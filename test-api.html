@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Test Tool</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 20px auto; padding: 20px; }
+        button { padding: 10px 20px; margin: 10px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background: #0056b3; }
+        .result { background: #f8f9fa; border: 1px solid #dee2e6; padding: 15px; margin: 10px 0; border-radius: 5px; }
+        .success { border-color: #28a745; background: #d4edda; }
+        .error { border-color: #dc3545; background: #f8d7da; }
+        pre { background: #e9ecef; padding: 10px; border-radius: 3px; overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <h1>🔧 API Diagnostic Tool</h1>
+    <p>This tool helps test your Flask API endpoints.</p>
+
+    <button onclick="testServer()">1. Test Server Connection</button>
+    <button onclick="testContactAPI()">2. Test Contact Form API</button>
+    <button onclick="clearResults()">Clear Results</button>
+
+    <div id="results"></div>
+
+    <script>
+        (function(){
+            const loc = window.location;
+            const defaultOrigin = 'http://127.0.0.1:8000';
+            let base;
+            if (loc.origin && !loc.origin.startsWith('file:') && (loc.port === '' || loc.port === '8000')) {
+                base = loc.origin;
+            } else {
+                base = defaultOrigin;
+            }
+            window.API_BASE = base;
+        })();
+        
+        function log(message, type = 'info') {
+            const results = document.getElementById('results');
+            const div = document.createElement('div');
+            div.className = 'result ' + (type === 'success' ? 'success' : type === 'error' ? 'error' : '');
+            div.innerHTML = `<strong>${new Date().toLocaleTimeString()}</strong>: ${message}`;
+            results.appendChild(div);
+            results.scrollTop = results.scrollHeight;
+        }
+
+        function clearResults() {
+            document.getElementById('results').innerHTML = '';
+        }
+
+        async function testServer() {
+            log('🔍 Testing server connection...');
+            try {
+                const response = await fetch(`${API_BASE}/api`);
+                const data = await response.json();
+                log(`✅ Server is running: ${data.message}`, 'success');
+                log(`<pre>${JSON.stringify(data, null, 2)}</pre>`);
+            } catch (error) {
+                log(`❌ Server connection failed: ${error.message}`, 'error');
+                log('Make sure Flask server is running with: python app.py');
+            }
+        }
+
+        async function testContactAPI() {
+            log('📧 Testing contact form API...');
+            
+            const testData = {
+                name: 'Test User محمد احمد',
+                email: 'test@example.com',
+                subject: 'Test Subject موضوع',
+                message: 'This is a test message. یہ ایک ٹیسٹ پیغام ہے۔'
+            };
+            
+            log(`Sending data: <pre>${JSON.stringify(testData, null, 2)}</pre>`);
+            
+            try {
+                const response = await fetch(`${API_BASE}/api/submit-contact`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(testData)
+                });
+                
+                log(`Response status: ${response.status}`);
+                log(`Response headers: <pre>${JSON.stringify([...response.headers.entries()], null, 2)}</pre>`);
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    log(`✅ Contact form working: ${result.message}`, 'success');
+                } else {
+                    log(`⚠️ API returned error: ${result.error}`, 'error');
+                }
+                
+                log(`Full response: <pre>${JSON.stringify(result, null, 2)}</pre>`);
+                
+            } catch (error) {
+                log(`❌ Network error: ${error.message}`, 'error');
+                log('This might be a CORS issue or network problem');
+            }
+        }
+
+        // Test server on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            log('🚀 Diagnostic tool loaded');
+            log('Click buttons above to run tests');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Virtual Islamic University</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/img/admin_dashboard.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            overflow: hidden;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .header {
+            background: linear-gradient(45deg, rgba(44, 62, 80, 0.9), rgba(52, 152, 219, 0.9));
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .university-logo {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        
+        .header-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .logout-btn {
+            background: linear-gradient(45deg, rgba(231, 76, 60, 0.8), rgba(192, 57, 43, 0.8));
+            color: white;
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 12px 24px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+        }
+        
+        .logout-btn:hover {
+            background: linear-gradient(45deg, rgba(231, 76, 60, 1), rgba(192, 57, 43, 1));
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+        }
+        
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            opacity: 0.9;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            background: rgba(248, 249, 250, 0.8);
+        }
+        
+        .stat-card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #3498db;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .tabs {
+            display: flex;
+            background: rgba(241, 242, 246, 0.9);
+            border-bottom: 1px solid #ddd;
+            backdrop-filter: blur(5px);
+        }
+        
+        .tab {
+            flex: 1;
+            padding: 15px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            color: #666;
+        }
+        
+        .tab:hover {
+            background: rgba(52, 152, 219, 0.1);
+            color: #3498db;
+        }
+        
+        .tab.active {
+            background: white;
+            color: #3498db;
+            border-bottom: 3px solid #3498db;
+            box-shadow: 0 2px 10px rgba(52, 152, 219, 0.2);
+        }
+        
+        .tab-content {
+            display: none;
+            padding: 30px;
+            min-height: 600px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            max-height: 800px;
+            overflow-y: auto;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            border: 1px solid rgba(52, 152, 219, 0.1);
+        }
+        
+        .data-table th {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 20px 18px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .data-table td {
+            padding: 18px;
+            border-bottom: 1px solid #e8f4f8;
+            vertical-align: top;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+        
+        .data-table tr:hover {
+            background: linear-gradient(135deg, #f8f9fa, #e3f2fd);
+            transform: scale(1.01);
+            transition: all 0.3s ease;
+        }
+        
+        .data-table tr:nth-child(even) {
+            background: rgba(52, 152, 219, 0.02);
+        }
+        
+        .status-badge {
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .status-new { background: #e74c3c; color: white; }
+        .status-pending { background: #f39c12; color: white; }
+        .status-read { background: #27ae60; color: white; }
+        .status-approved { background: #27ae60; color: white; }
+        .status-rejected { background: #e74c3c; color: white; }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+        
+        .error {
+            background: #ffebee;
+            color: #c62828;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        
+        .refresh-btn {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 0;
+            transition: background 0.3s ease;
+        }
+        
+        .refresh-btn:hover {
+            background: #2980b9;
+        }
+        
+        .no-data {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+            font-size: 1.1rem;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 5px 10px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-approve {
+            background: #27ae60;
+            color: white;
+        }
+        
+        .btn-approve:hover {
+            background: #219a52;
+        }
+        
+        .btn-reject {
+            background: #e74c3c;
+            color: white;
+        }
+        
+        .btn-reject:hover {
+            background: #c0392b;
+        }
+        
+        .btn-delete {
+            background: #95a5a6;
+            color: white;
+        }
+        
+        .btn-delete:hover {
+            background: #7f8c8d;
+        }
+        
+        .btn-mark-read {
+            background: #f39c12;
+            color: white;
+        }
+        
+        .btn-mark-read:hover {
+            background: #d68910;
+        }
+        
+        .btn-view {
+            background: #3498db;
+            color: white;
+        }
+        
+        .btn-view:hover {
+            background: #2980b9;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+        
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: none;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .close:hover {
+            color: black;
+        }
+        
+        .detail-section {
+            margin-bottom: 15px;
+        }
+        
+        .detail-label {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .detail-value {
+            background: #f8f9fa;
+            padding: 8px;
+            border-radius: 4px;
+            border-left: 3px solid #3498db;
+        }
+        
+        .confirm-dialog {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .confirm-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        
+        .disabled:hover {
+            background: inherit !important;
+        }
+        
+        .btn-reply {
+            background: #9b59b6;
+            color: white;
+        }
+        
+        .btn-reply:hover {
+            background: #8e44ad;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .form-input, .form-textarea {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            font-family: inherit;
+        }
+        
+        .form-textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .form-input:focus, .form-textarea:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+        }
+        
+        .form-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+            margin-top: 20px;
+        }
+        
+        .btn-send {
+            background: #27ae60;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        .btn-send:hover {
+            background: #219a52;
+        }
+        
+        .btn-cancel {
+            background: #95a5a6;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        .btn-cancel:hover {
+            background: #7f8c8d;
+        }
+        
+        /* Enhanced styling for both tab sections */
+        .tab-content h2 {
+            text-align: center;
+            color: #333;
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 25px;
+            padding: 18px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(240, 248, 255, 0.95));
+            border-radius: 12px;
+            border-left: 5px solid #3498db;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            text-shadow: none;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(52, 152, 219, 0.1);
+        }
+        
+        /* Enhanced background for both tab contents */
+        #applications, #contacts {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 252, 0.98));
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Enhanced refresh button styling for both sections */
+        .refresh-btn {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 15px 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .refresh-btn:hover {
+            background: linear-gradient(135deg, #2980b9, #1f618d);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+            transform: translateY(-2px);
+        }
+        
+        /* Improved table column sizing for contact section */
+        .data-table th:nth-child(1) { width: 4%; }  /* ID */
+        .data-table th:nth-child(2) { width: 10%; } /* Name */
+        .data-table th:nth-child(3) { width: 16%; } /* Email */
+        .data-table th:nth-child(4) { width: 14%; } /* Subject */
+        .data-table th:nth-child(5) { width: 32%; } /* Message - increased for better readability */
+        .data-table th:nth-child(6) { width: 9%; }  /* Date */
+        .data-table th:nth-child(7) { width: 7%; }  /* Status */
+        .data-table th:nth-child(8) { width: 13%; } /* Actions */
+        
+        /* Contact message cell styling */
+        .data-table td:nth-child(5) {
+            max-width: 300px;
+            word-wrap: break-word;
+            white-space: pre-wrap;
+            font-family: 'Arial', sans-serif;
+            background: rgba(248, 249, 250, 0.9);
+            border-left: 4px solid #3498db;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            padding: 20px;
+            border-radius: 6px;
+        }
+        
+        /* Email column styling */
+        .data-table td:nth-child(3) {
+            word-wrap: break-word;
+            font-size: 0.85rem;
+        }
+        
+        /* Subject column styling */
+        .data-table td:nth-child(4) {
+            word-wrap: break-word;
+            font-weight: 500;
+        }
+        
+        /* Enhanced no-data message styling */
+        .no-data {
+            text-align: center;
+            padding: 50px 20px;
+            color: #666;
+            font-size: 1.2rem;
+            background: linear-gradient(135deg, rgba(240, 248, 255, 0.8), rgba(255, 255, 255, 0.8));
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        /* Enhanced loading message styling */
+        .loading {
+            text-align: center;
+            padding: 50px 20px;
+            color: #3498db;
+            font-size: 1.1rem;
+            background: linear-gradient(135deg, rgba(240, 248, 255, 0.9), rgba(255, 255, 255, 0.9));
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 0.7; }
+            50% { opacity: 1; }
+            100% { opacity: 0.7; }
+        }
+    </style>
+    <script>
+        // Check authentication on page load
+        async function checkAuthentication() {
+            try {
+                const response = await fetch('/api/admin/check-auth', {
+                    method: 'GET',
+                    credentials: 'include',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+                
+                const result = await response.json();
+                
+                if (!result.authenticated) {
+                    // User is not authenticated, redirect to login page
+                    alert('You must login first to access the admin dashboard.');
+                    window.location.href = '/admin_login.html';
+                    return false;
+                }
+                
+                return true;
+            } catch (error) {
+                console.error('Authentication check failed:', error);
+                alert('Authentication check failed. Please login again.');
+                window.location.href = '/admin_login.html';
+                return false;
+            }
+        }
+        
+        // Run authentication check when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            checkAuthentication();
+        });
+        
+        // Also check authentication when page becomes visible (tab switching)
+        document.addEventListener('visibilitychange', function() {
+            if (document.visibilityState === 'visible') {
+                checkAuthentication();
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="VIU-Logo-Final-3.png" alt="VIU Logo" class="university-logo" onerror="this.src='assets/img/Vlogo.png'">
+            <div class="header-content">
+                <h1>🎓 Virtual Islamic University</h1>
+                <p>Admin Dashboard - ورچوئل اسلامک یونیورسٹی ایڈمن پینل</p>
+            </div>
+            <button class="logout-btn" onclick="adminLogout()">🚪 Logout</button>
+        </div>
+        
+        <div class="stats-grid" id="statsGrid">
+            <div class="stat-card">
+                <div class="stat-number" id="totalApplications">0</div>
+                <div class="stat-label">Total Applications</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="pendingApplications">0</div>
+                <div class="stat-label">Pending Applications</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="totalContacts">0</div>
+                <div class="stat-label">Total Contacts</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="newContacts">0</div>
+                <div class="stat-label">New Messages</div>
+            </div>
+        </div>
+        
+        <div class="tabs">
+            <button class="tab active" onclick="showTab('applications')">📚 Applications</button>
+            <button class="tab" onclick="showTab('contacts')">📧 Contact Messages</button>
+        </div>
+        
+        <div id="applications" class="tab-content active">
+            <h2>📚 Admission Applications</h2>
+            <button class="refresh-btn" onclick="loadApplications()">🔄 Refresh Data</button>
+            <div id="applicationsContent">
+                <div class="loading">Loading applications...</div>
+            </div>
+        </div>
+        
+        <div id="contacts" class="tab-content">
+            <h2>📧 Contact Messages</h2>
+            <button class="refresh-btn" onclick="loadContacts()">🔄 Refresh Data</button>
+            <div id="contactsContent">
+                <div class="loading">Loading contacts...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for viewing details -->
+    <div id="detailModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <!-- Modal for confirmations -->
+    <div id="confirmModal" class="modal">
+        <div class="modal-content">
+            <div id="confirmContent" class="confirm-dialog"></div>
+        </div>
+    </div>
+
+    <!-- Modal for reply form -->
+    <div id="replyModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeReplyModal()">&times;</span>
+            <div id="replyContent">
+                <h2>📝 Reply to Contact Message</h2>
+                <form id="replyForm" onsubmit="return false;">
+                    <div class="form-group">
+                        <label class="form-label">To:</label>
+                        <input type="text" id="replyToEmail" class="form-input" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Subject:</label>
+                        <input type="text" id="replySubject" class="form-input" placeholder="Re: Original Subject">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Your Reply:</label>
+                        <textarea id="replyMessage" class="form-textarea" placeholder="Type your reply message here..." required></textarea>
+                    </div>
+                    <div class="form-buttons">
+                        <button type="button" class="btn-cancel" onclick="closeReplyModal()">Cancel</button>
+                        <button type="button" class="btn-send" onclick="sendReply()">Send Reply</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function(){
+            const loc = window.location;
+            const defaultApi = 'http://127.0.0.1:8000/api';
+            let base;
+            if (loc.origin && !loc.origin.startsWith('file:') && (loc.port === '8000' || loc.origin.includes('127.0.0.1:8000') || loc.origin.includes('localhost:8000'))) {
+                base = `${loc.origin}/api`;
+            } else {
+                base = defaultApi;
+            }
+            window.API_BASE = base;
+        })();
+        
+        
+        async function checkAuthentication() {
+            try {
+                const response = await fetch(`${API_BASE}/admin/check-auth`, {
+                    credentials: 'include'
+                });
+                const data = await response.json();
+                
+                if (!data.success || !data.authenticated) {
+                    // Not authenticated, redirect to login immediately
+                    console.log('Authentication failed, redirecting to login...');
+                    window.location.replace('admin_login.html');
+                    return false;
+                }
+                
+                // Authenticated, load dashboard data
+                console.log('Authentication successful, loading dashboard...');
+                loadStats();
+                loadApplications();
+                return true;
+                
+            } catch (error) {
+                console.error('Authentication check failed:', error);
+                // If there's an error checking auth, redirect to login
+                window.location.replace('admin_login.html');
+                return false;
+            }
+        }
+        
+        // Function to handle authentication failures in API calls
+        function handleAuthFailure(response) {
+            if (response.status === 401) {
+                console.log('Session expired, redirecting to login...');
+                window.location.replace('admin_login.html');
+                return true;
+            }
+            return false;
+        }
+        
+        // Enhanced function to check authentication periodically
+        function startAuthMonitoring() {
+            // Check authentication every 5 minutes
+            setInterval(async () => {
+                try {
+                    const response = await fetch(`${API_BASE}/admin/check-auth`, {
+                        credentials: 'include'
+                    });
+                    const data = await response.json();
+                    
+                    if (!data.success || !data.authenticated) {
+                        console.log('Session expired during monitoring, redirecting...');
+                        window.location.replace('admin_login.html');
+                    }
+                } catch (error) {
+                    console.error('Auth monitoring failed:', error);
+                    // Don't redirect on network errors during monitoring
+                }
+            }, 300000); // 5 minutes
+        }
+        
+        // Load statistics
+        async function loadStats() {
+            try {
+                const response = await fetch(`${API_BASE}/admin/stats`, {
+                    credentials: 'include'
+                });
+                
+                // Check for authentication failure
+                if (handleAuthFailure(response)) {
+                    return;
+                }
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    const stats = data.stats;
+                    document.getElementById('totalApplications').textContent = stats.total_applications || 0;
+                    document.getElementById('pendingApplications').textContent = stats.pending_applications || 0;
+                    document.getElementById('totalContacts').textContent = stats.total_contacts || 0;
+                    document.getElementById('newContacts').textContent = stats.new_contacts || 0;
+                }
+            } catch (error) {
+                console.error('Error loading stats:', error);
+            }
+        }
+        
+        // Load applications
+        async function loadApplications() {
+            const contentDiv = document.getElementById('applicationsContent');
+            contentDiv.innerHTML = '<div class="loading">Loading applications...</div>';
+            
+            try {
+                const response = await fetch(`${API_BASE}/admin/applications`, {
+                    credentials: 'include'
+                });
+                
+                // Check for authentication failure
+                if (handleAuthFailure(response)) {
+                    return;
+                }
+                
+                const data = await response.json();
+                
+                if (data.success && data.applications.length > 0) {
+                    let html = `
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Application #</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Course</th>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                    `;
+                    
+                    data.applications.forEach(app => {
+                        const date = new Date(app.application_date).toLocaleDateString();
+                        html += `
+                            <tr>
+                                <td><strong>${app.application_number}</strong></td>
+                                <td>${app.first_name} ${app.last_name}</td>
+                                <td>${app.email}</td>
+                                <td>${app.phone}</td>
+                                <td>${getCourseNameUrdu(app.course)}</td>
+                                <td>${date}</td>
+                                <td><span class="status-badge status-${app.status}">${getStatusUrdu(app.status)}</span></td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="btn btn-view" onclick="viewApplication(${app.id})" title="View Details">👁️</button>
+                                        ${app.status === 'pending' ? `
+                                            <button class="btn btn-approve" onclick="approveApplication(${app.id})" title="Approve">✅</button>
+                                            <button class="btn btn-reject" onclick="rejectApplication(${app.id})" title="Reject">❌</button>
+                                        ` : ''}
+                                        <button class="btn btn-delete" onclick="deleteApplication(${app.id})" title="Delete">🗑️</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        `;
+                    });
+                    
+                    html += '</tbody></table>';
+                    contentDiv.innerHTML = html;
+                } else if (data.success && data.applications.length === 0) {
+                    contentDiv.innerHTML = '<div class="no-data">📝 No applications submitted yet</div>';
+                } else {
+                    contentDiv.innerHTML = '<div class="error">Error loading applications</div>';
+                }
+            } catch (error) {
+                contentDiv.innerHTML = '<div class="error">Network error - Make sure backend is running</div>';
+                console.error('Error loading applications:', error);
+            }
+        }
+        
+        // Load contacts
+        async function loadContacts() {
+            const contentDiv = document.getElementById('contactsContent');
+            contentDiv.innerHTML = '<div class="loading">Loading contacts...</div>';
+            
+            try {
+                const response = await fetch(`${API_BASE}/admin/contacts`, {
+                    credentials: 'include'
+                });
+                const data = await response.json();
+                
+                if (data.success && data.contacts.length > 0) {
+                    let html = `
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Subject</th>
+                                    <th>Message</th>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                    `;
+                    
+                    data.contacts.forEach(contact => {
+                        const date = new Date(contact.submission_date).toLocaleDateString();
+                    const message = contact.message.length > 250 ? 
+                                      contact.message.substring(0, 250) + '...' : 
+                                      contact.message;
+                        html += `
+                            <tr>
+                                <td>${contact.id}</td>
+                                <td>${contact.name}</td>
+                                <td>${contact.email}</td>
+                                <td>${contact.subject}</td>
+                                <td>${message}</td>
+                                <td>${date}</td>
+                                <td><span class="status-badge status-${contact.status}">${getStatusUrdu(contact.status)}</span></td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="btn btn-view" onclick="viewContact(${contact.id})" title="View Full Message">👁️</button>
+                                        ${contact.status === 'new' ? `
+                                            <button class="btn btn-mark-read" onclick="markContactAsRead(${contact.id})" title="Mark as Read">📖</button>
+                                        ` : ''}
+                                        <button class="btn btn-reply" onclick="replyToContact(${contact.id})" title="Reply">📝</button>
+                                        <button class="btn btn-delete" onclick="deleteContact(${contact.id})" title="Delete">🗑️</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        `;
+                    });
+                    
+                    html += '</tbody></table>';
+                    contentDiv.innerHTML = html;
+                } else if (data.success && data.contacts.length === 0) {
+                    contentDiv.innerHTML = '<div class="no-data">📧 No contact messages yet</div>';
+                } else {
+                    contentDiv.innerHTML = '<div class="error">Error loading contacts</div>';
+                }
+            } catch (error) {
+                contentDiv.innerHTML = '<div class="error">Network error - Make sure backend is running</div>';
+                console.error('Error loading contacts:', error);
+            }
+        }
+        
+        // Helper functions
+        function getCourseNameUrdu(course) {
+            const courseNames = {
+                'quran': 'فہم القرآن',
+                'arabic': 'اللغة العربية',
+                'islamic-studies': 'علوم الدین'
+            };
+            return courseNames[course] || course;
+        }
+        
+        function getStatusUrdu(status) {
+            const statusNames = {
+                'new': 'نیا',
+                'pending': 'زیر التواء',
+                'read': 'پڑھا گیا',
+                'approved': 'منظور',
+                'rejected': 'مسترد'
+            };
+            return statusNames[status] || status;
+        }
+        
+        // Tab switching
+        function showTab(tabName) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Remove active class from all tabs
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected tab content
+            document.getElementById(tabName).classList.add('active');
+            
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+            
+            // Load data for the selected tab
+            if (tabName === 'applications') {
+                loadApplications();
+            } else if (tabName === 'contacts') {
+                loadContacts();
+            }
+        }
+        
+        // Application management functions
+        async function viewApplication(appId) {
+            try {
+                const response = await fetch(`${API_BASE}/admin/applications`, {
+                    credentials: 'include'
+                });
+                const data = await response.json();
+                
+                if (data.success) {
+                    const app = data.applications.find(a => a.id === appId);
+                    if (app) {
+                        const modalContent = `
+                            <h2>📚 Application Details</h2>
+                            <div class="detail-section">
+                                <div class="detail-label">Application Number:</div>
+                                <div class="detail-value">${app.application_number}</div>
+                            </div>
+                            <div class="detail-section">
+                                <div class="detail-label">Full Name:</div>
+                                <div class="detail-value">${app.first_name} ${app.last_name}</div>
+                            </div>
+                            <div class="detail-section">
+                                <div class="detail-label">Email:</div>
+                                <div class="detail-value">${app.email}</div>
+                            </div>
+                            <div class="detail-section">
+                                <div class="detail-label">Phone:</div>
+                                <div class="detail-value">${app.phone}</div>
+                            </div>
+                            <div class="detail-section">
+                                <div class="detail-label">CNIC:</div>
+                                <div class="detail-value">${app.cnic}</div>
+                            </div>
+                            <div class="detail-section">
+                                <div class="detail-label">Course:</div>
+                                <div class="detail-value">${getCourseNameUrdu(app.course)}</div>
+                            </div>
+                            <div class="detail-section">
+                                <div class="detail-label">Education:</div>
+                                <div class="detail-value">${app.education}</div>
+                            </div>
+                            <div class="detail-section">
+                                <div class="detail-label">Address:</div>
+                                <div class="detail-value">${app.address}</div>
+                            </div>
+                            <div class="detail-section">
+                                <div class="detail-label">Application Date:</div>
+                                <div class="detail-value">${new Date(app.application_date).toLocaleDateString()}</div>
+                            </div>
+                            <div class="detail-section">
+                                <div class="detail-label">Status:</div>
+                                <div class="detail-value"><span class="status-badge status-${app.status}">${getStatusUrdu(app.status)}</span></div>
+                            </div>
+                        `;
+                        
+                        document.getElementById('modalContent').innerHTML = modalContent;
+                        document.getElementById('detailModal').style.display = 'block';
+                    }
+                }
+            } catch (error) {
+                console.error('Error loading application details:', error);
+            }
+        }
+
+        async function approveApplication(appId) {
+            showConfirmDialog(
+                '✅ Approve Application',
+                'Are you sure you want to approve this application? The applicant will be notified via email.',
+                async () => {
+                    await performAction(`${API_BASE}/admin/applications/${appId}/approve`, 'POST', 'Application approved successfully!');
+                }
+            );
+        }
+
+        async function rejectApplication(appId) {
+            showConfirmDialog(
+                '❌ Reject Application',
+                'Are you sure you want to reject this application? The applicant will be notified via email.',
+                async () => {
+                    await performAction(`${API_BASE}/admin/applications/${appId}/reject`, 'POST', 'Application rejected successfully!');
+                }
+            );
+        }
+
+        async function deleteApplication(appId) {
+            showConfirmDialog(
+                '🗑️ Delete Application',
+                'Are you sure you want to permanently delete this application? This action cannot be undone.',
+                async () => {
+                    await performAction(`${API_BASE}/admin/applications/${appId}`, 'DELETE', 'Application deleted successfully!');
+                }
+            );
+        }
+
+        // Contact management functions
+        async function viewContact(contactId) {
+            try {
+                const response = await fetch(`${API_BASE}/admin/contacts`, {
+                    credentials: 'include'
+                });
+                const data = await response.json();
+                
+                if (data.success) {
+                const contact = data.contacts.find(c => c.id === contactId);
+                
+                if (!contact) {
+                    alert('Contact not found, please refresh the page and try again.');
+                    return;
+                }
+                    if (contact) {
+                        const modalContent = `
+                            <h2>📧 Contact Message Details</h2>
+                            <div class="detail-section">
+                                <div class="detail-label">Contact ID:</div>
+                                <div class="detail-value">${contact.id}</div>
+                            </div>
+                            <div class="detail-section">
+                                <div class="detail-label">Name:</div>
+                                <div class="detail-value">${contact.name}</div>
+                            </div>
+                            <div class="detail-section">
+                                <div class="detail-label">Email:</div>
+                                <div class="detail-value">${contact.email}</div>
+                            </div>
+                            <div class="detail-section">
+                                <div class="detail-label">Subject:</div>
+                                <div class="detail-value">${contact.subject}</div>
+                            </div>
+                            <div class="detail-section">
+                                <div class="detail-label">Message:</div>
+                                <div class="detail-value">${contact.message}</div>
+                            </div>
+                            <div class="detail-section">
+                                <div class="detail-label">Submission Date:</div>
+                                <div class="detail-value">${new Date(contact.submission_date).toLocaleDateString()}</div>
+                            </div>
+                            <div class="detail-section">
+                                <div class="detail-label">Status:</div>
+                                <div class="detail-value"><span class="status-badge status-${contact.status}">${getStatusUrdu(contact.status)}</span></div>
+                            </div>
+                        `;
+                        
+                        document.getElementById('modalContent').innerHTML = modalContent;
+                        document.getElementById('detailModal').style.display = 'block';
+                    }
+                }
+            } catch (error) {
+                console.error('Error loading contact details:', error);
+            }
+        }
+
+        async function markContactAsRead(contactId) {
+            await performAction(`${API_BASE}/admin/contacts/${contactId}/mark-read`, 'POST', 'Message marked as read!');
+        }
+
+        async function deleteContact(contactId) {
+            showConfirmDialog(
+                '🗑️ Delete Contact',
+                'Are you sure you want to permanently delete this contact message? This action cannot be undone.',
+                async () => {
+                    await performAction(`${API_BASE}/admin/contacts/${contactId}`, 'DELETE', 'Contact deleted successfully!');
+                }
+            );
+        }
+
+        // Reply to contact function
+        async function replyToContact(contactId) {
+            try {
+                const response = await fetch(`${API_BASE}/admin/contacts`, {
+                    credentials: 'include'
+                });
+                const data = await response.json();
+                
+                if (data.success) {
+                    const contact = data.contacts.find(c => c.id === contactId);
+                    if (contact) {
+                        // Populate reply form
+                        document.getElementById('replyToEmail').value = contact.email;
+                        document.getElementById('replySubject').value = `Re: ${contact.subject}`;
+                        document.getElementById('replyMessage').value = '';
+                        
+                        // Store contact ID for form submission
+                        window.currentReplyContactId = contactId;
+                        
+                        // Show reply modal
+                        document.getElementById('replyModal').style.display = 'block';
+                    }
+                }
+            } catch (error) {
+                console.error('Error loading contact for reply:', error);
+                alert('Error loading contact information. Please try again.');
+            }
+        }
+
+        function closeReplyModal() {
+            document.getElementById('replyModal').style.display = 'none';
+            document.getElementById('replyForm').reset();
+            window.currentReplyContactId = null;
+        }
+
+        // Handle reply form submission
+        async function sendReply() {
+            const contactId = window.currentReplyContactId;
+            const subject = document.getElementById('replySubject').value;
+            const message = document.getElementById('replyMessage').value;
+            
+            // Debug logs
+            console.log('Reply form submission:');
+            console.log('Contact ID:', contactId);
+            console.log('Subject:', subject);
+            console.log('Message:', message);
+            console.log('Message length:', message.length);
+            console.log('Message trimmed:', message.trim());
+            console.log('Message trimmed length:', message.trim().length);
+            
+            if (!contactId || !message.trim()) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            const payload = {
+                reply_message: message
+            };
+            
+            console.log('Payload to send:', payload);
+            console.log('Payload JSON:', JSON.stringify(payload));
+            
+            const submitButton = document.querySelector('.btn-send');
+            const originalText = submitButton.textContent;
+            
+            try {
+                submitButton.textContent = 'Sending...';
+                submitButton.disabled = true;
+                
+                const response = await fetch(`${API_BASE}/admin/contacts/${contactId}/reply`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    credentials: 'include',
+                    body: JSON.stringify(payload)
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    showSuccessMessage('Reply sent successfully!');
+                    closeReplyModal();
+                    // Refresh contacts to update any status changes
+                    loadContacts();
+                    loadStats();
+                } else {
+                    console.error('Backend error response:', data);
+                    alert('Error sending reply: ' + (data.error || data.message || 'Unknown error occurred'));
+                }
+            } catch (error) {
+                console.error('Error sending reply:', error);
+                alert('Network error occurred. Please try again.');
+            } finally {
+                submitButton.textContent = originalText;
+                submitButton.disabled = false;
+            }
+        }
+
+        // Utility functions
+        function showConfirmDialog(title, message, onConfirm) {
+            const confirmContent = `
+                <h3>${title}</h3>
+                <p>${message}</p>
+                <div class="confirm-buttons">
+                    <button class="btn btn-approve" onclick="confirmAction()">Yes, Proceed</button>
+                    <button class="btn btn-reject" onclick="closeConfirmModal()">Cancel</button>
+                </div>
+            `;
+            
+            document.getElementById('confirmContent').innerHTML = confirmContent;
+            document.getElementById('confirmModal').style.display = 'block';
+            
+            // Store the confirm action
+            window.currentConfirmAction = onConfirm;
+        }
+
+        async function confirmAction() {
+            if (window.currentConfirmAction) {
+                await window.currentConfirmAction();
+                window.currentConfirmAction = null;
+            }
+            closeConfirmModal();
+        }
+
+        function closeConfirmModal() {
+            document.getElementById('confirmModal').style.display = 'none';
+        }
+
+        function closeModal() {
+            document.getElementById('detailModal').style.display = 'none';
+        }
+
+        async function performAction(url, method, successMessage, retryCount = 0) {
+            const maxRetries = 2;
+            
+            try {
+                console.log(`Attempting ${method} request to: ${url} (attempt ${retryCount + 1})`);
+                
+                const response = await fetch(url, { 
+                    method,
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    credentials: 'include'
+                });
+                
+                console.log('Response status:', response.status);
+                console.log('Response headers:', response.headers);
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                
+                const data = await response.json();
+                console.log('Response data:', data);
+                
+                if (data.success) {
+                    showSuccessMessage(successMessage);
+                    loadStats();
+                    const activeTab = document.querySelector('.tab-content.active');
+                    if (activeTab.id === 'applications') {
+                        loadApplications();
+                    } else if (activeTab.id === 'contacts') {
+                        loadContacts();
+                    }
+                } else {
+                    alert('Error: ' + (data.error || data.message || 'Unknown error occurred'));
+                }
+            } catch (error) {
+                console.error('Error performing action:', error);
+                
+                if (retryCount < maxRetries) {
+                    console.log(`Retrying request... (${retryCount + 1}/${maxRetries})`);
+                    setTimeout(() => {
+                        performAction(url, method, successMessage, retryCount + 1);
+                    }, 1000 * (retryCount + 1)); // Exponential backoff
+                } else {
+                    let errorMessage = 'Network error occurred.';
+                    
+                    if (error.message.includes('Failed to fetch')) {
+                        errorMessage = 'Cannot connect to the server. Please make sure the backend is running on port 8000.';
+                    } else if (error.message.includes('HTTP')) {
+                        errorMessage = `Server error: ${error.message}`;
+                    }
+                    
+                    alert(errorMessage + ' Please check the console for more details.');
+                }
+            }
+        }
+
+        function showSuccessMessage(message) {
+            const successDiv = document.createElement('div');
+            successDiv.className = 'success-message';
+            successDiv.textContent = message;
+            
+            const activeTab = document.querySelector('.tab-content.active');
+            activeTab.insertBefore(successDiv, activeTab.firstChild);
+            
+            setTimeout(() => {
+                successDiv.remove();
+            }, 5000);
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const detailModal = document.getElementById('detailModal');
+            const confirmModal = document.getElementById('confirmModal');
+            const replyModal = document.getElementById('replyModal');
+            
+            if (event.target === detailModal) {
+                closeModal();
+            }
+            if (event.target === confirmModal) {
+                closeConfirmModal();
+            }
+            if (event.target === replyModal) {
+                closeReplyModal();
+            }
+        }
+
+        // Admin logout function
+        async function adminLogout() {
+            try {
+                const response = await fetch(`${API_BASE}/admin/logout`, {
+                    method: 'POST',
+                    credentials: 'include'
+                });
+                
+                // Always redirect to login, regardless of response
+                window.location.replace('admin_login.html');
+                
+            } catch (error) {
+                console.error('Logout error:', error);
+                // Even if there's an error, redirect to login
+                window.location.replace('admin_login.html');
+            }
+        }
+        
+        // Initialize dashboard
+        window.onload = function() {
+            // First check authentication - this will redirect if not authenticated
+            checkAuthentication().then((isAuthenticated) => {
+                if (isAuthenticated) {
+                    // Start monitoring authentication status
+                    startAuthMonitoring();
+                }
+            });
+            
+            // Auto-refresh every 30 seconds
+            setInterval(() => {
+                loadStats();
+                const activeTab = document.querySelector('.tab-content.active');
+                if (activeTab.id === 'applications') {
+                    loadApplications();
+                } else if (activeTab.id === 'contacts') {
+                    loadContacts();
+                }
+            }, 30000);
+        };
+    </script>
+</body>
+</html>

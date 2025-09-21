@@ -1,0 +1,4867 @@
+
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>ورچوئل اسلامک یونیورسٹی - Virtual Islamic University</title>
+  <meta name="description" content="Islamic Education Online Platform">
+  <meta name="keywords" content="Islamic, Education, Quran, Arabic, Online">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Enhanced Arabic & Urdu Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Noto+Nastaliq+Urdu:wght@400;500;600;700&family=Amiri:wght@400;500;600;700&family=Scheherazade+New:wght@400;500;700&family=Cairo:wght@400;500;600;700&family=Tajawal:wght@400;500;600;700&family=Markazi+Text:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Local Mehr Nastaliq Web Font -->
+  <style>
+    @font-face {
+      font-family: 'Mehr Nastaliq Web';
+      src: url('mehr nastaliq web font v 2.0/Mehr_Nastaliq_Web v. 2.0.ttf') format('truetype'),
+           url('mehr nastaliq web font v 2.0/Mehr_Nastaliq_Web v.2.0.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+  </style>
+
+  <!-- Vendor CSS Files with CDN Fallbacks -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.rtl.min.css" rel="stylesheet" onerror="this.href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css'">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" onerror="this.href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css'">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet" onerror="this.href='https://unpkg.com/aos@2.3.1/dist/aos.css'">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" onerror="this.href='https://cdn.jsdelivr.net/gh/biati-digital/glightbox/dist/css/glightbox.min.css'">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" onerror="this.href='https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css'">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- Custom RTL and Islamic Styling -->
+  <style>
+    /* Professional Semi-Transparent Navbar Styling */
+    .header {
+      background: rgba(30, 60, 114, 0.85);
+      box-shadow: 0 4px 20px rgba(30, 60, 114, 0.3);
+      backdrop-filter: blur(15px);
+      border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+    
+    .header.scrolled {
+      background: rgba(30, 60, 114, 0.95);
+      box-shadow: 0 4px 20px rgba(30, 60, 114, 0.4);
+    }
+    
+    .navmenu a {
+      color: white !important;
+      font-weight: 600;
+      font-size: 1.1rem;
+      font-family: 'Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu', 'Markazi Text', serif;
+      transition: all 0.3s ease;
+      position: relative;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    }
+    
+    .navmenu a:hover {
+      color: #FFC107 !important;
+      text-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
+    }
+    
+    .navmenu a.active {
+      color: #FFC107 !important;
+    }
+    
+    .btn-getstarted {
+      color: white !important;
+      font-weight: 600;
+      font-size: 1.1rem;
+      font-family: 'Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu', 'Markazi Text', serif;
+      transition: all 0.3s ease;
+      position: relative;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+      text-decoration: none;
+    }
+    
+    .btn-getstarted:hover {
+      color: #FFC107 !important;
+      text-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
+    }
+    
+    /* Admin Login Button Styling */
+.btn-admin {
+      background: linear-gradient(135deg, #1a252f, #2c3e50, #34495e);
+      color: white;
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(44, 62, 80, 0.3);
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-admin::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+      transition: left 0.4s ease;
+    }
+
+    .btn-admin:hover::before {
+      left: 100%;
+    }
+
+    .btn-admin:hover {
+      background: linear-gradient(135deg, #34495e, #2c3e50, #1a252f);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(44, 62, 80, 0.4);
+    }
+    /* Donation Button Styling */
+.btn-donation {
+      color: white !important;
+      font-weight: 600;
+      font-size: 1.1rem;
+      font-family: 'Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu', 'Markazi Text', serif;
+      transition: all 0.3s ease;
+      position: relative;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+      text-decoration: none;
+      display: inline-block;
+    }
+    
+.btn-donation:hover {
+      color: #FFC107 !important;
+      text-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
+      text-decoration: none;
+    }
+    
+    /* Simple Clean Dropdown Styles */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .dropdown-menu {
+      direction: rtl;
+      text-align: right;
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 8px 0;
+      min-width: 220px;
+      z-index: 1050;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      margin-top: 4px;
+      display: none;
+      font-family: 'Mehr Nastaliq Web', 'Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu', serif;
+    }
+    
+    /* Show dropdown on hover and click */
+    .dropdown:hover .dropdown-menu,
+    .dropdown.show .dropdown-menu,
+    .dropdown-menu.show {
+      display: block !important;
+    }
+    
+    /* Simple Dropdown Items with Dark Text */
+    .dropdown-item {
+      padding: 10px 16px;
+      color: #1e3c72 !important;
+      text-decoration: none;
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.4;
+      transition: all 0.2s ease;
+      font-family: 'Mehr Nastaliq Web', 'Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu', serif;
+    }
+    
+    /* Override any conflicting text colors */
+    .dropdown-menu .dropdown-item,
+    .navmenu .dropdown-menu .dropdown-item {
+      color: #1e3c72 !important;
+      -webkit-text-fill-color: #1e3c72 !important;
+    }
+    
+    /* Simple hover effect */
+    .dropdown-item:hover {
+      background-color: #f8fafc;
+      color: #0f172a !important;
+      -webkit-text-fill-color: #0f172a !important;
+      text-decoration: none;
+      transform: translateX(-2px);
+    }
+    
+    /* Visited and active states */
+    .dropdown-item:visited,
+    .dropdown-item:active,
+    .dropdown-item:focus {
+      color: #1e3c72 !important;
+      -webkit-text-fill-color: #1e3c72 !important;
+    }
+    
+    /* Divider */
+    .dropdown-divider {
+      height: 0;
+      margin: 8px 0;
+      overflow: hidden;
+      border-top: 1px solid #e5e7eb;
+    }
+    
+    /* View all courses button - simple style */
+    .dropdown-item[href="courses.html"] {
+      background-color: #1e3c72;
+      color: white !important;
+      -webkit-text-fill-color: white !important;
+      font-weight: 600;
+      border-radius: 6px;
+      margin: 4px 8px;
+    }
+    
+    .dropdown-item[href="courses.html"]:hover {
+      background-color: #2a5298;
+      color: white !important;
+      -webkit-text-fill-color: white !important;
+    }
+    
+    /* Mobile-specific navbar fixes */
+    @media (max-width: 1199px) {
+      /* Hide desktop navigation */
+      .navmenu {
+        display: none;
+      }
+      
+      #secondary-nav {
+        display: none;
+      }
+      
+      /* Mobile toggle button */
+      .mobile-nav-toggle {
+        color: white !important;
+        font-size: 28px !important;
+        line-height: 1;
+        margin-right: 15px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        padding: 10px;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        min-width: 48px;
+        min-height: 48px;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        z-index: 10001;
+        position: relative;
+      }
+      
+      .mobile-nav-toggle:hover {
+        background: rgba(255, 255, 255, 0.2);
+        color: #FFC107 !important;
+        transform: scale(1.05);
+      }
+      
+      /* Mobile navigation overlay */
+      .mobile-nav-active .navmenu {
+        display: block !important;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(30, 60, 114, 0.98);
+        backdrop-filter: blur(15px);
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        z-index: 9999;
+        overflow-y: auto;
+        padding: 100px 0 60px 0;
+        transform: translateX(0);
+        opacity: 1;
+      }
+      
+      /* Mobile navigation list */
+      .mobile-nav-active .navmenu > ul {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        list-style: none;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      
+      /* Mobile navigation links */
+      .mobile-nav-active .navmenu li {
+        width: 100%;
+        margin-bottom: 8px;
+      }
+      
+      .mobile-nav-active .navmenu a {
+        color: white !important;
+        padding: 16px 20px;
+        font-size: 18px;
+        font-weight: 600;
+        display: block;
+        text-align: center;
+        width: 100%;
+        border-radius: 12px;
+        margin: 0;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        font-family: 'Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu', serif;
+        background: transparent;
+        border: 1px solid transparent;
+        line-height: 1.4;
+      }
+      
+      .mobile-nav-active .navmenu a:hover,
+      .mobile-nav-active .navmenu a.active {
+        background: rgba(255, 193, 7, 0.2);
+        color: #FFC107 !important;
+        text-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
+        border-color: rgba(255, 193, 7, 0.3);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(255, 193, 7, 0.2);
+      }
+      
+      /* Mobile dropdown styles */
+      .mobile-nav-active .dropdown {
+        width: 100%;
+      }
+      
+      .mobile-nav-active .dropdown-menu {
+        position: static !important;
+        display: none;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 8px;
+        margin: 8px 0;
+        padding: 8px;
+        box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(5px);
+        width: 100%;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+      }
+      
+      .mobile-nav-active .dropdown.show .dropdown-menu {
+        display: block !important;
+      }
+      
+      .mobile-nav-active .dropdown-item {
+        color: rgba(255, 255, 255, 0.9) !important;
+        -webkit-text-fill-color: rgba(255, 255, 255, 0.9) !important;
+        padding: 12px 16px;
+        font-size: 16px;
+        border-radius: 6px;
+        margin: 2px 0;
+        background: transparent;
+        transition: all 0.3s ease;
+      }
+      
+      .mobile-nav-active .dropdown-item:hover {
+        background: rgba(255, 193, 7, 0.2) !important;
+        color: #FFC107 !important;
+        -webkit-text-fill-color: #FFC107 !important;
+        transform: translateX(-4px);
+      }
+      
+      .mobile-nav-active .dropdown-toggle::after {
+        margin-left: 8px;
+        transition: transform 0.3s ease;
+      }
+      
+      .mobile-nav-active .dropdown-toggle[aria-expanded="true"]::after {
+        transform: rotate(180deg);
+      }
+      
+      /* Mobile close button */
+      .mobile-nav-active .mobile-nav-toggle {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 10000;
+        background: rgba(255, 255, 255, 0.95);
+        color: #1e3c72 !important;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        border: 2px solid rgba(30, 60, 114, 0.3);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        backdrop-filter: blur(10px);
+      }
+      
+      .mobile-nav-active .mobile-nav-toggle:hover {
+        background: rgba(255, 255, 255, 1);
+        transform: scale(1.1) rotate(90deg);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+      }
+      
+      /* Prevent body scroll when mobile nav is active */
+      body.mobile-nav-active {
+        overflow: hidden !important;
+        position: fixed;
+        width: 100%;
+      }
+      
+      /* Hide secondary nav and admin buttons on mobile */
+      .btn-admin,
+      .btn-admin-panel,
+      .btn-logout {
+        display: none !important;
+      }
+      
+      /* Fix logo positioning on mobile */
+      .logo {
+        flex-direction: row;
+        align-items: center;
+        text-align: right;
+        justify-content: flex-start;
+        flex: 1;
+      }
+      
+      .logo img {
+        height: 55px !important;
+        margin-left: 12px;
+        order: 2;
+      }
+      
+      .logo-text {
+        margin-right: 0;
+        margin-left: 0;
+        order: 1;
+        flex: 1;
+      }
+      
+      .logo-text h1 {
+        font-size: 1.4rem !important;
+        margin-bottom: 2px;
+        line-height: 1.3;
+      }
+      
+      .logo-text p {
+        font-size: 0.8rem !important;
+        line-height: 1.2;
+      }
+      
+      /* Fix header layout */
+      .header {
+        min-height: 70px;
+        padding: 10px 0;
+      }
+      
+      .container-fluid.container-xl {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        flex-wrap: nowrap;
+        gap: 15px;
+      }
+    }
+    
+    /* Extra small devices */
+    @media (max-width: 576px) {
+      .mobile-nav-toggle {
+        font-size: 24px !important;
+        min-width: 44px;
+        min-height: 44px;
+        padding: 8px;
+      }
+      
+      .logo img {
+        height: 45px !important;
+      }
+      
+      .logo-text h1 {
+        font-size: 1.2rem !important;
+      }
+      
+      .logo-text p {
+        font-size: 0.7rem !important;
+      }
+      
+      .container-fluid.container-xl {
+        padding: 8px 15px;
+      }
+      
+      .mobile-nav-active .navmenu > ul {
+        padding: 15px;
+        margin: 0 15px;
+        width: calc(100% - 30px);
+        max-width: 320px;
+        border-radius: 15px;
+      }
+      
+      .mobile-nav-active .navmenu a {
+        padding: 14px 16px;
+        font-size: 16px;
+      }
+      
+      .mobile-nav-active .dropdown-item {
+        padding: 10px 12px;
+        font-size: 15px;
+      }
+      
+      .mobile-nav-active .mobile-nav-toggle {
+        top: 15px;
+        right: 15px;
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+      }
+    }
+    
+    .dropdown-menu.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0) scale(1);
+    }
+    
+    /* Dropdown menu animation triggers */
+    .dropdown-menu {
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    
+    .dropdown.show .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0) scale(1);
+    }
+    
+    /* Add spacing for dropdown container */
+    .courses.section {
+      padding-bottom: 120px;
+    }
+    
+    /* Remove conflicting dropdown item styles - handled by earlier definition */
+    
+    .dropdown-divider {
+      margin: 10px 20px;
+      border-top: 1px solid #e0e0e0;
+    }
+    
+    /* Simple dropdown toggle styling */
+    .dropdown-toggle {
+      background: none;
+      border: none;
+      color: white;
+      padding: 8px 16px;
+      font-family: 'Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu', 'Markazi Text', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .dropdown-toggle:hover {
+      color: #FFC107;
+    }
+    
+    .dropdown-toggle:focus {
+      color: #FFC107;
+      outline: none;
+    }
+    
+    .dropdown-toggle::after {
+      margin-left: 8px;
+      transition: transform 0.3s ease;
+    }
+    
+    .dropdown-toggle[aria-expanded="true"]::after {
+      transform: rotate(180deg);
+    }
+    
+    
+    
+    
+    
+    
+    /* Animation for course cards */
+    .course-item {
+      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    
+    .course-item:hover {
+      transform: translateY(-15px) scale(1.02);
+      box-shadow: 0 15px 35px rgba(0, 77, 64, 0.2);
+    }
+    
+    /* About Section Image Slider */
+    .about-slider-container {
+      position: relative;
+      width: 100%;
+      height: 450px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(0, 77, 64, 0.3);
+      background: #f8f9fa;
+    }
+    
+    .simple-slider {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+    
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    
+    .slide.active {
+      opacity: 1;
+    }
+    
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.95);
+      display: block;
+    }
+    
+    .slider-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        135deg,
+        rgba(0, 105, 92, 0.1) 0%,
+        rgba(0, 77, 64, 0.2) 50%,
+        rgba(0, 37, 26, 0.3) 100%
+      );
+      opacity: 0.4;
+    }
+    
+    .slider-content {
+      position: absolute;
+      bottom: 30px;
+      left: 30px;
+      right: 30px;
+      color: white;
+      z-index: 3;
+      transform: translateY(0);
+      opacity: 1;
+    }
+    
+    .slider-content h4 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+    
+    .slider-content p {
+      font-size: 1rem;
+      opacity: 0.9;
+      text-shadow: 0 1px 5px rgba(0,0,0,0.3);
+    }
+    
+    
+    /* Slider Indicators */
+    .slider-indicators {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+      z-index: 4;
+    }
+    
+    .indicator {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.5);
+      border: 2px solid rgba(255, 255, 255, 0.8);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .indicator.active {
+      background: #FFC107;
+      border-color: #FFC107;
+      box-shadow: 0 0 15px rgba(255, 193, 7, 0.6);
+    }
+    
+    
+    .about-content h3 {
+      font-size: 2.5rem !important;
+      font-weight: 700 !important;
+      color: #1e3c72;
+      margin-bottom: 25px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      font-style: normal !important;
+    }
+    
+    .about-content p {
+      font-size: 1.3rem !important;
+      font-weight: 600 !important;
+      color: #2a5298;
+      line-height: 1.8;
+      margin-bottom: 30px;
+      font-style: normal !important;
+    }
+    
+    .about-content ul li {
+      font-size: 1.4rem !important;
+      font-weight: 500 !important;
+      margin-bottom: 15px;
+      padding: 8px 0;
+      line-height: 1.6;
+    }
+    
+    .about-content ul li i {
+      font-size: 1.5rem;
+      color: #D84315;
+      margin-left: 15px;
+    }
+    
+    .about-content ul li span {
+      color: #333;
+      font-weight: 600;
+    }
+    
+    .about-content .read-more {
+      font-size: 1.2rem !important;
+      font-weight: 600 !important;
+      padding: 15px 30px;
+      background: linear-gradient(45deg, #1e3c72, #2a5298);
+      color: white;
+      border-radius: 25px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .about-content .read-more:hover {
+      background: linear-gradient(45deg, #2a5298, #3b6ecd);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(30, 60, 114, 0.3);
+      color: white;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    .about-small-images .about-image:nth-child(1) {
+      animation: slideInLeft 1s ease-out 0.3s both;
+    }
+    
+    .about-small-images .about-image:nth-child(2) {
+      animation: slideInRight 1s ease-out 0.5s both;
+    }
+    body {
+      font-family: 'Mehr Nastaliq Web', 'Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu', 'Markazi Text', 'Amiri', serif;
+      direction: rtl;
+      text-align: right;
+      font-weight: 500;
+    }
+    
+    .sitename {
+      font-family: 'Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu', 'Markazi Text', serif;
+      color: #D84315;
+      font-weight: 700;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu', 'Markazi Text', 'Amiri', serif;
+      font-weight: 700;
+    }
+    
+    .course-content h3 {
+      font-family: 'Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu', 'Markazi Text', serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      line-height: 1.4;
+      margin-bottom: 12px;
+    }
+    
+    /* Enhanced Arabic typography for courses section */
+    #courses h2, .courses.section h2, .courses h2 {
+      font-family: 'Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu', 'Markazi Text', serif;
+      font-weight: 700;
+      font-size: 2.2rem;
+      text-shadow: 0 3px 6px rgba(0,0,0,0.15);
+      margin-bottom: 10px;
+    }
+    
+    #courses p, .courses.section p, .courses p {
+      font-family: 'Noto Nastaliq Urdu', 'Markazi Text', 'Noto Sans Urdu', serif;
+      font-weight: 500;
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+    }
+    
+    /* Specific override for course item descriptions */
+    .course-content .description,
+    .course-content p.description,
+    .course-item .course-content .description,
+    .course-item .course-content p.description {
+      font-size: 1.1rem !important;
+      font-weight: 500 !important;
+      line-height: 1.6 !important;
+      color: #555 !important;
+      margin-bottom: 15px !important;
+      font-family: 'Mehr Nastaliq Web', 'Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu', 'Markazi Text', serif !important;
+    }
+    
+    /* Specific targeting for courses section title */
+    .courses.section .section-title h2,
+    .courses .section-title h2,
+    #courses .section-title h2,
+    .section-title h2 {
+      font-family: 'Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu', 'Markazi Text', serif !important;
+      font-weight: 700 !important;
+      font-size: 2.4rem !important;
+      text-shadow: 0 3px 6px rgba(0,0,0,0.15) !important;
+      color: #1e3c72 !important;
+      margin-bottom: 10px !important;
+    }
+    
+    .courses.section .section-title p,
+    .courses .section-title p,
+    #courses .section-title p,
+    .section-title p {
+      font-family: 'Noto Nastaliq Urdu', 'Markazi Text', 'Noto Sans Urdu', serif !important;
+      font-weight: 500 !important;
+      font-size: 1.1rem !important;
+      color: #666 !important;
+      margin-top: 5px !important;
+      margin-bottom: 40px !important;
+    }
+    
+    .course-item .description {
+      font-family: 'Noto Nastaliq Urdu', 'Markazi Text', 'Noto Sans Urdu', serif;
+      font-weight: 400;
+      font-size: 0.65rem !important;
+      line-height: 1.3 !important;
+      margin-bottom: 8px !important;
+      color: #666;
+    }
+    
+    .course-category {
+      font-family: 'Noto Sans Urdu', 'Markazi Text', sans-serif;
+      font-weight: 500;
+      font-size: 0.7rem;
+    }
+    
+    .trainer-link {
+      font-family: 'Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu', 'Amiri', serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: #1e3c72;
+      line-height: 1.4;
+    }
+    
+    /* Force Arabic fonts on specific courses section elements */
+    section#courses .section-title h2,
+    section.courses .section-title h2,
+    .container.section-title h2 {
+      font-family: 'Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu', 'Markazi Text', serif;
+      font-weight: 700;
+      font-size: 2.4rem;
+      text-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      color: #1e3c72;
+      letter-spacing: 0.2px;
+      margin-bottom: 10px;
+    }
+    
+    section#courses .section-title p,
+    section.courses .section-title p,
+    .container.section-title p {
+      font-family: 'Noto Nastaliq Urdu', 'Markazi Text', 'Noto Sans Urdu', serif;
+      font-weight: 500;
+      font-size: 1.1rem;
+      color: #666;
+      margin-top: 8px;
+      margin-bottom: 40px;
+      letter-spacing: 0.1px;
+    }
+    
+    /* Professional Equal Size Course Cards */
+    .course-item {
+      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      background: linear-gradient(145deg, #ffffff 0%, #fafbfc 100%);
+      border-radius: 20px;
+      box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.08),
+        0 4px 15px rgba(30, 60, 114, 0.05),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+      overflow: hidden;
+      border: 1px solid rgba(30, 60, 114, 0.08);
+      position: relative;
+      cursor: pointer;
+    }
+    
+    .course-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(30, 60, 114, 0.05), transparent);
+      transition: left 0.6s ease;
+      z-index: 1;
+    }
+
+    .course-item:hover {
+      transform: translateY(-12px) scale(1.02);
+      box-shadow: 
+        0 20px 50px rgba(30, 60, 114, 0.15),
+        0 8px 25px rgba(0, 0, 0, 0.1),
+        inset 0 2px 0 rgba(255, 255, 255, 0.9);
+      border-color: rgba(30, 60, 114, 0.15);
+    }
+    
+    .course-item:hover::before {
+      left: 100%;
+    }
+
+    .course-item img {
+      height: 250px;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 20px 20px 0 0;
+      flex-shrink: 0;
+      transition: all 0.4s ease;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .course-item:hover img {
+      transform: scale(1.05);
+      filter: brightness(1.05) contrast(1.1);
+    }
+
+    .course-content {
+      padding: 25px 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .course-content .d-flex.justify-content-between {
+      margin-bottom: 15px;
+    }
+
+    .course-content h3 {
+      flex-grow: 0;
+      margin-bottom: 15px;
+    }
+
+    .course-content .description {
+      flex-grow: 1;
+      margin-bottom: 20px;
+    }
+
+    .course-content .trainer {
+      margin-top: auto;
+      flex-shrink: 0;
+    }
+
+    /* Ensure all course columns have equal height */
+    .courses .row .col-lg-4,
+    .courses .row .col-md-6 {
+      display: flex;
+      margin-bottom: 30px;
+    }
+
+    /* Force equal heights for all course cards */
+    .courses .row {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .courses .row > [class*="col-"] {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .islamic-pattern {
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="islamic-pattern" patternUnits="userSpaceOnUse" width="20" height="20"><polygon points="10,1 18,5 18,15 10,19 2,15 2,5" fill="none" stroke="%23004D40" stroke-width="0.5" opacity="0.3"/><circle cx="10" cy="10" r="3" fill="none" stroke="%23D84315" stroke-width="0.3" opacity="0.2"/></pattern></defs><rect width="100" height="100" fill="url(%23islamic-pattern)"/></svg>');
+    }
+    
+    .hero {
+      position: relative;
+      overflow: hidden;
+      min-height: 60vh;
+      height: 60vh;
+      background: url('assets/img/background1.jpg') center/cover no-repeat;
+    }
+
+    .hero-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 400%;
+      height: 100%;
+      display: flex;
+      animation: slideBackground 32s ease-in-out infinite;
+      animation-delay: 4s;
+      will-change: transform;
+    }
+
+    .hero-slide {
+      width: 25%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+      flex-shrink: 0;
+      backface-visibility: hidden;
+      transform: translateZ(0);
+    }
+
+    .hero-slide::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, 
+        rgba(101, 67, 33, 0.7) 0%,
+        rgba(139, 69, 19, 0.5) 25%,
+        rgba(160, 82, 45, 0.3) 50%,
+        rgba(0, 0, 0, 0.1) 75%,
+        transparent 100%
+      );
+      opacity: 0.6;
+    }
+
+    .hero-slide::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 40%;
+      height: 100%;
+      background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(255, 255, 255, 0.1) 50%,
+        rgba(255, 255, 255, 0.2) 100%
+      );
+      opacity: 0.6;
+    }
+
+    .hero-slide.slide1 {
+      background-image: url('assets/img/background1.jpg');
+    }
+
+    .hero-slide.slide2 {
+      background-image: url('assets/img/background2.jpg');
+    }
+
+    .hero-slide.slide3 {
+      background-image: url('assets/img/background3.jpg');
+    }
+
+    .hero-slide.slide4 {
+      background-image: url('assets/img/background4.jpg');
+    }
+
+    @keyframes slideBackground {
+      0% {
+        transform: translateX(0%);
+      }
+      20% {
+        transform: translateX(0%);
+      }
+      25% {
+        transform: translateX(-25%);
+      }
+      45% {
+        transform: translateX(-25%);
+      }
+      50% {
+        transform: translateX(-50%);
+      }
+      70% {
+        transform: translateX(-50%);
+      }
+      75% {
+        transform: translateX(-75%);
+      }
+      95% {
+        transform: translateX(-75%);
+      }
+      100% {
+        transform: translateX(0%);
+      }
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero h2, .hero p {
+      font-family: 'Mehr Nastaliq Web', serif;
+    }
+
+    /* Apply Mehr Naskh font to About section */
+    #about, .about.section {
+      font-family: 'Mehr Nastaliq Web', serif;
+    }
+    
+    #about h3, .about.section h3,
+    #about p, .about.section p,
+    #about ul li, .about.section ul li,
+    #about .read-more, .about.section .read-more {
+      font-family: 'Mehr Nastaliq Web', serif;
+    }
+    
+    /* Add margin between tick icon and text in about section */
+    #about ul li i, .about.section ul li i {
+      margin-right: 15px;
+    }
+    
+    /* Apply proper Islamic fonts to Director section */
+    #vc, .vc.section {
+      font-family: 'Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu', 'Markazi Text', serif;
+    }
+    
+    #vc h2, .vc.section h2,
+    #vc h3, .vc.section h3,
+    #vc p, .vc.section p,
+    #vc .vc-message, .vc.section .vc-message,
+    #vc .vc-details, .vc.section .vc-details,
+    #vc .vc-qualifications, .vc.section .vc-qualifications,
+    #vc .vc-card, .vc.section .vc-card,
+    #vc .vc-content, .vc.section .vc-content {
+      font-family: 'Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu', 'Markazi Text', serif;
+    }
+    
+    .course-category {
+      background: linear-gradient(135deg, #D84315 0%, #FF5722 100%);
+      color: white;
+      padding: 6px 12px;
+      border-radius: 12px;
+      font-size: 0.75rem !important;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      box-shadow: 
+        0 3px 8px rgba(216, 67, 21, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .course-category::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.4s ease;
+    }
+    
+    .course-item:hover .course-category::before {
+      left: 100%;
+    }
+    
+    .course-item:hover .course-category {
+      transform: scale(1.05) translateY(-1px);
+      box-shadow: 
+        0 6px 15px rgba(216, 67, 21, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    }
+    
+    .course-price {
+      background: linear-gradient(135deg, #00695C 0%, #004D40 100%);
+      color: white;
+      padding: 6px 12px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 0.75rem !important;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      box-shadow: 
+        0 3px 8px rgba(0, 105, 92, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .course-price::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.4s ease;
+    }
+    
+    .course-item:hover .course-price::before {
+      left: 100%;
+    }
+    
+    .course-item:hover .course-price {
+      transform: scale(1.05) translateY(-1px);
+      box-shadow: 
+        0 6px 15px rgba(0, 105, 92, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    }
+    
+    /* Add rotation animation for footer light effects */
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    
+    /* Animation for floating heart effect */
+    @keyframes floatUp {
+      0% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+      50% {
+        opacity: 0.8;
+        transform: translateY(-20px) scale(1.2);
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(-40px) scale(0.8);
+      }
+    }
+    
+    /* Professional Faculty Section Styles */
+    .faculty.section {
+      background: linear-gradient(135deg, 
+        rgba(248, 250, 252, 0.3) 0%, 
+        rgba(226, 232, 240, 0.8) 15%, 
+        rgba(248, 250, 252, 0.95) 25%, 
+        rgba(226, 232, 240, 1) 40%, 
+        rgba(248, 250, 252, 1) 60%, 
+        rgba(226, 232, 240, 0.95) 75%, 
+        rgba(248, 250, 252, 0.8) 85%, 
+        rgba(226, 232, 240, 0.3) 100%);
+      padding: 60px 0;
+      margin-top: 120px;
+      position: relative;
+      overflow: hidden;
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+    }
+    
+    .faculty.section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        url('assets/img/teacher background.jpg') no-repeat center center,
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="faculty-pattern" patternUnits="userSpaceOnUse" width="20" height="20"><circle cx="10" cy="10" r="2" fill="none" stroke="%231e3c72" stroke-width="0.3" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23faculty-pattern)"/></svg>');
+      background-size: cover, auto;
+      background-position: center, 0 0;
+      opacity: 0.15;
+      animation: teacherBackgroundFloat 15s ease-in-out infinite;
+      pointer-events: none;
+      z-index: 0;
+    }
+    
+        .faculty.section .section-title h2 {
+          font-size: 2.8rem;
+          font-weight: 700;
+          color: #1e3c72;
+          margin-bottom: 15px;
+          text-shadow: 0 3px 6px rgba(30, 60, 114, 0.2);
+          position: relative;
+        }
+        
+        
+        .faculty.section .section-title p {
+          font-size: 1.3rem;
+          color: #64748b;
+          font-weight: 500;
+          margin-top: 25px;
+        }
+        
+        /* Fix faculty cards spacing and prevent overlap */
+        .faculty.section .row {
+          margin-left: -15px;
+          margin-right: -15px;
+        }
+        
+        .faculty.section .col-lg-3 {
+          padding-left: 15px;
+          padding-right: 15px;
+          margin-bottom: 30px;
+        }
+        
+        .faculty.section .row.justify-content-center {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 20px;
+        }
+        
+        .faculty.section .col-lg-3.col-md-6.mb-4 {
+          flex: 0 0 auto;
+          width: calc(25% - 20px);
+          max-width: 280px;
+          min-width: 250px;
+        }
+        
+        @media (max-width: 1200px) {
+          .faculty.section .col-lg-3.col-md-6.mb-4 {
+            width: calc(33.333% - 20px);
+          }
+        }
+        
+        @media (max-width: 992px) {
+          .faculty.section .col-lg-3.col-md-6.mb-4 {
+            width: calc(50% - 20px);
+          }
+        }
+        
+        @media (max-width: 768px) {
+          .faculty.section .col-lg-3.col-md-6.mb-4 {
+            width: 100%;
+            max-width: 350px;
+          }
+        }
+    
+        .faculty-card {
+          background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+          border-radius: 25px;
+          box-shadow: 
+            0 20px 40px rgba(30, 60, 114, 0.08),
+            0 8px 25px rgba(0, 0, 0, 0.06),
+            inset 0 1px 0 rgba(255, 255, 255, 0.8);
+          overflow: hidden;
+          text-align: center;
+          cursor: pointer;
+          transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+          border: 2px solid transparent;
+          position: relative;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          backdrop-filter: blur(10px);
+          transform-style: preserve-3d;
+          animation: none;
+          margin: 0 auto;
+          width: 100%;
+          max-width: 280px;
+        }
+    
+    .faculty-card::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(135deg, 
+        #1e3c72 0%, 
+        #2a5298 25%, 
+        #3b6ecd 50%, 
+        #4285f4 75%, 
+        #5fcf80 100%);
+      z-index: -1;
+      border-radius: 27px;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      filter: blur(8px);
+    }
+    
+    .faculty-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, 
+        rgba(30, 60, 114, 0.05) 0%, 
+        rgba(42, 82, 152, 0.05) 25%, 
+        rgba(59, 110, 205, 0.05) 50%, 
+        rgba(66, 133, 244, 0.05) 75%, 
+        rgba(95, 207, 128, 0.05) 100%);
+      border-radius: 25px;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      pointer-events: none;
+    }
+    
+    .faculty-card:hover {
+      transform: translateY(-20px) scale(1.05) rotateX(5deg);
+      box-shadow: 
+        0 35px 80px rgba(30, 60, 114, 0.15),
+        0 15px 35px rgba(0, 0, 0, 0.1),
+        inset 0 2px 0 rgba(255, 255, 255, 0.9);
+      border-color: transparent;
+    }
+    
+    .faculty-card:hover::before {
+      opacity: 1;
+      filter: blur(12px);
+    }
+    
+    .faculty-card:hover::after {
+      opacity: 1;
+    }
+    
+        .faculty-card img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            object-position: center top;
+            border-radius: 20px 20px 0 0;
+            transition: all 0.5s ease;
+            filter: brightness(1.02) contrast(1.08) saturate(1.05);
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 0;
+            border: 3px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 
+                0 8px 25px rgba(30, 60, 114, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+        }
+    
+    .faculty-card:hover img {
+      transform: scale(1.08);
+      filter: brightness(1.1) contrast(1.15) saturate(1.2);
+    }
+    
+        .faculty-card h3 {
+          font-size: 1.4rem !important;
+          font-weight: 700 !important;
+          /* Ensure visible text with solid color */
+          background: none !important;
+          color: #1e3c72 !important;
+          /* Remove webkit text fill to ensure visibility */
+          -webkit-text-fill-color: #1e3c72 !important;
+          margin: 15px 0 10px;
+          font-family: 'Mehr Nastaliq Web', 'Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu', serif !important;
+          padding: 0 15px;
+          line-height: 1.5 !important;
+          text-shadow: 0 1px 2px rgba(30, 60, 114, 0.1);
+          transition: all 0.3s ease;
+        }
+        
+        .faculty-card:hover h3 {
+          transform: scale(1.02);
+          text-shadow: 0 2px 4px rgba(30, 60, 114, 0.15);
+          color: #1e3c72 !important;
+        }
+        
+        .faculty-card p {
+          font-size: 1.1rem !important;
+          /* Use solid color instead of gradient for better readability */
+          background: none !important;
+          color: #D84315 !important;
+          -webkit-background-clip: initial !important;
+          -webkit-text-fill-color: #D84315 !important;
+          background-clip: initial !important;
+          font-weight: 600 !important;
+          margin-bottom: 10px;
+          padding: 0 15px;
+          line-height: 1.6 !important;
+          transition: all 0.3s ease;
+        }
+        
+        .faculty-card:hover p {
+          transform: scale(1.01);
+          color: #D84315 !important;
+        }
+        
+        .faculty-card .faculty-info {
+          padding: 15px 15px;
+          background: linear-gradient(135deg, 
+            rgba(248, 250, 252, 0.95) 0%, 
+            rgba(241, 245, 249, 0.95) 100%);
+          margin-top: auto;
+          border-top: 1px solid rgba(226, 232, 240, 0.5);
+          backdrop-filter: blur(10px);
+          position: relative;
+        }
+        
+        .faculty-card .faculty-info::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 30px;
+          height: 2px;
+          background: linear-gradient(90deg, #667eea, #764ba2);
+          border-radius: 1px;
+        }
+        
+        .faculty-card .faculty-expertise {
+          font-size: 0.95rem !important;
+          color: #64748b !important;
+          font-style: italic;
+          font-weight: 500;
+          margin-top: 8px;
+          line-height: 1.5 !important;
+          opacity: 0.9;
+          transition: all 0.3s ease;
+        }
+        
+        .faculty-card:hover .faculty-expertise {
+          opacity: 1;
+          color: #475569 !important;
+        }
+    
+    /* ✨ AMAZING FACULTY CARD ANIMATIONS ✨ */
+    
+    /* 🌊 Floating Animation */
+    @keyframes cardFloat {
+      0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+        box-shadow: 0 20px 40px rgba(30, 60, 114, 0.08);
+      }
+      25% {
+        transform: translateY(-8px) rotate(0.5deg);
+        box-shadow: 0 25px 50px rgba(30, 60, 114, 0.12);
+      }
+      50% {
+        transform: translateY(-12px) rotate(0deg);
+        box-shadow: 0 30px 60px rgba(30, 60, 114, 0.15);
+      }
+      75% {
+        transform: translateY(-8px) rotate(-0.5deg);
+        box-shadow: 0 25px 50px rgba(30, 60, 114, 0.12);
+      }
+    }
+    
+    /* 💫 Magical Glow Animation */
+    @keyframes magicalGlow {
+      0%, 100% {
+        box-shadow: 
+          0 0 20px rgba(30, 60, 114, 0.3),
+          0 0 40px rgba(42, 82, 152, 0.2),
+          0 0 60px rgba(59, 110, 205, 0.1),
+          inset 0 0 20px rgba(255, 255, 255, 0.1);
+      }
+      50% {
+        box-shadow: 
+          0 0 30px rgba(30, 60, 114, 0.5),
+          0 0 60px rgba(42, 82, 152, 0.4),
+          0 0 90px rgba(59, 110, 205, 0.3),
+          inset 0 0 30px rgba(255, 255, 255, 0.2);
+      }
+    }
+    
+    /* 🎭 Shimmer Effect */
+    @keyframes shimmer {
+      0% {
+        background-position: -200px 0;
+      }
+      100% {
+        background-position: calc(200px + 100%) 0;
+      }
+    }
+    
+    /* 🌟 Sparkle Animation */
+    @keyframes sparkle {
+      0%, 100% {
+        opacity: 0;
+        transform: scale(0) rotate(0deg);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1) rotate(180deg);
+      }
+    }
+    
+    /* 🔮 Pulse Glow */
+    @keyframes pulseGlow {
+      0%, 100% {
+        filter: brightness(1) saturate(1);
+        transform: scale(1);
+      }
+      50% {
+        filter: brightness(1.1) saturate(1.2);
+        transform: scale(1.02);
+      }
+    }
+    
+    /* 🎪 Bounce In Animation */
+    @keyframes bounceIn {
+      0% {
+        opacity: 0;
+        transform: scale(0.3) translateY(50px);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.05) translateY(-10px);
+      }
+      70% {
+        transform: scale(0.9) translateY(0px);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1) translateY(0px);
+      }
+    }
+    
+    /* 🌈 Gradient Shift */
+    @keyframes gradientShift {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+    
+    /* 🎭 3D Looping Card Animation */
+    @keyframes card3DLoop {
+      0% {
+        transform: perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px);
+        box-shadow: 0 10px 30px rgba(30, 60, 114, 0.15);
+      }
+      25% {
+        transform: perspective(1000px) rotateX(5deg) rotateY(15deg) translateZ(20px);
+        box-shadow: 0 20px 40px rgba(30, 60, 114, 0.25);
+      }
+      50% {
+        transform: perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(40px);
+        box-shadow: 0 25px 50px rgba(30, 60, 114, 0.3);
+      }
+      75% {
+        transform: perspective(1000px) rotateX(-5deg) rotateY(-15deg) translateZ(20px);
+        box-shadow: 0 20px 40px rgba(30, 60, 114, 0.25);
+      }
+      100% {
+        transform: perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px);
+        box-shadow: 0 10px 30px rgba(30, 60, 114, 0.15);
+      }
+    }
+    
+    /* 🎨 Enhanced 3D Rotation Loop */
+    @keyframes enhance3DRotation {
+      0% {
+        transform: perspective(1200px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1);
+        filter: brightness(1) hue-rotate(0deg);
+      }
+      20% {
+        transform: perspective(1200px) rotateX(10deg) rotateY(20deg) rotateZ(2deg) scale(1.05);
+        filter: brightness(1.1) hue-rotate(15deg);
+      }
+      40% {
+        transform: perspective(1200px) rotateX(-5deg) rotateY(30deg) rotateZ(-1deg) scale(1.08);
+        filter: brightness(1.2) hue-rotate(30deg);
+      }
+      60% {
+        transform: perspective(1200px) rotateX(8deg) rotateY(-20deg) rotateZ(3deg) scale(1.05);
+        filter: brightness(1.15) hue-rotate(-15deg);
+      }
+      80% {
+        transform: perspective(1200px) rotateX(-3deg) rotateY(-10deg) rotateZ(-2deg) scale(1.02);
+        filter: brightness(1.05) hue-rotate(-30deg);
+      }
+      100% {
+        transform: perspective(1200px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1);
+        filter: brightness(1) hue-rotate(0deg);
+      }
+    }
+    
+    /* 🌈 Prismatic Color Loop */
+    @keyframes prismaticLoop {
+      0%, 100% {
+        background-position: 0% 50%;
+        border-color: rgba(30, 60, 114, 0.3);
+      }
+      25% {
+        background-position: 25% 50%;
+        border-color: rgba(255, 107, 53, 0.3);
+      }
+      50% {
+        background-position: 50% 50%;
+        border-color: rgba(66, 133, 244, 0.3);
+      }
+      75% {
+        background-position: 75% 50%;
+        border-color: rgba(52, 168, 83, 0.3);
+      }
+      100% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+    
+    /* ⭐ Enhanced Faculty Card with Magical 3D Effects */
+    .faculty-card {
+      /* 3D Animation Properties */
+      animation: 
+        card3DLoop 8s ease-in-out infinite,
+        bounceIn 0.8s ease-out;
+      position: relative;
+      overflow: visible !important;
+      transform-style: preserve-3d;
+      perspective: 1000px;
+      
+      /* Base Card Properties */
+      background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+      border-radius: 25px;
+      box-shadow: 
+        0 20px 40px rgba(30, 60, 114, 0.08),
+        0 8px 25px rgba(0, 0, 0, 0.06),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+      text-align: center;
+      cursor: pointer;
+      border: 2px solid transparent;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      backdrop-filter: blur(10px);
+      
+      /* Performance Optimizations */
+      will-change: transform, box-shadow, filter;
+      backface-visibility: hidden;
+      opacity: 1;
+    }
+    
+    /* ✨ Add Shimmer Overlay */
+    .faculty-card::before {
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+      );
+      background-size: 200px 100%;
+      animation: shimmer 3s infinite;
+    }
+    
+    /* 🎭 Enhanced Hover Effect - Simplified to prevent overlap */
+    .faculty-card:hover {
+      animation: none !important;
+      transform: translateY(-10px) scale(1.02) !important;
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+      box-shadow: 
+        0 20px 40px rgba(30, 60, 114, 0.15),
+        0 8px 25px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+      z-index: 10 !important;
+    }
+    
+    /* 🌊 Enhanced Image Animation - Simplified */
+    .faculty-card img {
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      position: relative;
+      z-index: 1;
+    }
+    
+    .faculty-card:hover img {
+      transform: scale(1.05);
+      filter: 
+        brightness(1.1) 
+        contrast(1.1) 
+        saturate(1.2);
+    }
+    
+    /* 🎪 Enhanced Text Animations - Simplified */
+    .faculty-card h3 {
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      background: none; /* Remove gradient */
+      color: #1e3c72; /* Ensure visible color */
+    }
+    
+    .faculty-card:hover h3 {
+      transform: scale(1.02);
+      text-shadow: 0 2px 4px rgba(30, 60, 114, 0.2);
+      color: #1e3c72;
+    }
+    
+    /* 🌟 Enhanced Info Section */
+    .faculty-card .faculty-info {
+      background: linear-gradient(
+        135deg,
+        rgba(248, 250, 252, 0.95) 0%,
+        rgba(241, 245, 249, 0.95) 50%,
+        rgba(226, 232, 240, 0.95) 100%
+      );
+      backdrop-filter: blur(15px);
+      transition: all 0.4s ease;
+    }
+    
+    /* 💫 Page Load Animation */
+    .faculty-card {
+      opacity: 1;
+    }
+    
+    /* 🌟 Reduce Motion for Accessibility */
+    @media (prefers-reduced-motion: reduce) {
+      .faculty-card,
+      .faculty-card *,
+      .faculty-card::before,
+      .faculty-card::after {
+        animation: none !important;
+        transition: opacity 0.3s ease, transform 0.3s ease !important;
+      }
+    }
+    
+    /* ✨ FOOTER ANIMATIONS ✨ */
+    
+    /* Footer fade-in animation */
+    @keyframes footerFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Footer sitename glow animation */
+    @keyframes footerSitenameGlow {
+      0%, 100% {
+        text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        color: white;
+      }
+      50% {
+        text-shadow: 0 2px 4px rgba(0,0,0,0.3), 0 0 15px rgba(255, 193, 7, 0.6), 0 0 30px rgba(255, 193, 7, 0.4);
+        color: #FFC107;
+      }
+    }
+    
+    /* Social links bounce animation */
+    @keyframes socialBounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-8px);
+      }
+      60% {
+        transform: translateY(-4px);
+      }
+    }
+    
+    /* WhatsApp button pulse animation */
+    @keyframes whatsappPulse {
+      0%, 100% {
+        box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        transform: scale(1);
+      }
+      50% {
+        box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5), 0 0 20px rgba(37, 211, 102, 0.3);
+        transform: scale(1.05);
+      }
+    }
+    
+    /* Footer links hover animation */
+    @keyframes linkSlideIn {
+      from {
+        opacity: 0;
+        transform: translateX(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    /* Apply animations to footer elements */
+    .footer {
+      animation: footerFadeIn 1s ease-out;
+    }
+    
+    .footer .sitename {
+      animation: footerSitenameGlow 4s ease-in-out infinite;
+    }
+    
+    .footer .social-links a {
+      animation: socialBounce 2s ease-in-out infinite;
+    }
+    
+    .footer .social-links a:nth-child(1) {
+      animation-delay: 0s;
+    }
+    
+    .footer .social-links a:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+    
+    .footer .social-links a:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+    
+    .footer a[href*="whatsapp"] {
+      animation: whatsappPulse 3s ease-in-out infinite !important;
+    }
+    
+    .footer-links ul li {
+      animation: linkSlideIn 0.6s ease-out forwards;
+      opacity: 0;
+    }
+    
+    .footer-links ul li:nth-child(1) { animation-delay: 0.1s; }
+    .footer-links ul li:nth-child(2) { animation-delay: 0.2s; }
+    .footer-links ul li:nth-child(3) { animation-delay: 0.3s; }
+    .footer-links ul li:nth-child(4) { animation-delay: 0.4s; }
+    
+    .footer-links ul li a:hover {
+      color: #FFC107 !important;
+      transform: translateX(-5px);
+      transition: all 0.3s ease;
+    }
+    
+    /* Footer contact info animation */
+    .footer-contact p {
+      animation: linkSlideIn 0.8s ease-out forwards;
+      opacity: 0;
+    }
+    
+    .footer-contact p:nth-child(1) { animation-delay: 0.2s; }
+    .footer-contact p:nth-child(2) { animation-delay: 0.4s; }
+    .footer-contact p:nth-child(3) { animation-delay: 0.6s; }
+    .footer-contact p:nth-child(4) { animation-delay: 0.8s; }
+    
+    /* Copyright section animation */
+    .copyright {
+      animation: footerFadeIn 1.2s ease-out 0.5s both;
+    }
+    
+    /* Enhanced social media hover effects */
+    .footer .social-links a:hover {
+      animation-play-state: paused;
+      transform: translateY(-5px) scale(1.1) !important;
+      filter: brightness(1.2) saturate(1.3);
+    }
+    
+    .faculty-card:hover .faculty-info {
+      background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.98) 0%,
+        rgba(248, 250, 252, 0.98) 50%,
+        rgba(241, 245, 249, 0.98) 100%
+      );
+      transform: translateY(-5px);
+      box-shadow: 
+        0 10px 30px rgba(30, 60, 114, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    }
+    
+    /* 🎭 Expertise Badge Animation */
+    .faculty-card .faculty-expertise {
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    .faculty-card:hover .faculty-expertise {
+      color: #1e3c72;
+      font-weight: 600;
+      transform: scale(1.05);
+      text-shadow: 0 2px 4px rgba(30, 60, 114, 0.2);
+    }
+    
+    /* 🌈 Staggered Animation Delays */
+    .faculty-card:nth-child(1) {
+      animation-delay: 0s;
+    }
+    
+    .faculty-card:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+    
+    .faculty-card:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+    
+    .faculty-card:nth-child(4) {
+      animation-delay: 0.6s;
+    }
+    
+    /* 🎪 Special Hover States for Different Cards - Simplified */
+    .faculty-card:nth-child(odd):hover {
+      transform: translateY(-10px) scale(1.02);
+    }
+    
+    .faculty-card:nth-child(even):hover {
+      transform: translateY(-10px) scale(1.02);
+    }
+ 
+    /* 💫 Page Load Animation */
+    .faculty-card {
+      opacity: 1;
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+    
+    /* 🎭 Performance Optimizations */
+    .faculty-card {
+      will-change: transform, box-shadow, filter;
+      backface-visibility: hidden;
+      transform-style: preserve-3d;
+    }
+    
+    @media (max-width: 768px) {
+      .faculty.section .section-title h2 {
+        font-size: 2.2rem;
+      }
+      
+      .faculty-card {
+        margin-bottom: 30px;
+        /* Reduce animations on mobile for performance */
+        animation: none;
+      }
+      
+      .faculty-card:hover {
+        transform: translateY(-15px) scale(1.05);
+        animation: pulseGlow 2s ease-in-out infinite;
+      }
+      
+      .faculty-card img {
+        height: 280px;
+      }
+      
+      /* Disable complex 3D transforms on mobile */
+      .faculty-card:nth-child(odd):hover,
+      .faculty-card:nth-child(even):hover {
+        transform: translateY(-15px) scale(1.05);
+      }
+    }
+    
+    /* 🌟 Reduce Motion for Accessibility */
+    @media (prefers-reduced-motion: reduce) {
+      .faculty-card,
+      .faculty-card *,
+      .faculty-card::before,
+      .faculty-card::after {
+        animation: none !important;
+        transition: opacity 0.3s ease, transform 0.3s ease !important;
+      }
+    }
+    
+    /* VC Card Hover Animation */
+    .vc-card:hover {
+      transform: scale(1.05) translateY(-10px) !important;
+      box-shadow: 0 30px 80px rgba(30, 60, 114, 0.25), 0 15px 40px rgba(0, 0, 0, 0.15) !important;
+      border-color: rgba(30, 60, 114, 0.2) !important;
+    }
+    
+    /* Teacher Card Floating Animation */
+    @keyframes teacherFloat {
+      0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+      }
+      25% {
+        transform: translateY(-8px) rotate(0.5deg);
+      }
+      50% {
+        transform: translateY(-12px) rotate(0deg);
+      }
+      75% {
+        transform: translateY(-8px) rotate(-0.5deg);
+      }
+    }
+    
+    /* Teacher Card Hover Enhancement */
+    .teacher-card:hover {
+      transform: translateY(-15px) scale(1.05) !important;
+      box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.15),
+        0 10px 30px rgba(30, 60, 114, 0.1) !important;
+      animation: none !important;
+    }
+    
+    /* Teacher Card Shimmer Effect on Hover */
+    .teacher-card:hover .teacher-card-shimmer {
+      left: 100% !important;
+    }
+    
+/* Animation for Logo and Sitename */
+    @keyframes logoBounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-10px);
+      }
+      60% {
+        transform: translateY(-5px);
+      }
+    }
+    
+    @keyframes textFadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .logo img {
+      animation: logoBounce 2s infinite;
+    }
+
+    .sitename {
+      animation: textSlideIn 2s ease-out, textGlow 3s ease-in-out infinite 2s;
+      animation-fill-mode: backwards;
+    }
+    
+    @keyframes textSlideIn {
+      0% {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    @keyframes textGlow {
+      0%, 100% {
+        text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+      }
+      50% {
+        text-shadow: 0 2px 4px rgba(0,0,0,0.3), 0 0 10px rgba(255, 193, 7, 0.5), 0 0 20px rgba(255, 193, 7, 0.3);
+      }
+    }
+    
+    /* FORCE LOGO SIZE - Override all other styles with maximum specificity */
+    html body .header .logo img,
+    html body header .logo img,
+    html body .logo img,
+    .logo img,
+    .header .logo img,
+    header .logo img,
+    body .logo img,
+    body .header .logo img,
+    body header .logo img {
+      height: 60px !important;
+      min-height: 60px !important;
+      max-height: 60px !important;
+      width: auto !important;
+    }
+    
+    /* Mobile logo size override */
+    @media (max-width: 1199px) {
+      html body .header .logo img,
+      html body header .logo img,
+      html body .logo img,
+      .logo img,
+      .header .logo img,
+      header .logo img,
+      body .logo img,
+      body .header .logo img,
+      body header .logo img {
+        height: 55px !important;
+        min-height: 55px !important;
+        max-height: 55px !important;
+        width: auto !important;
+      }
+    }
+    
+    /* Additional override for mobile devices */
+    @media (max-width: 576px) {
+      html body .header .logo img,
+      html body header .logo img,
+      html body .logo img,
+      .logo img,
+      .header .logo img,
+      header .logo img,
+      body .logo img,
+      body .header .logo img,
+      body header .logo img {
+        height: 50px !important;
+        min-height: 50px !important;
+        max-height: 50px !important;
+        width: auto !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <div class="logo d-flex align-items-center me-auto">
+        <img src="VIU-Logo-Final-3.png" alt="Virtual Islamic University Logo" style="height: 60px !important; max-height: 60px !important; min-height: 60px !important; width: auto !important; border-radius: 8px; box-shadow: 0 4px 15px rgba(30, 60, 114, 0.3); border: 2px solid rgba(255, 255, 255, 0.2);">
+        <div class="logo-text" style="margin-right: 15px;">
+<h1 class="sitename" style="font-family: 'Mehr Nastaliq Web', serif; font-size: 1.8rem; font-weight: 700; margin-bottom: 10px; text-shadow: 0 2px 4px rgba(0,0,0,0.3); color: white;">ورچوئل اسلامک یونیورسٹی</h1>
+          <p style="font-family: 'Mehr Nastaliq Web', serif; font-size: 1.1rem; opacity: 0.9; margin: 0; color: #FFC107;">اسلامی تعلیم کا آن لائن مستند پلیٹ فارم</p>
+        </div>
+      </div>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">پہلا صفحہ</a></li>
+          <li><a href="#about">تعارف</a></li>
+          <li class="dropdown">
+            <a href="#courses" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              کورسز <i class="bi bi-chevron-down ms-1"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="course-quran.html">فہم القرآن</a></li>
+              <li><a class="dropdown-item" href="course-arabic.html">اللغة العربية</a></li>
+              <li><a class="dropdown-item" href="course-islamic-studies.html">علوم الدین</a></li>
+              <li><a class="dropdown-item" href="course-alsaraf.html">دورۃ الصرف</a></li>
+              <li><a class="dropdown-item" href="course-usool-hadees.html">اصول الحدیث</a></li>
+              <li><a class="dropdown-item" href="course-al-aqeeda.html">العقیدہ</a></li>
+              <li><a class="dropdown-item" href="course-doratul-arab.html">دورۃ الاعراب</a></li>
+              <li><a class="dropdown-item" href="course-dora-tatbiq-alqawaid.html">دورۃ تطبیق القواعد</a></li>
+            </ul>
+          </li>
+          <li><a href="faculty.html">اساتذہ کرام</a></li>
+          <li><a href="#features">خصوصیات</a></li>
+          <li><a href="#contact">رابطہ</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <nav id="secondary-nav" class="navmenu">
+        <ul>
+          <li><a href="admission.html">داخلہ</a></li>
+          <li><a href="donation.html">Donation</a></li>
+        </ul>
+      </nav>
+      <a class="btn-admin" href="admin_login.html" title="Admin Login" id="adminLoginBtn">Admin Login</a>
+      <!-- Admin Panel Button (hidden by default) -->
+      <a class="btn-admin-panel" href="admin_dashboard.html" title="Admin Panel" id="adminPanelBtn" style="display: none;">📊</a>
+      <!-- Logout Button (hidden by default) -->
+      <a class="btn-logout" href="#" title="Logout" id="logoutBtn" style="display: none;" onclick="logoutAdmin()">🚪</a>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background islamic-pattern">
+      <!-- Background Slideshow -->
+      <div class="hero-background">
+        <div class="hero-slide slide1"></div>
+        <div class="hero-slide slide2"></div>
+        <div class="hero-slide slide3"></div>
+        <div class="hero-slide slide4"></div>
+      </div>
+
+      <div class="container">
+        <h2 data-aos="fade-up" data-aos-delay="100">اسلامی علوم میں جدید تعلیم</h2>
+        <p data-aos="fade-up" data-aos-delay="200" style="font-size: 1.75rem; line-height: 1.9; color: rgba(240, 246, 247, 0.95); text-shadow: 0 2px 6px rgba(0,0,0,0.4); font-weight: 500; margin-bottom: 30px; max-width: 800px; margin-left: auto; margin-right: 0; text-align: right;">اسلامی علوم و فنون کی تعلیم میں جدت اکیسویں صدی کا اولین تقاضا ہے۔ ہم روایت کو برقرار رکھتے ہوئے جدید ٹیکنالوجی کے ذریعے ایسا تعلیمی نظام فراہم کرتے ہیں جو دین و دنیا دونوں میں رہنمائی فراہم کرے۔ہمارا مقصد ایسے باعمل، باعلم اور عصری تقاضوں سے ہم آہنگ علماء اور طلباء کی تیاری ہے جو معاشرے کی ضروریات کو سمجھتے ہوئے اسلامی تعلیمات کو عملی زندگی میں نافذ کر سکیں۔</p>
+        
+        
+        </div>
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+       <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-up" data-aos-delay="100">
+            <div class="about-slider-container">
+              <div class="simple-slider" id="aboutSlider">
+                <!-- Slide 1 -->
+                <div class="slide active">
+                  <img src="assets/img/about.jpg" alt="Islamic University Campus">
+                  <div class="slider-overlay"></div>
+                  <div class="slider-content">
+                    <h4>جدید کیمپس</h4>
+                    <p>اعلیٰ تعلیمی سہولات کے ساتھ</p>
+                  </div>
+                </div>
+                
+                <!-- Slide 2 -->
+                <div class="slide">
+                  <img src="assets/img/about2.jpg" alt="Islamic Education">
+                  <div class="slider-overlay"></div>
+                  <div class="slider-content">
+                    <h4>اسلامی تعلیم</h4>
+                    <p>روایتی اور جدید طریقہ کار</p>
+                  </div>
+                </div>
+                
+                <!-- Slide 3 -->
+                <div class="slide">
+                  <img src="assets/img/about3.jpg" alt="Online Learning">
+                  <div class="slider-overlay"></div>
+                  <div class="slider-content">
+                    <h4>آن لائن تعلیم</h4>
+                    <p>گھر بیٹھے معیاری تعلیم</p>
+                  </div>
+                </div>
+                
+                <!-- Slide 4 -->
+                <div class="slide">
+                  <img src="assets/img/about4.jpg" alt="Digital Learning">
+                  <div class="slider-overlay"></div>
+                  <div class="slider-content">
+                    <h4>ڈیجیٹل تعلیم</h4>
+                    <p>جدید ٹیکنالوجی کے ساتھ</p>
+                  </div>
+                </div>
+                
+                <!-- Slider Indicators -->
+                <div class="slider-indicators">
+                  <div class="indicator active" onclick="showSlide(0)"></div>
+                  <div class="indicator" onclick="showSlide(1)"></div>
+                  <div class="indicator" onclick="showSlide(2)"></div>
+                  <div class="indicator" onclick="showSlide(3)"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 order-2 order-lg-1 content" data-aos="fade-up" data-aos-delay="200">
+            <h3>ایک پروفیشنل ادارہ</h3>
+            <p>
+              ورچوئل اسلامک یونیورسٹی کوئی برائے نام یا کاغذی پروگرام نہیں، بلکہ یہ ایک منظم ومرتب نظامِ تعلیم ہے۔
+            </p>
+            <ul>
+<li><i class="bi bi-check-circle"></i>&nbsp;<span>جدید ٹیکنالوجی کے ذریعے معیاری اسلامی تعلیم</span></li>
+              <li><i class="bi bi-check-circle"></i>&nbsp;<span>تجربہ کار اور قابل اساتذہ کی رہنمائی</span></li>
+              <li><i class="bi bi-check-circle"></i>&nbsp;<span>مکمل آن لائن پلیٹ فارم جو 24/7 دستیاب ہے</span></li>
+              <li><i class="bi bi-check-circle"></i>&nbsp;<span>مفت اور معیاری تعلیمی مواد فراہم کرتے ہیں</span></li>
+              <li><i class="bi bi-check-circle"></i>&nbsp;<span>انٹرایکٹو لائیو کلاسز اور ریکارڈ شدہ لیکچرز</span></li>
+              <li><i class="bi bi-check-circle"></i>&nbsp;<span>مکمل کورس کی تکمیل پر معتبر سرٹیفکیٹ</span></li>
+            </ul>
+            <a href="courses.html" class="read-more"><span>مزید پڑھیں</span><i class="bi bi-arrow-right"></i></a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+    <!-- Courses Section -->
+    <section id="courses" class="courses section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>کورسز</h2>
+        <p>ہمارے مقبول کورسز</p>
+      </div>
+      <!-- End Section Title -->
+
+      <div class="container">
+
+        <!-- Professional Course Grid Layout -->
+        <div class="row g-4 justify-content-center">
+
+          <div class="col-xl-3 col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <div class="course-item">
+              <a href="course-quran.html"><img src="assets/img/course-1.jpg" class="img-fluid" alt="فہم القرآن"></a>
+              <div class="course-content">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <p class="course-category">اسلامی علوم</p>
+                  <p class="course-price">Free</p>
+                </div>
+
+                <h3><a href="course-quran.html" style="font-family: 'Noto Naskh Arabic', 'Amiri', serif; font-weight: 400; text-align: right; direction: rtl; font-size: 1.4rem;">فہم القرآن</a></h3>
+                <p class="description" style="font-size: 1.4rem !important;">قرآن کریم کی تفہیم اور تدبر کے جدید طریقے</p>
+                <div class="trainer d-flex justify-content-between align-items-center">
+                  <div class="trainer-profile d-flex align-items-center">
+                    <a href="" class="trainer-link">فضیلۃ الشیخ حافظ عبد الرحمن</a>
+                  </div>
+                  <div class="trainer-rank d-flex align-items-center">
+<i class="bi bi-person user-icon"></i>&nbsp;&nbsp;150
+                    &nbsp;&nbsp;
+                    <i class="bi bi-heart heart-icon clickable-heart" onclick="toggleLike(this, 'quran')" data-course="quran" style="cursor: pointer; transition: all 0.3s ease;"></i>&nbsp;&nbsp;<span class="like-count" id="like-count-quran">200</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> <!-- End Course Item-->
+
+          <div class="col-xl-3 col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="200">
+            <div class="course-item">
+              <a href="course-arabic.html"><img src="assets/img/course-2.jpg" class="img-fluid" alt="اللغة العربية"></a>
+              <div class="course-content">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <p class="course-category">عربی زبان</p>
+                  <p class="course-price">Free</p>
+                </div>
+
+                <h3><a href="course-arabic.html" style="font-family: 'Noto Naskh Arabic', 'Amiri', serif; font-weight: 400; text-align: right; direction: rtl; font-size: 1.4rem;">اللغة العربية</a></h3>
+                <p class="description" style="font-size: 1.4rem !important;">عربی زبان کی بنیادی اور پیشہ ورانہ تعلیم</p>
+                <div class="trainer d-flex justify-content-between align-items-center">
+                  <div class="trainer-profile d-flex align-items-center">
+                    <a href="" class="trainer-link">فضیلۃ الشیخ حافظ اقبال خلجی</a>
+                  </div>
+                  <div class="trainer-rank d-flex align-items-center">
+<i class="bi bi-person user-icon"></i>&nbsp;&nbsp;120
+                    &nbsp;&nbsp;
+                    <i class="bi bi-heart heart-icon clickable-heart" onclick="toggleLike(this, 'arabic')" data-course="arabic" style="cursor: pointer; transition: all 0.3s ease;"></i>&nbsp;&nbsp;<span class="like-count" id="like-count-arabic">180</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> <!-- End Course Item-->
+
+          <div class="col-xl-3 col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="300">
+            <div class="course-item">
+              <a href="course-islamic-studies.html"><img src="assets/img/course-3.jpg" class="img-fluid" alt="علوم الدین"></a>
+              <div class="course-content">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <p class="course-category">اسلامی علوم</p>
+                  <p class="course-price">Free</p>
+                </div>
+
+                <h3><a href="course-islamic-studies.html" style="font-family: 'Noto Naskh Arabic', 'Amiri', serif; font-weight: 400; text-align: right; direction: rtl; font-size: 1.4rem;">علوم الدین</a></h3>
+                <p class="description" style="font-size: 1.4rem !important;">اسلامی علوم کی جامع اور معاصر تعلیم</p>
+                <div class="trainer d-flex justify-content-between align-items-center">
+                  <div class="trainer-profile d-flex align-items-center">
+                    <a href="" class="trainer-link">فضیلۃ الشیخ حافظ ابوبکر صدیق</a>
+                  </div>
+                  <div class="trainer-rank d-flex align-items-center">
+<i class="bi bi-person user-icon"></i>&nbsp;&nbsp;200
+                    &nbsp;&nbsp;
+                    <i class="bi bi-heart heart-icon clickable-heart" onclick="toggleLike(this, 'islamic')" data-course="islamic" style="cursor: pointer; transition: all 0.3s ease;"></i>&nbsp;&nbsp;<span class="like-count" id="like-count-islamic">250</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> <!-- End Course Item-->
+
+          <div class="col-xl-3 col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <div class="course-item">
+              <a href="course-alsaraf.html"><img src="assets/img/Ramzan.jpg" class="img-fluid" alt="Dora Al-Sarf"></a>
+              <div class="course-content">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <p class="course-category">خصوصی کورس</p>
+                  <p class="course-price">Free</p>
+                </div>
+
+                <h3><a href="course-alsaraf.html" style="font-family: 'Noto Naskh Arabic', 'Amiri', serif; font-weight: 400; text-align: right; direction: rtl; font-size: 1.4rem;">دورۃ الصرف</a></h3>
+                <p class="description" style="font-size: 1.4rem !important;">رمضان المبارک کے لیے ایک خصوصی کورس</p>
+                <div class="trainer d-flex justify-content-between align-items-center">
+                  <div class="trainer-profile d-flex align-items-center">
+                    <a href="" class="trainer-link">استاد</a>
+                  </div>
+                  <div class="trainer-rank d-flex align-items-center">
+<i class="bi bi-person user-icon"></i>&nbsp;&nbsp;50
+                    &nbsp;&nbsp;
+                    <i class="bi bi-heart heart-icon clickable-heart" onclick="toggleLike(this, 'ramzan')" data-course="ramzan" style="cursor: pointer; transition: all 0.3s ease;"></i>&nbsp;&nbsp;<span class="like-count" id="like-count-ramzan">100</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> <!-- End Course Item-->
+
+          <div class="col-xl-3 col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="200">
+            <div class="course-item">
+              <a href="course-usool-hadees.html"><img src="assets/img/Usool Hadees.jpg" class="img-fluid" alt="Usool e hadith"></a>
+              <div class="course-content">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <p class="course-category">تخصص</p>
+                  <p class="course-price">Free</p>
+                </div>
+
+                <h3><a href="course-usool-hadees.html" style="font-family: 'Noto Naskh Arabic', 'Amiri', serif; font-weight: 400; text-align: right; direction: rtl; font-size: 1.4rem;">اصول الحدیث</a></h3>
+                <p class="description" style="font-size: 1.4rem !important;">اصول حدیث میں تخصص</p>
+                <div class="trainer d-flex justify-content-between align-items-center">
+                  <div class="trainer-profile d-flex align-items-center">
+                    <a href="" class="trainer-link">استاد</a>
+                  </div>
+                  <div class="trainer-rank d-flex align-items-center">
+<i class="bi bi-person user-icon"></i>&nbsp;&nbsp;40
+                    &nbsp;&nbsp;
+                    <i class="bi bi-heart heart-icon clickable-heart" onclick="toggleLike(this, 'hadith')" data-course="hadith" style="cursor: pointer; transition: all 0.3s ease;"></i>&nbsp;&nbsp;<span class="like-count" id="like-count-hadith">90</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> <!-- End Course Item-->
+
+          <div class="col-xl-3 col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="300">
+            <div class="course-item">
+              <a href="course-al-aqeeda.html"><img src="assets/img/Aqedah.jpg" class="img-fluid" alt="Aqeedah"></a>
+              <div class="course-content">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <p class="course-category">تخصص</p>
+                  <p class="course-price">Free</p>
+                </div>
+
+                <h3><a href="course-al-aqeeda.html" style="font-family: 'Noto Naskh Arabic', 'Amiri', serif; font-weight: 400; text-align: right; direction: rtl; font-size: 1.4rem;">العقیدہ</a></h3>
+                <p class="description" style="font-size: 1.4rem !important;">اسلامی عقیدہ میں تخصص</p>
+                <div class="trainer d-flex justify-content-between align-items-center">
+                  <div class="trainer-profile d-flex align-items-center">
+                    <a href="" class="trainer-link">استاد</a>
+                  </div>
+                  <div class="trainer-rank d-flex align-items-center">
+<i class="bi bi-person user-icon"></i>&nbsp;&nbsp;60
+                    &nbsp;&nbsp;
+                    <i class="bi bi-heart heart-icon clickable-heart" onclick="toggleLike(this, 'aqeedah')" data-course="aqeedah" style="cursor: pointer; transition: all 0.3s ease;"></i>&nbsp;&nbsp;<span class="like-count" id="like-count-aqeedah">120</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> <!-- End Course Item-->
+
+          <!-- Course 7: دورۃ الاعراب -->
+          <div class="col-xl-3 col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="400">
+            <div class="course-item">
+                  <a href="course-doratul-arab.html"><img src="assets/img/Dora arab.webp" class="img-fluid" alt="Dora Al-I'raab"></a>
+                  <div class="course-content">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                      <p class="course-category">عربی نحو</p>
+                      <p class="course-price">Free</p>
+                    </div>
+
+                    <h3><a href="course-doratul-arab.html" style="font-family: 'Noto Naskh Arabic', 'Amiri', serif; font-weight: 400; text-align: right; direction: rtl; font-size: 1.4rem;">دورۃ الاعراب</a></h3>
+                    <p class="description" style="font-size: 1.4rem !important;">عربی زبان میں اعراب کی جامع تعلیم</p>
+                    <div class="trainer d-flex justify-content-between align-items-center">
+                      <div class="trainer-profile d-flex align-items-center">
+                        <a href="" class="trainer-link">استاد</a>
+                      </div>
+                      <div class="trainer-rank d-flex align-items-center">
+<i class="bi bi-person user-icon"></i>&nbsp;&nbsp;30
+                        &nbsp;&nbsp;
+                        <i class="bi bi-heart heart-icon clickable-heart" onclick="toggleLike(this, 'iraab')" data-course="iraab" style="cursor: pointer; transition: all 0.3s ease;"></i>&nbsp;&nbsp;<span class="like-count" id="like-count-iraab">75</span>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+          </div>
+
+          <!-- Course 8: دورۃ تطبیق القواعد -->
+          <div class="col-xl-3 col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="500">
+            <div class="course-item">
+                  <a href="course-dora-tatbiq-alqawaid.html"><img src="assets/img/course 9.jpg" class="img-fluid" alt="Dora Tatbiqul Qawaid"></a>
+                  <div class="course-content">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                      <p class="course-category">عملی تطبیق</p>
+                      <p class="course-price">Free</p>
+                    </div>
+
+                    <h3><a href="course-dora-tatbiq-alqawaid.html" style="font-family: 'Noto Naskh Arabic', 'Amiri', serif; font-weight: 400; text-align: right; direction: rtl; font-size: 1.4rem;">دورۃ تطبیق القواعد</a></h3>
+                    <p class="description" style="font-size: 1.4rem !important;">عربی قواعد کا عملی اطلاق</p>
+                    <div class="trainer d-flex justify-content-between align-items-center">
+                      <div class="trainer-profile d-flex align-items-center">
+                        <a href="" class="trainer-link">استاد</a>
+                      </div>
+                      <div class="trainer-rank d-flex align-items-center">
+<i class="bi bi-person user-icon"></i>&nbsp;&nbsp;25
+                        &nbsp;&nbsp;
+                        <i class="bi bi-heart heart-icon clickable-heart" onclick="toggleLike(this, 'tatbiq')" data-course="tatbiq" style="cursor: pointer; transition: all 0.3s ease;"></i>&nbsp;&nbsp;<span class="like-count" id="like-count-tatbiq">65</span>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+          </div>
+
+        </div>
+
+        
+        <div class="text-center mt-5 mb-5" data-aos="fade-up" data-aos-delay="400" style="padding-bottom: 100px;">
+          <div class="d-flex justify-content-center align-items-center gap-5 flex-wrap" style="max-width: 1000px; margin: 0 auto;">
+            
+            <!-- Left Side Button - Free Courses -->
+            <div class="professional-btn-wrapper" style="position: relative;">
+              <a href="courses.html" class="professional-btn" style="
+                display: inline-flex;
+                align-items: center;
+                gap: 12px;
+                padding: 16px 32px;
+                background: linear-gradient(135deg, #D84315 0%, #FF5722 100%);
+                color: white;
+                border: 2px solid rgba(216, 67, 21, 0.2);
+                border-radius: 12px;
+                font-weight: 600;
+                font-size: 16px;
+                text-decoration: none;
+                transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                box-shadow: 0 4px 24px rgba(216, 67, 21, 0.25);
+                position: relative;
+                overflow: hidden;
+                min-width: 180px;
+                justify-content: center;
+                font-family: 'Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu', 'Markazi Text', serif;
+              ">
+                <i class="bi bi-mortarboard" style="font-size: 20px; color: white;"></i>
+                <span>مفت کورسز</span>
+                <div style="
+                  position: absolute;
+                  top: 0;
+                  left: -100%;
+                  width: 100%;
+                  height: 100%;
+                  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+                  transition: left 0.6s ease;
+                "></div>
+              </a>
+            </div>
+            
+            <!-- Main Dropdown Button -->
+            <div class="dropdown professional-dropdown" style="position: relative;">
+              <button class="btn btn-primary btn-lg dropdown-toggle professional-main-btn" type="button" id="coursesDropdown" data-bs-toggle="dropdown" aria-expanded="false" style="
+                display: inline-flex;
+                align-items: center;
+                gap: 12px;
+                padding: 18px 36px;
+                background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%) !important;
+                border: none;
+                border-radius: 12px;
+                color: white !important;
+                font-weight: 600;
+                font-size: 17px;
+                text-decoration: none;
+                transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                box-shadow: 0 8px 32px rgba(30, 60, 114, 0.25);
+                position: relative;
+                overflow: hidden;
+                min-width: 220px;
+                justify-content: center;
+                font-family: 'Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu', 'Markazi Text', serif;
+               
+                outline: none;
+              ">
+                <i class="bi bi-grid-3x3-gap" style="font-size: 20px;"></i>
+                <span>تمام کورسز دیکھیں</span>
+                <i class="bi bi-chevron-down" style="font-size: 14px; margin-left: 8px; transition: transform 0.3s ease;"></i>
+              </button>
+              <ul class="dropdown-menu professional-dropdown-menu" aria-labelledby="coursesDropdown" style="
+                border: none;
+                border-radius: 10px;
+                box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+                padding: 6px;
+                margin-top: 6px;
+                min-width: 200px;
+                background: white;
+              ">
+                <li><a class="dropdown-item professional-dropdown-item" href="course-quran.html" style="
+                  padding: 12px 16px;
+                  border-radius: 8px;
+                  margin-bottom: 4px;
+                  transition: all 0.2s ease;
+                  font-weight: 500;
+                  color: #374151;
+                ">فہم القرآن</a></li>
+                <li><a class="dropdown-item professional-dropdown-item" href="course-arabic.html" style="
+                  padding: 12px 16px;
+                  border-radius: 8px;
+                  margin-bottom: 4px;
+                  transition: all 0.2s ease;
+                  font-weight: 500;
+                  color: #374151;
+                ">اللغة العربية</a></li>
+                <li><a class="dropdown-item professional-dropdown-item" href="course-islamic-studies.html" style="
+                  padding: 12px 16px;
+                  border-radius: 8px;
+                  margin-bottom: 4px;
+                  transition: all 0.2s ease;
+                  font-weight: 500;
+                  color: #374151;
+                ">علوم الدین</a></li>
+                <li><hr class="dropdown-divider" style="margin: 8px 0; border-color: #e5e7eb;"></li>
+                <li><a class="dropdown-item professional-dropdown-item" href="courses.html" style="
+                  padding: 12px 16px;
+                  border-radius: 8px;
+                  transition: all 0.2s ease;
+                  font-weight: 600;
+                  color: #1e3c72;
+                ">تمام کورسز</a></li>
+              </ul>
+            </div>
+            
+            <!-- Right Side Button - Admission -->
+            <div class="professional-btn-wrapper" style="position: relative;">
+              <a href="admission.html" class="professional-btn" style="
+                display: inline-flex;
+                align-items: center;
+                gap: 12px;
+                padding: 16px 32px;
+                background: linear-gradient(135deg, #FFC107 0%, #FF8F00 100%);
+                color: #1e3c72;
+                border: 2px solid rgba(255, 193, 7, 0.3);
+                border-radius: 12px;
+                font-weight: 600;
+                font-size: 16px;
+                text-decoration: none;
+                transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                box-shadow: 0 4px 24px rgba(255, 193, 7, 0.25);
+                position: relative;
+                overflow: hidden;
+                min-width: 180px;
+                justify-content: center;
+                font-family: 'Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu', 'Markazi Text', serif;
+              ">
+                <i class="bi bi-person-plus" style="font-size: 20px; color: #1e3c72;"></i>
+                <span>داخلہ لیں</span>
+                <div style="
+                  position: absolute;
+                  top: 0;
+                  left: -100%;
+                  width: 100%;
+                  height: 100%;
+                  background: linear-gradient(90deg, transparent, rgba(30, 60, 114, 0.1), transparent);
+                  transition: left 0.6s ease;
+                "></div>
+              </a>
+            </div>
+            
+          </div>
+          
+          <!-- Add professional hover effects with CSS -->
+          <style>
+            .professional-btn:hover {
+              transform: translateY(-2px) !important;
+            }
+            
+            .professional-btn:hover div {
+              left: 100% !important;
+            }
+            
+            /* Free Courses Button Hover */
+            .professional-btn[href="courses.html"]:hover {
+              box-shadow: 0 8px 32px rgba(216, 67, 21, 0.4) !important;
+              background: linear-gradient(135deg, #FF5722 0%, #D84315 100%) !important;
+            }
+            
+            /* Admission Button Hover */
+            .professional-btn[href="admission.html"]:hover {
+              box-shadow: 0 8px 32px rgba(255, 193, 7, 0.4) !important;
+              background: linear-gradient(135deg, #FF8F00 0%, #FFC107 100%) !important;
+              color: #1e3c72 !important;
+            }
+            
+            .professional-main-btn:hover {
+              transform: translateY(-3px) !important;
+              box-shadow: 0 12px 40px rgba(30, 60, 114, 0.35) !important;
+            }
+            
+            .professional-main-btn:hover .bi-chevron-down {
+              transform: rotate(180deg) !important;
+            }
+            
+            .professional-dropdown-item:hover {
+              background: #f8fafc !important;
+              color: #1e3c72 !important;
+              transform: translateX(-4px) !important;
+            }
+            
+            /* Professional Submit Button Hover Effects */
+            .professional-submit-btn:hover {
+              transform: translateY(-3px) !important;
+              box-shadow: 0 10px 35px rgba(30, 60, 114, 0.35) !important;
+              background: linear-gradient(135deg, #2a5298 0%, #3b6ecd 100%) !important;
+            }
+            
+            .professional-submit-btn:hover .btn-shine {
+              left: 100% !important;
+            }
+            
+            .professional-submit-btn:active {
+              transform: translateY(-1px) !important;
+              box-shadow: 0 6px 20px rgba(30, 60, 114, 0.3) !important;
+            }
+            
+            .professional-submit-btn:disabled {
+              opacity: 0.7 !important;
+              transform: none !important;
+              cursor: not-allowed !important;
+            }
+            
+            @media (max-width: 768px) {
+              .professional-btn, .professional-main-btn {
+                min-width: 140px !important;
+                padding: 14px 24px !important;
+                font-size: 15px !important;
+              }
+              
+              .professional-submit-btn {
+                min-width: 160px !important;
+                padding: 14px 28px !important;
+                font-size: 15px !important;
+              }
+              
+              .d-flex.gap-5 {
+                gap: 1rem !important;
+              }
+            }
+          </style>
+        </div>
+        
+      </div>
+
+</section><!-- /Courses Section -->
+
+    <!-- Counts Section -->
+    <section id="counts" class="section counts light-background">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="1000" data-purecounter-duration="1" class="purecounter"></span>
+              <p>کامیاب طلباء</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="6" data-purecounter-duration="1" class="purecounter"></span>
+              <p>کورسز</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="8" data-purecounter-duration="1" class="purecounter"></span>
+              <p>اساتذہ</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="5" data-purecounter-duration="1" class="purecounter"></span>
+              <p>سال کا تجربہ</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Counts Section -->
+
+    <!-- Features Section -->
+    <section id="features" class="features section">
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-2 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="features-item">
+              <i class="bi bi-laptop" style="color: #ffbb2c;"></i>
+              <h3><a href="" class="stretched-link">آن لائن تعلیم</a></h3>
+            </div>
+          </div><!-- End Feature Item -->
+
+          <div class="col-lg-2 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="features-item">
+              <i class="bi bi-people" style="color: #5578ff;"></i>
+              <h3><a href="" class="stretched-link">ماہر اساتذہ</a></h3>
+            </div>
+          </div><!-- End Feature Item -->
+
+          <div class="col-lg-2 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="features-item">
+              <i class="bi bi-award" style="color: #e80368;"></i>
+              <h3><a href="" class="stretched-link">معتبر سرٹیفکیٹ</a></h3>
+            </div>
+          </div><!-- End Feature Item -->
+
+          <div class="col-lg-2 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="features-item">
+              <i class="bi bi-clock" style="color: #e361ff;"></i>
+              <h3><a href="" class="stretched-link">&nbsp;&nbsp;لچکدار وقت</a></h3>
+            </div>
+          </div><!-- End Feature Item -->
+
+          <div class="col-lg-2 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="features-item">
+              <i class="bi bi-globe" style="color: #ff5828;"></i>
+              <h3><a href="" class="stretched-link">عالمی رابطہ</a></h3>
+            </div>
+          </div><!-- End Feature Item -->
+
+          <div class="col-lg-2 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="600">
+            <div class="features-item">
+              <i class="bi bi-lightbulb" style="color: #ffc107;"></i>
+              <h3><a href="" class="stretched-link">جدید خیالات</a></h3>
+            </div>
+          </div><!-- End Feature Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Features Section -->
+
+    <!-- VC Section -->
+    <section id="vc" class="vc section" style="background: url('assets/img/Director background.jpg') center/cover no-repeat; padding: 80px 0; margin-top: 60px; margin-bottom: 100px; position: relative;">
+      <!-- Transparent overlay to make background image transparent -->
+      <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.7); z-index: 1;"></div>
+      <div style="position: relative; z-index: 2;">
+      
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2 style="color: #1e3c72; font-size: 2.5rem; font-weight: 700; margin-bottom: 15px; position: relative; text-align: right; font-family: 'Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu', 'Markazi Text', serif; text-shadow: 0 2px 4px rgba(30, 60, 114, 0.1);">
+          ڈائریکٹر
+          <div style="position: absolute; bottom: -10px; right: 0; width: 80px; height: 4px; background: linear-gradient(90deg, #1e3c72, #D84315); border-radius: 2px;"></div>
+        </h2>
+        <p style="color: #64748b; font-size: 1.2rem; font-weight: 500; margin-top: 25px; text-align: right; font-family: 'Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu', 'Markazi Text', serif; line-height: 1.6; letter-spacing: 0.5px;">یہ ہمارے ورچوئل اسلامک یونیورسٹی کے ڈائریکٹر ہیں</p>
+      </div><!-- End Section Title -->
+      
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="vc-card" style="
+              background: #ffffff;
+              border-radius: 20px;
+              padding: 50px 40px;
+              box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1), 0 8px 25px rgba(30, 60, 114, 0.1);
+              border: 1px solid rgba(30, 60, 114, 0.1);
+              position: relative;
+              overflow: hidden;
+              transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+              cursor: pointer;
+            ">
+              
+              <div class="vc-content">
+                <div class="row align-items-center">
+                  
+                  <!-- VC Details Column -->
+                  <div class="col-lg-8 order-2 order-lg-1">
+                    <div class="vc-details" style="text-align: right; padding-left: 20px;">
+                      
+                      <!-- Name -->
+                      <div style="margin-bottom: 25px;">
+                      <h3 style="
+                          font-size: 2rem;
+                          font-weight: 700;
+                          color: #1e3c72;
+                          margin-bottom: 8px;
+font-family: 'Mehr Nastaliq Web', serif;
+                          line-height: 1.3;
+                          text-shadow: 0 1px 3px rgba(30, 60, 114, 0.1);
+                        ">ڈاکٹر حافظ ابو یحییٰ نورپوری</h3>
+                        
+                        <div style="width: 80px; height: 3px; background: linear-gradient(90deg, #D84315, #1e3c72); margin: 10px 0 0 auto; border-radius: 2px;"></div>
+                      </div>
+                      
+                      <!-- Professional Qualifications -->
+                      <div class="vc-qualifications" style="margin-bottom: 30px;">
+                        
+                        <!-- Education -->
+                        <div style="display: flex; align-items: center; margin-bottom: 15px; justify-content: flex-start;">
+                          <div style="background: #1e3c72; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(30, 60, 114, 0.3); flex-shrink: 0;">
+                            <i class="bi bi-mortarboard" style="font-size: 1.1rem;"></i>
+                          </div>
+                          <div style="text-align: right; margin-right: 15px;">
+                            <p style="
+                              font-size: 1.3rem;
+                              color: #4a5568;
+                              margin-bottom: 0;
+                              font-family: 'Mehr Nastaliq Web', serif;
+                              font-weight: 500;
+                            ">پی ایچ ڈی، شعبہ اسلامیات، پنجاب یونیورسٹی، لاہور</p>
+                          </div>
+                        </div>
+                        
+                        <!-- Executive Position -->
+                        <div style="display: flex; align-items: center; margin-bottom: 15px; justify-content: flex-start;">
+                          <div style="background: #059669; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(5, 150, 105, 0.3); flex-shrink: 0;">
+                            <i class="bi bi-briefcase" style="font-size: 1.1rem;"></i>
+                          </div>
+                          <div style="text-align: right; margin-right: 15px;">
+                            <p style="
+                              font-size: 1.3rem;
+                              color: #4a5568;
+                              margin-bottom: 0;
+                              font-family: 'Mehr Nastaliq Web', serif;
+                              font-weight: 500;
+                            ">چیف ایگزیکٹو، اصلاح میڈیا</p>
+                          </div>
+                        </div>
+                        
+                        <!-- VC Position -->
+                        <div style="display: flex; align-items: center; margin-bottom: 20px; justify-content: flex-start;">
+                          <div style="background: #D84315; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(216, 67, 21, 0.3); flex-shrink: 0;">
+                            <i class="bi bi-award" style="font-size: 1.1rem;"></i>
+                          </div>
+                          <div style="text-align: right; margin-right: 15px;">
+                            <p style="
+                              font-size: 1.3rem;
+                              color: #1e3c72;
+                              margin-bottom: 0;
+                              font-family: 'Mehr Nastaliq Web', serif;
+                              font-weight: 600;
+                            ">ڈائریکٹر، ورچوئل اسلامک یونیورسٹی</p>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <!-- Inspirational Message -->
+                      <div class="vc-message" style="
+                        background: rgba(30, 60, 114, 0.05);
+                        border-radius: 15px;
+                        padding: 25px;
+                        border-right: 4px solid #1e3c72;
+                        margin-top: 25px;
+                        position: relative;
+                      ">
+                        <div style="position: absolute; top: 10px; right: 15px; font-size: 1.5rem; color: rgba(30, 60, 114, 0.3); font-family: serif;">"</div>
+                        
+                        <p style="
+                          font-size: 1.3rem;
+                          color: #2d3748;
+                          line-height: 1.8;
+                          margin-bottom: 0;
+                          font-style: normal;
+                          font-family: 'Mehr Nastaliq Web', serif;
+                          font-weight: 500;
+                          position: relative;
+                          z-index: 2;
+                        ">تعلیم انسان کی زندگی کا بنیادی حق ہے اور اسلامی تعلیم کے ذریعے ہم نئی نسل کو دین اور دنیا کی بہترین تعلیم فراہم کر سکتے ہیں۔</p>
+                        
+                        <!-- Signature Line -->
+                        <div style="text-align: left; margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(30, 60, 114, 0.1);">
+                          <p style="font-size: 0.9rem; color: #64748b; font-weight: 600; font-family: 'Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu', serif; margin-bottom: 0;">— ڈاکٹر حافظ ابو یحییٰ نورپوری</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- VC Image Column -->
+                  <div class="col-lg-4 text-center mb-4 mb-lg-0 order-1 order-lg-2">
+                    <div class="vc-image-wrapper" style="position: relative; display: inline-block;">
+                      <div style="padding: 8px; background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%); border-radius: 50%; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);">
+                        <img src="assets/img/VC2.jpg" alt="Dr. Hafiz Abu Yahya Noorpuri" style="
+                          width: 180px;
+                          height: 180px;
+                          border-radius: 50%;
+                          object-fit: cover;
+                          border: 4px solid #ffffff;
+                          box-shadow: 0 8px 25px rgba(30, 60, 114, 0.2);
+                        ">
+                      </div>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      </div>
+    </section><!-- /VC Section -->
+
+    <!-- Faculty Section -->
+    <section id="faculty" class="faculty section">
+      
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2 style="color: #1e3c72; font-size: 2.8rem; font-weight: 700; margin-bottom: 15px; position: relative; text-align: right; font-family: 'Mehr Nastaliq Web', serif; text-shadow: 0 3px 6px rgba(30, 60, 114, 0.2);">
+          ہمارے اساتذہ
+          <div style="position: absolute; bottom: -10px; right: 0; width: 80px; height: 4px; background: linear-gradient(90deg, #1e3c72, #D84315); border-radius: 2px;"></div>
+        </h2>
+        <ul style="color: #64748b; font-size: 1.5rem; font-weight: 500; margin-top: 35px; text-align: right; font-family: 'Mehr Nastaliq Web'; line-height: 1.8; list-style: none; padding: 0;">
+          <li style="margin-bottom: 12px; position: relative; padding-right: 25px;">
+            <i class="bi bi-check-circle" style="position: absolute; right: 0; top: 2px; color: #1e3c72; font-size: 1.2rem;"></i>
+            تجربہ کار اور باعلم اساتذہ جو آپ کی تعلیمی سفر میں رہنمائی کرتے ہیں
+          </li>
+          <li style="margin-bottom: 12px; position: relative; padding-right: 25px;">
+            <i class="bi bi-check-circle" style="position: absolute; right: 0; top: 2px; color: #1e3c72; font-size: 1.2rem;"></i>
+            اسلامی علوم میں مہارت رکھنے والے قابل استاد
+          </li>
+          <li style="margin-bottom: 12px; position: relative; padding-right: 25px;">
+            <i class="bi bi-check-circle" style="position: absolute; right: 0; top: 2px; color: #1e3c72; font-size: 1.2rem;"></i>
+            جدید تدابیر اپناتے ہوئے تعلیم دیتے ہیں
+          </li>
+          <li style="margin-bottom: 12px; position: relative; padding-right: 25px;">
+            <i class="bi bi-check-circle" style="position: absolute; right: 0; top: 2px; color: #1e3c72; font-size: 1.2rem;"></i>
+            جو آپ کو اعلیٰ تعلیمی معیار اور بہترین تدریسی طریقے فراہم کرتے ہیں
+          </li>
+        </ul>
+      </div><!-- End Section Title -->
+      
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row justify-content-center" style="gap: 20px;">
+          
+        <!-- Teacher 1: Dr. Abu Yahya Noorpuri (Director) -->
+          <div class="col-lg-3 col-md-6 mb-4">
+          <div class="teacher-card" style="
+              background: linear-gradient(145deg, #fafbfc 0%, #f1f3f5 100%);
+              border-radius: 20px;
+              padding: 0;
+              box-shadow: 
+                0 10px 30px rgba(0, 0, 0, 0.08),
+                0 4px 15px rgba(0, 0, 0, 0.05),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+              transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+              position: relative;
+              overflow: hidden;
+              height: 100%;
+              display: flex;
+              flex-direction: column;
+              animation: teacherFloat 4s ease-in-out infinite;
+              cursor: pointer;
+            " onclick="navigateToFaculty('abu-yahya-noorpuri')">
+              <div class="teacher-card-shimmer" style="
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+                transition: left 0.6s ease;
+                z-index: 1;
+              "></div>
+              <div class="card-body text-center p-5" style="
+                background: transparent;
+                border-radius: 20px;
+                position: relative;
+                z-index: 2;
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+              ">
+                <div class="position-relative mb-4">
+                  <div class="d-flex align-items-center justify-content-center rounded-circle bg-secondary text-white" style="width: 130px; height: 130px; font-size: 3rem; margin: 0 auto; border: 4px solid #2a5298; background: white; padding: 10px;">
+                    <i class="bi bi-person"></i>
+                  </div>
+                </div>
+                <h3 class="card-title mt-3 mb-3" style="color: black; font-family: 'Mehr Nastaliq Web', serif; font-size: 0.9rem;">فضیلۃ الشیخ ڈاکٹر حافظ ابو یحییٰ نورپوری</h3>
+                <p class="text-muted small mb-3">ڈائریکٹر، ورچوئل اسلامک یونیورسٹی</p>
+              </div>
+            </div>
+          </div>
+          
+        <!-- Teacher 2: Iqbal Khilji -->
+          <div class="col-lg-3 col-md-6 mb-4">
+          <div class="teacher-card" style="
+              background: linear-gradient(145deg, #fafbfc 0%, #f1f3f5 100%);
+              border-radius: 20px;
+              padding: 0;
+              box-shadow: 
+                0 10px 30px rgba(0, 0, 0, 0.08),
+                0 4px 15px rgba(0, 0, 0, 0.05),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+              transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+              position: relative;
+              overflow: hidden;
+              height: 100%;
+              display: flex;
+              flex-direction: column;
+              animation: teacherFloat 4s ease-in-out infinite 0.5s;
+              cursor: pointer;
+            " onclick="navigateToFaculty('sheikh-iqbal-khilji')">
+              <div class="teacher-card-shimmer" style="
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+                transition: left 0.6s ease;
+                z-index: 1;
+              "></div>
+              <div class="card-body text-center p-5" style="
+                background: transparent;
+                border-radius: 20px;
+                position: relative;
+                z-index: 2;
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+              ">
+                <div class="position-relative mb-4">
+                  <div class="d-flex align-items-center justify-content-center rounded-circle bg-secondary text-white" style="width: 130px; height: 130px; font-size: 3rem; margin: 0 auto; border: 4px solid #2a5298; background: white; padding: 10px;">
+                    <i class="bi bi-person"></i>
+                  </div>
+                </div>
+                <h3 class="card-title mt-3 mb-3" style="color: black; font-family: 'Mehr Nastaliq Web', serif; font-size: 1.1rem;">فضیلۃ الشیخ اقبال خلجی</h3>
+                <p class="text-muted small mb-3">استاذ علوم اسلامیہ</p>
+              </div>
+            </div>
+          </div>
+          
+        <!-- Teacher 3: Muhammad Arsalan Al-Zubairi -->
+          <div class="col-lg-3 col-md-6 mb-4">
+          <div class="teacher-card" style="
+              background: linear-gradient(145deg, #fafbfc 0%, #f1f3f5 100%);
+              border-radius: 20px;
+              padding: 0;
+              box-shadow: 
+                0 10px 30px rgba(0, 0, 0, 0.08),
+                0 4px 15px rgba(0, 0, 0, 0.05),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+              transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+              position: relative;
+              overflow: hidden;
+              height: 100%;
+              display: flex;
+              flex-direction: column;
+              animation: teacherFloat 4s ease-in-out infinite 1s;
+              cursor: pointer;
+            " onclick="navigateToFaculty('muhammad-arsalan-al-zubairi')">
+              <div class="teacher-card-shimmer" style="
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+                transition: left 0.6s ease;
+                z-index: 1;
+              "></div>
+              <div class="card-body text-center p-5" style="
+                background: transparent;
+                border-radius: 20px;
+                position: relative;
+                z-index: 2;
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+              ">
+                <div class="position-relative mb-4">
+                  <div class="d-flex align-items-center justify-content-center rounded-circle bg-secondary text-white" style="width: 130px; height: 130px; font-size: 3rem; margin: 0 auto; border: 4px solid #2a5298; background: white; padding: 10px;">
+                    <i class="bi bi-person"></i>
+                  </div>
+                </div>
+                <h3 class="card-title mt-3 mb-3" style="color: black; font-family: 'Mehr Nastaliq Web', serif; font-size: 1.1rem;">فضیلۃ الشیخ محمد ارسلان الزبیری</h3>
+                <p class="text-muted small mb-3">عالمِ دین، محقق، مدرس اور مؤلف</p>
+              </div>
+            </div>
+          </div>
+          
+        <!-- Teacher 4: Hafiz Abu Bakr Siddique -->
+          <div class="col-lg-3 col-md-6 mb-4">
+          <div class="teacher-card" style="
+              background: linear-gradient(145deg, #fafbfc 0%, #f1f3f5 100%);
+              border-radius: 20px;
+              padding: 0;
+              box-shadow: 
+                0 10px 30px rgba(0, 0, 0, 0.08),
+                0 4px 15px rgba(0, 0, 0, 0.05),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+              transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+              position: relative;
+              overflow: hidden;
+              height: 100%;
+              display: flex;
+              flex-direction: column;
+              animation: teacherFloat 4s ease-in-out infinite 1.5s;
+              cursor: pointer;
+            " onclick="navigateToFaculty('hafiz-abu-bakr-siddiq')">
+              <div class="teacher-card-shimmer" style="
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+                transition: left 0.6s ease;
+                z-index: 1;
+              "></div>
+              <div class="card-body text-center p-5" style="
+                background: transparent;
+                border-radius: 20px;
+                position: relative;
+                z-index: 2;
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+              ">
+                <div class="position-relative mb-4">
+                  <div class="d-flex align-items-center justify-content-center rounded-circle bg-secondary text-white" style="width: 130px; height: 130px; font-size: 3rem; margin: 0 auto; border: 4px solid #2a5298; background: white; padding: 10px;">
+                    <i class="bi bi-person"></i>
+                  </div>
+                </div>
+                <h3 class="card-title mt-3 mb-3" style="color: black; font-family: 'Mehr Nastaliq Web', serif; font-size: 1.1rem;">فضیلۃ الشیخ حافظ ابوبکر صدیق</h3>
+                <p class="text-muted small mb-3">متخصص اصول الفقہ و علوم الحدیث</p>
+              </div>
+            </div>
+          </div>
+        
+        <!-- Teacher 5: Ameer Hamza -->
+          <div class="col-lg-3 col-md-6 mb-4">
+          <div class="teacher-card" style="
+              background: linear-gradient(145deg, #fafbfc 0%, #f1f3f5 100%);
+              border-radius: 20px;
+              padding: 0;
+              box-shadow: 
+                0 10px 30px rgba(0, 0, 0, 0.08),
+                0 4px 15px rgba(0, 0, 0, 0.05),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+              transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+              position: relative;
+              overflow: hidden;
+              height: 100%;
+              display: flex;
+              flex-direction: column;
+              animation: teacherFloat 4s ease-in-out infinite 2s;
+              cursor: pointer;
+            " onclick="navigateToFaculty('sheikh-ameer-hamza')">
+              <div class="teacher-card-shimmer" style="
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+                transition: left 0.6s ease;
+                z-index: 1;
+              "></div>
+              <div class="card-body text-center p-5" style="
+                background: transparent;
+                border-radius: 20px;
+                position: relative;
+                z-index: 2;
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+              ">
+                <div class="position-relative mb-4">
+                  <div class="d-flex align-items-center justify-content-center rounded-circle bg-secondary text-white" style="width: 130px; height: 130px; font-size: 3rem; margin: 0 auto; border: 4px solid #2a5298; background: white; padding: 10px;">
+                    <i class="bi bi-person"></i>
+                  </div>
+                </div>
+                <h3 class="card-title mt-3 mb-3" style="color: black; font-family: 'Mehr Nastaliq Web', serif; font-size: 1.1rem;">فضیلۃ الشیخ امیر حمزہ</h3>
+                <p class="text-muted small mb-3">استاذ علوم اسلامیہ</p>
+              </div>
+            </div>
+          </div>
+        
+        <!-- Teacher 6: Mehtab Asghar -->
+          <div class="col-lg-3 col-md-6 mb-4">
+          <div class="teacher-card" style="
+              background: linear-gradient(145deg, #fafbfc 0%, #f1f3f5 100%);
+              border-radius: 20px;
+              padding: 0;
+              box-shadow: 
+                0 10px 30px rgba(0, 0, 0, 0.08),
+                0 4px 15px rgba(0, 0, 0, 0.05),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+              transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+              position: relative;
+              overflow: hidden;
+              height: 100%;
+              display: flex;
+              flex-direction: column;
+              animation: teacherFloat 4s ease-in-out infinite 2.5s;
+              cursor: pointer;
+            " onclick="navigateToFaculty('sheikh-mehtab-asghar')">
+              <div class="teacher-card-shimmer" style="
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+                transition: left 0.6s ease;
+                z-index: 1;
+              "></div>
+              <div class="card-body text-center p-5" style="
+                background: transparent;
+                border-radius: 20px;
+                position: relative;
+                z-index: 2;
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+              ">
+                <div class="position-relative mb-4">
+                  <div class="d-flex align-items-center justify-content-center rounded-circle bg-secondary text-white" style="width: 130px; height: 130px; font-size: 3rem; margin: 0 auto; border: 4px solid #2a5298; background: white; padding: 10px;">
+                    <i class="bi bi-person"></i>
+                  </div>
+                </div>
+                <h3 class="card-title mt-3 mb-3" style="color: black; font-family: 'Mehr Nastaliq Web', serif; font-size: 1.1rem;">فضیلۃ الشیخ مہتاب اصغر</h3>
+                <p class="text-muted small mb-3">مدرس: ورچوئل اسلامک یونیورسٹی</p>
+              </div>
+            </div>
+          </div>
+          <!-- Teacher 8: Abdul Manan Siddiqi -->
+          <div class="col-lg-3 col-md-6 mb-4">
+          <div class="teacher-card" style="
+              background: linear-gradient(145deg, #fafbfc 0%, #f1f3f5 100%);
+              border-radius: 20px;
+              padding: 0;
+              box-shadow: 
+                0 10px 30px rgba(0, 0, 0, 0.08),
+                0 4px 15px rgba(0, 0, 0, 0.05),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+              transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+              position: relative;
+              overflow: hidden;
+              height: 100%;
+              display: flex;
+              flex-direction: column;
+              animation: teacherFloat 4s ease-in-out infinite 3s;
+              cursor: pointer;
+            " onclick="navigateToFaculty('abdul-manan-siddiqi')">
+              <div class="teacher-card-shimmer" style="
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+                transition: left 0.6s ease;
+                z-index: 1;
+              "></div>
+              <div class="card-body text-center p-5" style="
+                background: transparent;
+                border-radius: 20px;
+                position: relative;
+                z-index: 2;
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+              ">
+                <div class="position-relative mb-4">
+                  <div class="d-flex align-items-center justify-content-center rounded-circle bg-secondary text-white" style="width: 130px; height: 130px; font-size: 3rem; margin: 0 auto; border: 4px solid #2a5298; background: white; padding: 10px;">
+                    <i class="bi bi-person"></i>
+                  </div>
+                </div>
+                <h3 class="card-title mt-3 mb-3" style="color: black; font-family: 'Mehr Nastaliq Web', serif; font-size: 1.1rem;">عبدالمنان الصدیقی</h3>
+                <p class="text-muted small mb-3">مدرس: ورچوئل اسلامک یونیورسٹی</p>
+              </div>
+            </div>
+          </div>
+          </div>
+          
+        <!-- View All Faculty Button -->
+        <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="500">
+          <div class="professional-btn-wrapper" style="position: relative;">
+            <a href="faculty.html" class="professional-btn faculty-btn" style="
+              display: inline-flex;
+              align-items: center;
+              gap: 12px;
+              padding: 18px 36px;
+              background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+              color: white;
+              border: none;
+              border-radius: 15px;
+              font-weight: 600;
+              font-size: 1.1rem;
+              text-decoration: none;
+              transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+              box-shadow: 0 8px 32px rgba(30, 60, 114, 0.25);
+              font-family: 'Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu', serif;
+              position: relative;
+              overflow: hidden;
+              min-width: 220px;
+              justify-content: center;
+            ">
+              <i class="bi bi-people" style="font-size: 1.2rem;"></i>
+              <span>تمام اساتذہ دیکھیں</span>
+              <i class="bi bi-arrow-left" style="font-size: 1rem;"></i>
+              <div style="
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+                transition: left 0.6s ease;
+              "></div>
+            </a>
+          </div>
+        </div>
+        
+      </div>
+      
+    </section><!-- /Faculty Section -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section" style="margin-top: 100px;">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>رابطہ</h2>
+        <p>ہم سے رابطہ کریں</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-6">
+            <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="200">
+              <i class="bi bi-geo-alt"></i>
+              <h3>پتہ</h3>
+              <p>رائل ایونیو، سرگودھا، پنجاب، پاکستان</p>
+            </div>
+          </div><!-- End Info Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="300">
+              <i class="bi bi-telephone"></i>
+              <h3>فون کریں</h3>
+              <p><span dir="ltr">+92 (345) 555-6654</span></p>
+            </div>
+          </div><!-- End Info Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="400">
+              <i class="bi bi-envelope"></i>
+              <h3>ای میل</h3>
+              <p>info@virtualislamicuniversity.com</p>
+            </div>
+          </div><!-- End Info Item -->
+
+        </div>
+
+        <div class="row gy-4 mt-1">
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3366.926856084487!2d72.670777!3d32.083859!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x392193e50cfd95ab%3A0x9c4e8b8ed788f3a3!2sRoyal%20Avenue%2C%20Sargodha%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2s!4v1676961268712!5m2!1sen!2s" frameborder="0" style="border:0; width: 100%; height: 270px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div><!-- End Google Maps -->
+
+          <div class="col-lg-6">
+            <form id="contactForm" method="post" action="#" class="contact-form" data-aos="fade-up" data-aos-delay="400">
+              <div class="row gy-4">
+
+                <div class="col-lg-6">
+                  <input type="text" name="name" class="form-control" placeholder="آپ کا نام" required="">
+                </div>
+
+                <div class="col-lg-6">
+                  <input type="email" class="form-control" name="email" placeholder="آپ کا ای میل" required="">
+                </div>
+
+                <div class="col-lg-12">
+                  <input type="text" class="form-control" name="subject" placeholder="موضوع" required="">
+                </div>
+
+                <div class="col-lg-12">
+                  <textarea class="form-control" name="message" rows="6" placeholder="پیغام" required=""></textarea>
+                </div>
+
+                <div class="col-lg-12 text-center">
+                  <div class="loading" style="display: none;">لوڈ ہو رہا ہے</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message" style="display: none;"></div>
+
+                  <button type="submit" class="professional-submit-btn" style="
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 12px;
+                    padding: 16px 32px;
+                    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+                    color: white;
+                    border: none;
+                    border-radius: 12px;
+                    font-weight: 600;
+                    font-size: 16px;
+                    font-family: 'Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu', serif;
+                    text-decoration: none;
+                    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                    box-shadow: 0 6px 24px rgba(30, 60, 114, 0.25);
+                    position: relative;
+                    overflow: hidden;
+                    min-width: 180px;
+                    cursor: pointer;
+                    outline: none;
+                  ">
+                    <span>پیغام بھیجیں</span>
+                    <div class="btn-shine" style="
+                      position: absolute;
+                      top: 0;
+                      left: -100%;
+                      width: 100%;
+                      height: 100%;
+                      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+                      transition: left 0.6s ease;
+                    "></div>
+                  </button>
+                </div>
+
+              </div>
+            </form>
+          </div><!-- End Contact Form -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+    <!-- Admin Panel Section (Hidden by default) -->
+    <section id="admin-panel" class="admin-panel section" style="display: none; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); padding: 80px 0;">
+      
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2 style="color: #1e3c72; font-size: 2.5rem; font-weight: 700; margin-bottom: 15px; text-align: center;">Admin Dashboard</h2>
+        <p style="color: #64748b; font-size: 1.2rem; text-align: center; margin-bottom: 40px;">Manage Applications and Messages</p>
+      </div>
+      
+      <div class="container">
+        <!-- Admin Stats -->
+        <div class="row gy-4 mb-5">
+          <div class="col-lg-3 col-md-6">
+            <div class="admin-stat-card" style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; border-left: 5px solid #3498db;">
+              <i class="bi bi-people" style="font-size: 3rem; color: #3498db; margin-bottom: 15px;"></i>
+              <h3 style="font-size: 2rem; font-weight: bold; color: #3498db; margin-bottom: 5px;" id="admin-total-applications">0</h3>
+              <p style="color: #666; font-size: 1rem;">Total Applications</p>
+            </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-6">
+            <div class="admin-stat-card" style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; border-left: 5px solid #f39c12;">
+              <i class="bi bi-clock" style="font-size: 3rem; color: #f39c12; margin-bottom: 15px;"></i>
+              <h3 style="font-size: 2rem; font-weight: bold; color: #f39c12; margin-bottom: 5px;" id="admin-pending-applications">0</h3>
+              <p style="color: #666; font-size: 1rem;">Pending Applications</p>
+            </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-6">
+            <div class="admin-stat-card" style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; border-left: 5px solid #27ae60;">
+              <i class="bi bi-envelope" style="font-size: 3rem; color: #27ae60; margin-bottom: 15px;"></i>
+              <h3 style="font-size: 2rem; font-weight: bold; color: #27ae60; margin-bottom: 5px;" id="admin-total-contacts">0</h3>
+              <p style="color: #666; font-size: 1rem;">Total Messages</p>
+            </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-6">
+            <div class="admin-stat-card" style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; border-left: 5px solid #e74c3c;">
+              <i class="bi bi-bell" style="font-size: 3rem; color: #e74c3c; margin-bottom: 15px;"></i>
+              <h3 style="font-size: 2rem; font-weight: bold; color: #e74c3c; margin-bottom: 5px;" id="admin-new-contacts">0</h3>
+              <p style="color: #666; font-size: 1rem;">New Messages</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Admin Tabs -->
+        <div class="admin-tabs" style="background: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); overflow: hidden;">
+          <div class="tab-header" style="display: flex; background: #f1f2f6; border-bottom: 1px solid #ddd;">
+            <button class="admin-tab-btn active" onclick="showAdminTab('applications')" style="flex: 1; padding: 15px; background: none; border: none; cursor: pointer; font-size: 1rem; transition: all 0.3s ease;">📚 Applications</button>
+            <button class="admin-tab-btn" onclick="showAdminTab('contacts')" style="flex: 1; padding: 15px; background: none; border: none; cursor: pointer; font-size: 1rem; transition: all 0.3s ease;">📧 Messages</button>
+          </div>
+          
+          <div class="tab-content">
+            <div id="admin-applications" class="admin-tab-content active" style="padding: 20px; min-height: 400px;">
+              <div style="display: flex; justify-content: between; align-items: center; margin-bottom: 20px;">
+                <h3 style="color: #1e3c72; margin: 0;">📚 Student Applications</h3>
+                <button onclick="loadAdminApplications()" style="background: #3498db; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin-left: auto;">🔄 Refresh</button>
+              </div>
+              <div id="admin-applications-content">
+                <div style="text-align: center; padding: 40px; color: #666;">Loading applications...</div>
+              </div>
+            </div>
+            
+            <div id="admin-contacts" class="admin-tab-content" style="padding: 20px; min-height: 400px; display: none;">
+              <div style="display: flex; justify-content: between; align-items: center; margin-bottom: 20px;">
+                <h3 style="color: #1e3c72; margin: 0;">📧 Contact Messages</h3>
+                <button onclick="loadAdminContacts()" style="background: #3498db; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin-left: auto;">🔄 Refresh</button>
+              </div>
+              <div id="admin-contacts-content">
+                <div style="text-align: center; padding: 40px; color: #666;">Loading contacts...</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Quick Actions -->
+        <div class="admin-quick-actions" style="margin-top: 30px; text-align: center;">
+          <a href="admin_dashboard.html" class="btn" style="background: linear-gradient(45deg, #1e3c72, #2a5298); color: white; padding: 15px 30px; border-radius: 25px; text-decoration: none; margin: 0 10px; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(30, 60, 114, 0.3);">
+            <i class="bi bi-grid-3x3-gap"></i>
+            Full Dashboard
+          </a>
+          <button onclick="logoutAdmin()" class="btn" style="background: linear-gradient(45deg, #e74c3c, #c0392b); color: white; padding: 15px 30px; border-radius: 25px; border: none; cursor: pointer; margin: 0 10px; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);">
+            <i class="bi bi-box-arrow-right"></i>
+            Logout
+          </button>
+        </div>
+      </div>
+      
+      <!-- Admin Panel Styles -->
+      <style>
+        .admin-tab-btn.active {
+          background: white !important;
+          color: #3498db !important;
+          border-bottom: 3px solid #3498db !important;
+        }
+        
+        .admin-tab-btn:hover {
+          background: rgba(52, 152, 219, 0.1) !important;
+        }
+        
+        .admin-data-table {
+          width: 100%;
+          border-collapse: collapse;
+          margin-top: 20px;
+          background: white;
+          border-radius: 10px;
+          overflow: hidden;
+          box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .admin-data-table th {
+          background: #3498db;
+          color: white;
+          padding: 15px;
+          text-align: left;
+          font-weight: 600;
+        }
+        
+        .admin-data-table td {
+          padding: 12px 15px;
+          border-bottom: 1px solid #f1f2f6;
+        }
+        
+        .admin-data-table tr:hover {
+          background: #f8f9fa;
+        }
+        
+        .admin-status-badge {
+          padding: 5px 10px;
+          border-radius: 15px;
+          font-size: 0.8rem;
+          font-weight: bold;
+        }
+        
+        .admin-status-new { background: #e74c3c; color: white; }
+        .admin-status-pending { background: #f39c12; color: white; }
+        .admin-status-read { background: #27ae60; color: white; }
+        .admin-status-approved { background: #27ae60; color: white; }
+        .admin-status-rejected { background: #e74c3c; color: white; }
+        
+        .admin-btn {
+          padding: 5px 10px;
+          border: none;
+          border-radius: 3px;
+          cursor: pointer;
+          font-size: 0.8rem;
+          transition: all 0.3s ease;
+          margin: 2px;
+        }
+        
+        .admin-btn-approve {
+          background: #27ae60;
+          color: white;
+        }
+        
+        .admin-btn-reject {
+          background: #e74c3c;
+          color: white;
+        }
+        
+        .admin-btn-view {
+          background: #3498db;
+          color: white;
+        }
+        
+        .admin-btn-delete {
+          background: #95a5a6;
+          color: white;
+        }
+        
+        .admin-btn:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+      </style>
+      
+    </section><!-- /Admin Panel Section -->
+
+  </main>
+
+  <footer id="footer" class="footer position-relative" style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 30%, #3b6ecd 60%, #5a7ddb 100%); color: white; box-shadow: 0 -8px 30px rgba(30, 60, 114, 0.4); position: relative; overflow: hidden; font-family: 'Mehr Nastaliq Web', 'Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu', serif;">
+    <!-- Light Effects -->
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(255, 193, 7, 0.1) 0%, transparent 50%), radial-gradient(circle at 40% 70%, rgba(255, 255, 255, 0.05) 0%, transparent 50%); pointer-events: none;"></div>
+    <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: conic-gradient(from 0deg, transparent, rgba(255, 255, 255, 0.03), transparent, rgba(255, 193, 7, 0.02), transparent); animation: rotate 20s linear infinite; pointer-events: none;"></div>
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename" style="color: white; font-size: 1.5rem; font-weight: 700; font-family: 'Mehr Nastaliq Web', serif;">ورچوئل اسلامک یونیورسٹی</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 8px; font-family: 'Mehr Nastaliq Web', serif;">رائل ایونیو، سرگودھا</p>
+            <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 15px; font-family: 'Mehr Nastaliq Web', serif;">پنجاب، پاکستان</p>
+            <p class="mt-3" style="color: rgba(255, 255, 255, 0.8); margin-bottom: 8px; font-family: 'Mehr Nastaliq Web', serif;"><strong style="color: #FFC107; font-family: 'Mehr Nastaliq Web', serif;">فون:</strong> <span dir="ltr">+92 (345) 555-6654</span></p>
+            <p style="color: rgba(255, 255, 255, 0.8); font-family: 'Mehr Nastaliq Web', serif;"><strong style="color: #FFC107; font-family: 'Mehr Nastaliq Web', serif;">ای میل:</strong> <span>info@virtualislamicuniversity.com</span></p>
+          </div>
+          <div class="social-links d-flex mt-4">
+            <a href="https://www.youtube.com/@viupak/videos" target="_blank" style="background: #FF0000; color: white; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; margin-left: 10px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 6px 20px rgba(255, 0, 0, 0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(255, 0, 0, 0.3)';"><i class="bi bi-youtube"></i></a>
+            <a href="https://www.facebook.com/viupak" target="_blank" style="background: #1877F2; color: white; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; margin-left: 10px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(24, 119, 242, 0.3);" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 6px 20px rgba(24, 119, 242, 0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(24, 119, 242, 0.3)';"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/viupak/" target="_blank" style="background: linear-gradient(45deg, #F56040, #E1306C, #833AB4); color: white; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; margin-left: 10px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(225, 48, 108, 0.3);" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 6px 20px rgba(225, 48, 108, 0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(225, 48, 108, 0.3)';"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4 style="color: white; font-weight: 600; margin-bottom: 20px; font-family: 'Mehr Nastaliq Web', serif;">مفید لنکس</h4>
+          <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 10px;"><a href="#hero" style="color: rgba(255, 255, 255, 0.8); text-decoration: none; transition: color 0.3s ease; font-family: 'Mehr Nastaliq Web', serif;">پہلا صفحہ</a></li>
+            <li style="margin-bottom: 10px;"><a href="#about" style="color: rgba(255, 255, 255, 0.8); text-decoration: none; transition: color 0.3s ease; font-family: 'Mehr Nastaliq Web', serif;">تعارف</a></li>
+            <li style="margin-bottom: 10px;"><a href="#courses" style="color: rgba(255, 255, 255, 0.8); text-decoration: none; transition: color 0.3s ease; font-family: 'Mehr Nastaliq Web', serif;">کورسز</a></li>
+            <li style="margin-bottom: 10px;"><a href="#contact" style="color: rgba(255, 255, 255, 0.8); text-decoration: none; transition: color 0.3s ease; font-family: 'Mehr Nastaliq Web', serif;">رابطہ</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4 style="color: white; font-weight: 600; margin-bottom: 20px;">کورسز</h4>
+          <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 10px;"><a href="courses.html" style="color: rgba(255, 255, 255, 0.8); text-decoration: none; transition: color 0.3s ease;">فہم القرآن</a></li>
+            <li style="margin-bottom: 10px;"><a href="courses.html" style="color: rgba(255, 255, 255, 0.8); text-decoration: none; transition: color 0.3s ease;">اللغة العربية</a></li>
+            <li style="margin-bottom: 10px;"><a href="courses.html" style="color: rgba(255, 255, 255, 0.8); text-decoration: none; transition: color 0.3s ease;">علوم الدین</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-12 footer-newsletter">
+          <h4 style="color: white; font-weight: 600;">واٹس ایپ چینل</h4>
+          <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.6;">ہماری تازہ خبروں اور اپڈیٹس کے لیے واٹس ایپ چینل میں شامل ہوں</p>
+          <div style="margin-top: 20px;">
+            <a href="https://whatsapp.com/channel/0029Va9jzZ3IHphQSgtwkJ0K" target="_blank" style="background: linear-gradient(45deg, #25D366, #128C7E); color: white; padding: 15px 30px; border-radius: 25px; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);">
+              <i class="bi bi-whatsapp" style="font-size: 1.2rem;"></i>
+              چینل میں شامل ہوں
+            </a>
+          </div>
+          <p style="color: rgba(255, 255, 255, 0.6); font-size: 0.9rem; margin-top: 15px; line-height: 1.4;">فوری اپڈیٹس اور اہم اعلانات کے لیے</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4" style="position: relative; z-index: 10;">
+      <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 10px;">© <span>کاپی رائٹ</span> <strong class="px-1 sitename" style="color: #FFC107;">ورچوئل اسلامک یونیورسٹی</strong> <span>تمام حقوق محفوظ ہیں</span></p>
+      <div class="credits" style="color: rgba(255, 255, 255, 0.6);">
+        ڈیزائن <a href="#" style="color: #FFC107; text-decoration: none;">VIU Team</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files with CDN Fallbacks -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" onerror="this.onerror=null; this.src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js'"></script>
+  <!-- PHP validation script removed for Flask backend -->
+  <script src="assets/vendor/aos/aos.js" onerror="this.onerror=null; this.src='https://unpkg.com/aos@2.3.1/dist/aos.js'"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js" onerror="this.onerror=null; this.src='https://cdn.jsdelivr.net/gh/biati-digital/glightbox/dist/js/glightbox.min.js'"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js" onerror="this.onerror=null; this.src='https://cdn.jsdelivr.net/npm/@srexi/purecounterjs/dist/purecounter_vanilla.js'"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js" onerror="this.onerror=null; this.src='https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js'"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="static/js/form-handler.js"></script>
+  <script src="assets/js/faculty-handler.js"></script>
+  
+  <!-- Mobile Navigation JavaScript -->
+  <script>
+    // Mobile Navigation Toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+      const body = document.body;
+      
+      // Function to close mobile navigation
+      function closeMobileNav() {
+        body.classList.remove('mobile-nav-active');
+        body.style.overflow = '';
+        body.style.position = '';
+        body.style.width = '';
+      }
+      
+      // Function to open mobile navigation
+      function openMobileNav() {
+        body.classList.add('mobile-nav-active');
+        body.style.overflow = 'hidden';
+        body.style.position = 'fixed';
+        body.style.width = '100%';
+      }
+      
+      // Mobile navigation toggle button
+      if (mobileNavToggle) {
+        mobileNavToggle.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          
+          if (body.classList.contains('mobile-nav-active')) {
+            closeMobileNav();
+          } else {
+            openMobileNav();
+          }
+        });
+      }
+      
+      // Handle dropdown toggles in mobile navigation
+      function setupMobileDropdowns() {
+        const dropdowns = document.querySelectorAll('.navmenu .dropdown');
+        dropdowns.forEach(dropdown => {
+          const toggle = dropdown.querySelector('.dropdown-toggle');
+          const menu = dropdown.querySelector('.dropdown-menu');
+          
+          if (toggle && menu) {
+            toggle.addEventListener('click', function(e) {
+              if (window.innerWidth <= 1199) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                // Close other dropdowns
+                dropdowns.forEach(otherDropdown => {
+                  if (otherDropdown !== dropdown) {
+                    otherDropdown.classList.remove('show');
+                  }
+                });
+                
+                // Toggle current dropdown
+                dropdown.classList.toggle('show');
+                toggle.setAttribute('aria-expanded', dropdown.classList.contains('show'));
+              }
+            });
+          }
+        });
+      }
+      
+      // Setup mobile dropdowns
+      setupMobileDropdowns();
+      
+      // Close mobile nav when clicking on non-dropdown links
+      function handleMobileNavLinks() {
+        const navLinks = document.querySelectorAll('.navmenu a:not(.dropdown-toggle)');
+        navLinks.forEach(link => {
+          link.addEventListener('click', function() {
+            if (body.classList.contains('mobile-nav-active')) {
+              closeMobileNav();
+            }
+          });
+        });
+      }
+      
+      // Setup mobile nav link handlers
+      handleMobileNavLinks();
+      
+      // Close mobile nav when clicking outside
+      document.addEventListener('click', function(e) {
+        if (body.classList.contains('mobile-nav-active') && 
+            !e.target.closest('.navmenu') && 
+            !e.target.closest('.mobile-nav-toggle')) {
+          closeMobileNav();
+        }
+      });
+      
+      // Handle resize events
+      window.addEventListener('resize', function() {
+        if (window.innerWidth > 1199 && body.classList.contains('mobile-nav-active')) {
+          closeMobileNav();
+        }
+      });
+      
+      // Prevent scroll on mobile nav when active
+      window.addEventListener('scroll', function() {
+        if (body.classList.contains('mobile-nav-active')) {
+          window.scrollTo(0, 0);
+        }
+      });
+      
+      // Handle escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && body.classList.contains('mobile-nav-active')) {
+          closeMobileNav();
+        }
+      });
+    });
+  </script>
+  
+  <!-- Image Slider JavaScript -->
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const indicators = document.querySelectorAll('.indicator');
+    const totalSlides = slides.length;
+    
+    function showSlide(index) {
+      // Remove active class from all slides and indicators
+      slides.forEach(slide => slide.classList.remove('active'));
+      indicators.forEach(indicator => indicator.classList.remove('active'));
+      
+      // Add active class to current slide and indicator
+      slides[index].classList.add('active');
+      indicators[index].classList.add('active');
+      
+      currentSlide = index;
+    }
+    
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      showSlide(currentSlide);
+    }
+    
+    // Auto slide every 4 seconds
+    setInterval(nextSlide, 4000);
+    
+    // Initialize first slide
+    showSlide(0);
+    
+    // Transparent Navbar Scroll Effect
+    window.addEventListener('scroll', function() {
+      const header = document.getElementById('header');
+      if (window.scrollY > 100) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+    
+    // Function to show animated popup
+    function showSuccessPopup(message) {
+      // Create popup element
+      const popup = document.createElement('div');
+      popup.className = 'success-popup';
+      popup.innerHTML = `
+        <div class="popup-content">
+          <div class="popup-icon">
+            <i class="bi bi-check-circle-fill"></i>
+          </div>
+          <div class="popup-message">
+            ${message}
+          </div>
+          <button class="popup-close" onclick="closeSuccessPopup()">
+            <i class="bi bi-x"></i>
+          </button>
+        </div>
+      `;
+      
+      // Add popup styles
+      const style = document.createElement('style');
+      style.textContent = `
+        .success-popup {
+          position: fixed;
+          bottom: 30px;
+          left: 30px;
+          z-index: 10000;
+          opacity: 0;
+          transform: translateY(100%) scale(0.8);
+          animation: professionalSlideUp 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+        
+        .popup-content {
+          background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+          padding: 24px 28px;
+          border-radius: 16px;
+          text-align: right;
+          color: white;
+          position: relative;
+          max-width: 400px;
+          width: auto;
+          min-width: 300px;
+          box-shadow: 
+            0 20px 40px rgba(22, 163, 74, 0.3),
+            0 8px 16px rgba(0, 0, 0, 0.15),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2);
+          border: 1px solid rgba(255, 255, 255, 0.15);
+          backdrop-filter: blur(10px);
+          overflow: hidden;
+        }
+        
+        .popup-content::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+          animation: shine 2s ease-in-out infinite;
+        }
+        
+        .popup-icon {
+          font-size: 2rem;
+          color: white;
+          margin-left: 15px;
+          display: inline-block;
+          animation: professionalBounce 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.3s both;
+          filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+        }
+        
+        .popup-message {
+          font-size: 1.1rem;
+          font-weight: 600;
+          line-height: 1.5;
+          margin: 0;
+          font-family: 'Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu', serif;
+          animation: professionalFadeIn 0.5s ease 0.4s both;
+          display: inline-block;
+          text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        
+        .popup-close {
+          position: absolute;
+          top: 12px;
+          right: 12px;
+          background: rgba(255, 255, 255, 0.15);
+          border: none;
+          color: white;
+          width: 28px;
+          height: 28px;
+          border-radius: 50%;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1rem;
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          opacity: 0.8;
+          backdrop-filter: blur(5px);
+        }
+        
+        .popup-close:hover {
+          background: rgba(255, 255, 255, 0.25);
+          opacity: 1;
+          transform: scale(1.1) rotate(90deg);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        @keyframes professionalSlideUp {
+          0% {
+            transform: translateY(100%) scale(0.8);
+            opacity: 0;
+          }
+          60% {
+            transform: translateY(-10px) scale(1.02);
+            opacity: 0.9;
+          }
+          100% {
+            transform: translateY(0) scale(1);
+            opacity: 1;
+          }
+        }
+        
+        @keyframes professionalBounce {
+          0% {
+            transform: scale(0) rotate(-180deg);
+            opacity: 0;
+          }
+          50% {
+            transform: scale(1.2) rotate(-90deg);
+            opacity: 0.8;
+          }
+          100% {
+            transform: scale(1) rotate(0deg);
+            opacity: 1;
+          }
+        }
+        
+        @keyframes professionalFadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(20px) scale(0.95);
+            filter: blur(2px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            filter: blur(0);
+          }
+        }
+        
+        @keyframes shine {
+          0% {
+            left: -100%;
+          }
+          50% {
+            left: 100%;
+          }
+          100% {
+            left: 100%;
+          }
+        }
+        
+        @keyframes professionalSlideDown {
+          0% {
+            transform: translateY(0) scale(1);
+            opacity: 1;
+          }
+          100% {
+            transform: translateY(100%) scale(0.8);
+            opacity: 0;
+          }
+        }
+        
+        .success-popup.closing {
+          animation: professionalSlideDown 0.4s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards;
+        }
+        
+        .success-popup.closing .popup-content {
+          transform: scale(0.95);
+          opacity: 0.7;
+        }
+        
+        @media (max-width: 768px) {
+          .success-popup {
+            bottom: 20px;
+            right: 20px;
+            left: 20px;
+          }
+          
+          .popup-content {
+            padding: 20px 24px;
+            max-width: none;
+            min-width: auto;
+            width: 100%;
+          }
+          
+          .popup-icon {
+            font-size: 1.8rem;
+            margin-left: 12px;
+          }
+          
+          .popup-message {
+            font-size: 1rem;
+          }
+          
+          .popup-close {
+            width: 26px;
+            height: 26px;
+            font-size: 0.9rem;
+          }
+        }
+        
+        @media (max-width: 480px) {
+          .success-popup {
+            bottom: 15px;
+            right: 15px;
+            left: 15px;
+          }
+          
+          .popup-content {
+            padding: 18px 20px;
+          }
+        }
+      `;
+      
+      // Add styles to head
+      document.head.appendChild(style);
+      
+      // Add popup to body
+      document.body.appendChild(popup);
+      
+      // Auto close after 8 seconds
+      setTimeout(() => {
+        closeSuccessPopup();
+      }, 8000);
+    }
+    
+    // Function to close popup
+    function closeSuccessPopup() {
+      const popup = document.querySelector('.success-popup');
+      if (popup) {
+        popup.classList.add('closing');
+        setTimeout(() => {
+          popup.remove();
+        }, 300);
+      }
+    }
+    
+    // Like functionality for courses
+    function toggleLike(heartElement, courseId) {
+      const likeCountElement = document.getElementById(`like-count-${courseId}`);
+      const currentCount = parseInt(likeCountElement.textContent);
+      
+      // Check if already liked (stored in localStorage)
+      const isLiked = localStorage.getItem(`liked-${courseId}`) === 'true';
+      
+      if (isLiked) {
+        // Unlike the course
+        likeCountElement.textContent = currentCount - 1;
+        heartElement.style.color = '#6c757d'; // Gray color
+        heartElement.classList.remove('bi-heart-fill');
+        heartElement.classList.add('bi-heart');
+        localStorage.setItem(`liked-${courseId}`, 'false');
+        
+        // Animation for unlike
+        heartElement.style.transform = 'scale(0.8)';
+        setTimeout(() => {
+          heartElement.style.transform = 'scale(1)';
+        }, 150);
+      } else {
+        // Like the course
+        likeCountElement.textContent = currentCount + 1;
+        heartElement.style.color = '#dc3545'; // Red color
+        heartElement.classList.remove('bi-heart');
+        heartElement.classList.add('bi-heart-fill');
+        localStorage.setItem(`liked-${courseId}`, 'true');
+        
+        // Animation for like
+        heartElement.style.transform = 'scale(1.3)';
+        heartElement.style.filter = 'drop-shadow(0 0 10px rgba(220, 53, 69, 0.5))';
+        setTimeout(() => {
+          heartElement.style.transform = 'scale(1)';
+          heartElement.style.filter = 'none';
+        }, 200);
+        
+        // Show a small animation effect
+        createLikeEffect(heartElement);
+      }
+    }
+    
+    // Create floating heart effect
+    function createLikeEffect(heartElement) {
+      const floatingHeart = document.createElement('i');
+      floatingHeart.className = 'bi bi-heart-fill';
+      floatingHeart.style.cssText = `
+        position: absolute;
+        color: #dc3545;
+        font-size: 1.2rem;
+        pointer-events: none;
+        z-index: 1000;
+        animation: floatUp 1s ease-out forwards;
+      `;
+      
+      // Position relative to the heart
+      const rect = heartElement.getBoundingClientRect();
+      floatingHeart.style.left = rect.left + 'px';
+      floatingHeart.style.top = rect.top + 'px';
+      
+      document.body.appendChild(floatingHeart);
+      
+      // Remove after animation
+      setTimeout(() => {
+        floatingHeart.remove();
+      }, 1000);
+    }
+    
+    // Initialize like states on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      const courses = ['quran', 'arabic', 'islamic'];
+      courses.forEach(courseId => {
+        const isLiked = localStorage.getItem(`liked-${courseId}`) === 'true';
+        const heartElement = document.querySelector(`[data-course="${courseId}"]`);
+        
+        if (isLiked && heartElement) {
+          heartElement.style.color = '#dc3545';
+          heartElement.classList.remove('bi-heart');
+          heartElement.classList.add('bi-heart-fill');
+        }
+      });
+    });
+    
+    // Contact Form Submission is handled by form-handler.js
+    // This ensures consistent popup behavior across all forms
+    
+    // ==================== ADMIN FUNCTIONALITY ====================
+    
+    const API_BASE = 'http://127.0.0.1:8000/api';
+    
+    // Check admin authentication status on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      checkAdminAuthentication();
+    });
+    
+    // Function to check if admin is authenticated
+    async function checkAdminAuthentication() {
+      try {
+        const response = await fetch(`${API_BASE}/admin/check-auth`);
+        const data = await response.json();
+        
+        if (data.success && data.authenticated) {
+          // Admin is authenticated, show admin elements
+          showAdminElements();
+          // Load admin data
+          loadAdminStats();
+          loadAdminApplications();
+        } else {
+          // Admin is not authenticated, hide admin elements
+          hideAdminElements();
+        }
+      } catch (error) {
+        console.log('Admin auth check failed:', error);
+        hideAdminElements();
+      }
+    }
+    
+    // Show admin elements
+    function showAdminElements() {
+      document.getElementById('adminLoginBtn').style.display = 'none';
+      document.getElementById('adminPanelBtn').style.display = 'inline-block';
+      document.getElementById('logoutBtn').style.display = 'inline-block';
+      
+      // Style the admin buttons
+      const adminPanelBtn = document.getElementById('adminPanelBtn');
+      const logoutBtn = document.getElementById('logoutBtn');
+      
+      adminPanelBtn.style.cssText = `
+        background: linear-gradient(135deg, #3498db, #2980b9);
+        color: white;
+        padding: 8px 20px;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 14px;
+        text-decoration: none;
+        margin-right: 10px;
+        transition: all 0.3s ease;
+        box-shadow: 0 3px 12px rgba(52, 152, 219, 0.4);
+        display: inline-block;
+      `;
+      
+      logoutBtn.style.cssText = `
+        background: linear-gradient(135deg, #e74c3c, #c0392b);
+        color: white;
+        padding: 8px 20px;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 14px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 3px 12px rgba(231, 76, 60, 0.4);
+        display: inline-block;
+      `;
+      
+      // Add hover effects
+      adminPanelBtn.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-2px)';
+        this.style.boxShadow = '0 6px 20px rgba(52, 152, 219, 0.6)';
+      });
+      
+      adminPanelBtn.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0)';
+        this.style.boxShadow = '0 3px 12px rgba(52, 152, 219, 0.4)';
+      });
+      
+      logoutBtn.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-2px)';
+        this.style.boxShadow = '0 6px 20px rgba(231, 76, 60, 0.6)';
+      });
+      
+      logoutBtn.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0)';
+        this.style.boxShadow = '0 3px 12px rgba(231, 76, 60, 0.4)';
+      });
+      
+      // Handle admin panel button click
+      adminPanelBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        showAdminPanel();
+      });
+    }
+    
+    // Hide admin elements
+    function hideAdminElements() {
+      document.getElementById('adminLoginBtn').style.display = 'inline-block';
+      document.getElementById('adminPanelBtn').style.display = 'none';
+      document.getElementById('logoutBtn').style.display = 'none';
+      document.getElementById('admin-panel').style.display = 'none';
+    }
+    
+    // Show admin panel section
+    function showAdminPanel() {
+      const adminPanel = document.getElementById('admin-panel');
+      adminPanel.style.display = 'block';
+      
+      // Smooth scroll to admin panel
+      adminPanel.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+      
+      // Load latest data
+      loadAdminStats();
+      loadAdminApplications();
+    }
+    
+    // Load admin statistics
+    async function loadAdminStats() {
+      try {
+        const response = await fetch(`${API_BASE}/admin/stats`);
+        const data = await response.json();
+        
+        if (data.success) {
+          const stats = data.stats;
+          document.getElementById('admin-total-applications').textContent = stats.total_applications || 0;
+          document.getElementById('admin-pending-applications').textContent = stats.pending_applications || 0;
+          document.getElementById('admin-total-contacts').textContent = stats.total_contacts || 0;
+          document.getElementById('admin-new-contacts').textContent = stats.new_contacts || 0;
+        }
+      } catch (error) {
+        console.error('Error loading admin stats:', error);
+      }
+    }
+    
+    // Load admin applications
+    async function loadAdminApplications() {
+      const contentDiv = document.getElementById('admin-applications-content');
+      contentDiv.innerHTML = '<div style="text-align: center; padding: 40px; color: #666;">Loading applications...</div>';
+      
+      try {
+        const response = await fetch(`${API_BASE}/admin/applications`);
+        const data = await response.json();
+        
+        if (data.success && data.applications.length > 0) {
+          let html = `
+            <table class="admin-data-table">
+              <thead>
+                <tr>
+                  <th>Application #</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Course</th>
+                  <th>Date</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+          `;
+          
+          data.applications.forEach(app => {
+            const date = new Date(app.application_date).toLocaleDateString();
+            const courseNames = {
+              'quran': 'فہم القرآن',
+              'arabic': 'اللغة العربية',
+              'islamic-studies': 'علوم الدین'
+            };
+            const courseName = courseNames[app.course] || app.course;
+            
+            const statusNames = {
+              'new': 'نیا',
+              'pending': 'زیر التواء',
+              'approved': 'منظور',
+              'rejected': 'مسترد'
+            };
+            const statusName = statusNames[app.status] || app.status;
+            
+            html += `
+              <tr>
+                <td><strong>${app.application_number}</strong></td>
+                <td>${app.first_name} ${app.last_name}</td>
+                <td>${app.email}</td>
+                <td>${courseName}</td>
+                <td>${date}</td>
+                <td><span class="admin-status-badge admin-status-${app.status}">${statusName}</span></td>
+                <td>
+                  <button class="admin-btn admin-btn-view" onclick="viewAdminApplication(${app.id})" title="View Details">👁️</button>
+                  ${app.status === 'pending' ? `
+                    <button class="admin-btn admin-btn-approve" onclick="approveAdminApplication(${app.id})" title="Approve">✅</button>
+                    <button class="admin-btn admin-btn-reject" onclick="rejectAdminApplication(${app.id})" title="Reject">❌</button>
+                  ` : ''}
+                  <button class="admin-btn admin-btn-delete" onclick="deleteAdminApplication(${app.id})" title="Delete">🗑️</button>
+                </td>
+              </tr>
+            `;
+          });
+          
+          html += '</tbody></table>';
+          contentDiv.innerHTML = html;
+        } else if (data.success && data.applications.length === 0) {
+          contentDiv.innerHTML = '<div style="text-align: center; padding: 40px; color: #666;">📝 No applications submitted yet</div>';
+        } else {
+          contentDiv.innerHTML = '<div style="text-align: center; padding: 40px; color: #e74c3c;">Error loading applications</div>';
+        }
+      } catch (error) {
+        contentDiv.innerHTML = '<div style="text-align: center; padding: 40px; color: #e74c3c;">Network error - Make sure backend is running</div>';
+        console.error('Error loading applications:', error);
+      }
+    }
+    
+    // Load admin contacts
+    async function loadAdminContacts() {
+      const contentDiv = document.getElementById('admin-contacts-content');
+      contentDiv.innerHTML = '<div style="text-align: center; padding: 40px; color: #666;">Loading contacts...</div>';
+      
+      try {
+        const response = await fetch(`${API_BASE}/admin/contacts`);
+        const data = await response.json();
+        
+        if (data.success && data.contacts.length > 0) {
+          let html = `
+            <table class="admin-data-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Subject</th>
+                  <th>Message</th>
+                  <th>Date</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+          `;
+          
+          data.contacts.forEach(contact => {
+            const date = new Date(contact.submission_date).toLocaleDateString();
+            const message = contact.message.length > 50 ? 
+                          contact.message.substring(0, 50) + '...' : 
+                          contact.message;
+            
+            const statusNames = {
+              'new': 'نیا',
+              'read': 'پڑھا گیا'
+            };
+            const statusName = statusNames[contact.status] || contact.status;
+            
+            html += `
+              <tr>
+                <td>${contact.id}</td>
+                <td>${contact.name}</td>
+                <td>${contact.email}</td>
+                <td>${contact.subject}</td>
+                <td>${message}</td>
+                <td>${date}</td>
+                <td><span class="admin-status-badge admin-status-${contact.status}">${statusName}</span></td>
+                <td>
+                  <button class="admin-btn admin-btn-view" onclick="viewAdminContact(${contact.id})" title="View Full Message">👁️</button>
+                  ${contact.status === 'new' ? `
+                    <button class="admin-btn admin-btn-approve" onclick="markAdminContactAsRead(${contact.id})" title="Mark as Read">📖</button>
+                  ` : ''}
+                  <button class="admin-btn admin-btn-delete" onclick="deleteAdminContact(${contact.id})" title="Delete">🗑️</button>
+                </td>
+              </tr>
+            `;
+          });
+          
+          html += '</tbody></table>';
+          contentDiv.innerHTML = html;
+        } else if (data.success && data.contacts.length === 0) {
+          contentDiv.innerHTML = '<div style="text-align: center; padding: 40px; color: #666;">📧 No contact messages yet</div>';
+        } else {
+          contentDiv.innerHTML = '<div style="text-align: center; padding: 40px; color: #e74c3c;">Error loading contacts</div>';
+        }
+      } catch (error) {
+        contentDiv.innerHTML = '<div style="text-align: center; padding: 40px; color: #e74c3c;">Network error - Make sure backend is running</div>';
+        console.error('Error loading contacts:', error);
+      }
+    }
+    
+    // Admin tab switching
+    function showAdminTab(tabName) {
+      // Hide all tab contents
+      document.querySelectorAll('.admin-tab-content').forEach(tab => {
+        tab.style.display = 'none';
+      });
+      
+      // Remove active class from all tabs
+      document.querySelectorAll('.admin-tab-btn').forEach(tab => {
+        tab.classList.remove('active');
+      });
+      
+      // Show selected tab content
+      document.getElementById(`admin-${tabName}`).style.display = 'block';
+      
+      // Add active class to clicked tab
+      event.target.classList.add('active');
+      
+      // Load data for the selected tab
+      if (tabName === 'applications') {
+        loadAdminApplications();
+      } else if (tabName === 'contacts') {
+        loadAdminContacts();
+      }
+    }
+    
+    // Admin action functions (simplified versions)
+    function viewAdminApplication(appId) {
+      alert('Application details view - Redirect to full dashboard for detailed view');
+      window.open('admin_dashboard.html', '_blank');
+    }
+    
+    function approveAdminApplication(appId) {
+      if (confirm('Are you sure you want to approve this application?')) {
+        performAdminAction(`${API_BASE}/admin/applications/${appId}/approve`, 'POST', 'Application approved successfully!');
+      }
+    }
+    
+    function rejectAdminApplication(appId) {
+      if (confirm('Are you sure you want to reject this application?')) {
+        performAdminAction(`${API_BASE}/admin/applications/${appId}/reject`, 'POST', 'Application rejected successfully!');
+      }
+    }
+    
+    function deleteAdminApplication(appId) {
+      if (confirm('Are you sure you want to delete this application? This action cannot be undone.')) {
+        performAdminAction(`${API_BASE}/admin/applications/${appId}`, 'DELETE', 'Application deleted successfully!');
+      }
+    }
+    
+    function viewAdminContact(contactId) {
+      alert('Contact message details view - Redirect to full dashboard for detailed view');
+      window.open('admin_dashboard.html', '_blank');
+    }
+    
+    function markAdminContactAsRead(contactId) {
+      performAdminAction(`${API_BASE}/admin/contacts/${contactId}/mark-read`, 'POST', 'Message marked as read!');
+    }
+    
+    function deleteAdminContact(contactId) {
+      if (confirm('Are you sure you want to delete this contact message? This action cannot be undone.')) {
+        performAdminAction(`${API_BASE}/admin/contacts/${contactId}`, 'DELETE', 'Contact deleted successfully!');
+      }
+    }
+    
+    // Perform admin actions
+    async function performAdminAction(url, method, successMessage) {
+      try {
+        const response = await fetch(url, { 
+          method,
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        });
+        
+        const data = await response.json();
+        
+        if (data.success) {
+          showSuccessPopup(successMessage);
+          loadAdminStats();
+          loadAdminApplications();
+          loadAdminContacts();
+        } else {
+          alert('Error: ' + (data.error || data.message || 'Unknown error occurred'));
+        }
+      } catch (error) {
+        console.error('Error performing admin action:', error);
+        alert('Network error occurred. Please try again.');
+      }
+    }
+    
+    // Admin logout function
+    async function logoutAdmin() {
+      if (confirm('Are you sure you want to logout?')) {
+        try {
+          const response = await fetch(`${API_BASE}/admin/logout`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            }
+          });
+          
+          const data = await response.json();
+          
+          if (data.success) {
+            showSuccessPopup('Successfully logged out!');
+            hideAdminElements();
+          } else {
+            alert('Logout failed: ' + (data.error || 'Unknown error'));
+          }
+        } catch (error) {
+          console.error('Logout error:', error);
+          // Even if logout fails on server, hide admin elements
+          hideAdminElements();
+          showSuccessPopup('Logged out locally!');
+        }
+      }
+    }
+    
+    // Periodically check admin authentication (every 5 minutes)
+    setInterval(checkAdminAuthentication, 300000);
+    
+    // Faculty navigation function
+    function goToFaculty(facultyId) {
+      // Navigate to faculty.html with faculty ID as hash
+      window.location.href = `faculty.html#${facultyId}`;
+    }
+    
+    
+  </script>
+  
+  <script src="assets/js/faculty-handler.js"></script>
+  <script src="assets/js/contact-new.js"></script>
+
+</body>
+
+</html>

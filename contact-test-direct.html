@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form Direct Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f8f9fa;
+            direction: rtl;
+        }
+        .test-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin: 20px 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            text-align: right;
+        }
+        .btn-submit {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 16px 32px;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+        .btn-submit:hover {
+            background: linear-gradient(135deg, #2a5298 0%, #3b6ecd 100%);
+            transform: translateY(-2px);
+        }
+        .btn-submit:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+        .status {
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+        h1, h2 {
+            color: #1e3c72;
+            text-align: center;
+        }
+        .debug-info {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: monospace;
+            font-size: 12px;
+            margin: 10px 0;
+            text-align: left;
+            direction: ltr;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-card">
+        <h1>🧪 رابطہ فارم ڈائریکٹ ٹیسٹ</h1>
+        <div class="info">
+            یہ فارم فلاسک سرور کے ذریعے براہ راست کام کرتا ہے۔
+        </div>
+        
+        <div id="debug-info" class="debug-info"></div>
+    </div>
+
+    <div class="test-card">
+        <form id="contactForm">
+            <input type="text" name="name" class="form-control" placeholder="آپ کا نام" value="Muhammad Ahad" required>
+            <input type="email" name="email" class="form-control" placeholder="آپ کا ای میل" value="ahadarshad2001@gmail.com" required>
+            <input type="text" name="subject" class="form-control" placeholder="موضوع" value="Direct Flask Test" required>
+            <textarea name="message" class="form-control" rows="5" placeholder="پیغام" required>This is a direct test through Flask server to verify database connectivity.</textarea>
+            <button type="submit" class="btn-submit">
+                پیغام بھیجیں
+            </button>
+        </form>
+        
+        <div id="result"></div>
+    </div>
+
+    <script>
+        // Debug info
+        function updateDebugInfo() {
+            const debugDiv = document.getElementById('debug-info');
+            debugDiv.innerHTML = `
+                <strong>Debug Information:</strong><br>
+                Current URL: ${window.location.href}<br>
+                API URL: ${window.location.origin}/api/submit-contact<br>
+                Protocol: ${window.location.protocol}<br>
+                Host: ${window.location.host}<br>
+                Time: ${new Date().toLocaleString()}
+            `;
+        }
+        
+        // Initialize debug info
+        updateDebugInfo();
+        
+        // Form handler (same logic as main website)
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const resultDiv = document.getElementById('result');
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            
+            // Show loading state
+            submitBtn.innerHTML = 'بھیجا جا رہا ہے...';
+            submitBtn.disabled = true;
+            resultDiv.innerHTML = '<div class="info">📤 فارم جمع کیا جا رہا ہے...</div>';
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                subject: formData.get('subject'),
+                message: formData.get('message')
+            };
+            
+            console.log('Form data being sent:', data);
+            
+            try {
+                // Use relative URL since we're on the same server
+                const apiUrl = '/api/submit-contact';
+                console.log('Sending request to:', apiUrl);
+                
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+                
+                console.log('Response status:', response.status);
+                console.log('Response headers:', [...response.headers.entries()]);
+                
+                const result = await response.json();
+                console.log('Response data:', result);
+                
+                if (result.success) {
+                    resultDiv.innerHTML = `
+                        <div class="success">
+                            ✅ <strong>کامیابی!</strong> آپ کا پیغام کامیابی سے بھیج دیا گیا<br>
+                            <strong>Submission ID:</strong> ${result.submission_id}<br>
+                            <strong>یہ ثابت کرتا ہے کہ ڈیٹابیس میں ڈیٹا محفوظ ہو رہا ہے!</strong>
+                        </div>
+                    `;
+                    
+                    // Reset form
+                    this.reset();
+                    this.querySelector('input[name="name"]').focus();
+                    
+                } else {
+                    resultDiv.innerHTML = `
+                        <div class="error">
+                            ⚠️ <strong>سرور ایرر:</strong> ${result.error}
+                        </div>
+                    `;
+                }
+                
+            } catch (error) {
+                console.error('Network error:', error);
+                resultDiv.innerHTML = `
+                    <div class="error">
+                        ❌ <strong>نیٹ ورک ایرر:</strong> ${error.message}<br>
+                        <strong>یہی مسئلہ آپ کے اصل رابطہ فارم میں ہو رہا ہے!</strong>
+                    </div>
+                `;
+            } finally {
+                // Restore button
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }
+        });
+        
+        // Test server connectivity on page load
+        async function testConnectivity() {
+            try {
+                const response = await fetch('/api');
+                const data = await response.json();
+                console.log('Server connectivity test:', data);
+                
+                if (data.message) {
+                    const debugDiv = document.getElementById('debug-info');
+                    debugDiv.innerHTML += `<br><span style="color: green;">✅ Server connectivity: OK</span>`;
+                }
+            } catch (error) {
+                console.error('Server connectivity test failed:', error);
+                const debugDiv = document.getElementById('debug-info');
+                debugDiv.innerHTML += `<br><span style="color: red;">❌ Server connectivity: Failed</span>`;
+            }
+        }
+        
+        // Run connectivity test
+        document.addEventListener('DOMContentLoaded', testConnectivity);
+    </script>
+</body>
+</html>

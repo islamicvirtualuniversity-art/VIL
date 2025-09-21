@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ڈونیشن - ورچوئل اسلامک یونیورسٹی</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mehr+Nastaliq+Web:wght@400;700&display=swap" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.rtl.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/css/main.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        /* Professional Color Scheme */
+        body {
+            font-family: 'Mehr Nastaliq Web', serif;
+            direction: rtl;
+            text-align: right;
+            background: 
+                linear-gradient(135deg, 
+                    rgba(248, 249, 250, 0.9) 0%, 
+                    rgba(233, 236, 239, 0.8) 25%, 
+                    rgba(222, 226, 230, 0.7) 50%, 
+                    rgba(206, 212, 218, 0.8) 75%, 
+                    rgba(173, 181, 189, 0.9) 100%
+                ),
+                url('assets/img/donation.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            position: relative;
+        }
+        
+        /* Professional Navbar Styling */
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #3b6ecd 100%);
+            box-shadow: 0 4px 20px rgba(30, 60, 114, 0.4);
+            backdrop-filter: blur(15px);
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .navmenu a {
+            color: white !important;
+            font-weight: 600;
+            font-family: 'Mehr Nastaliq Web', serif;
+            transition: all 0.3s ease;
+        }
+        
+        .navmenu a:hover {
+            color: #FFC107 !important;
+            text-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
+        }
+        
+        .btn-getstarted {
+            background: linear-gradient(45deg, #D84315, #FF5722);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(216, 67, 21, 0.3);
+        }
+        
+        .btn-getstarted:hover {
+            background: linear-gradient(45deg, #FF5722, #D84315);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(216, 67, 21, 0.4);
+            color: white;
+        }
+        
+        /* Donation Button Styling */
+        .btn-donation {
+            background: linear-gradient(45deg, #28a745, #20c997);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+            margin-left: 10px;
+            animation: pulseGlow 2s infinite;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+            text-decoration: none;
+        }
+        
+        .btn-donation:hover {
+            background: linear-gradient(45deg, #20c997, #17a2b8);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+            color: white;
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+        
+        @keyframes pulseGlow {
+            0%, 100% {
+                box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3), 0 0 20px rgba(40, 167, 69, 0.2);
+            }
+            50% {
+                box-shadow: 0 6px 20px rgba(40, 167, 69, 0.5), 0 0 30px rgba(40, 167, 69, 0.4);
+            }
+        }
+        
+        .page-title {
+            background: 
+                linear-gradient(135deg, 
+                    rgba(30, 60, 114, 0.9) 0%, 
+                    rgba(42, 82, 152, 0.8) 50%, 
+                    rgba(59, 110, 205, 0.9) 100%
+                ),
+                url('assets/img/donation.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            color: white;
+            text-align: center;
+            padding: 60px 0;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .page-title h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            font-family: 'Mehr Nastaliq Web', serif;
+        }
+        
+        .page-title p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            font-family: 'Mehr Nastaliq Web', serif;
+        }
+        
+        .donation-list {
+            padding: 60px 20px;
+            margin-top: 50px;
+        }
+        
+        .donation-item {
+            margin-bottom: 30px;
+            border: none;
+            border-radius: 15px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 8px 25px rgba(30, 60, 114, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .donation-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(30, 60, 114, 0.2);
+        }
+        
+        .donation-title {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #1e3c72;
+            margin-bottom: 30px;
+            margin-top: 0;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            font-family: 'Mehr Nastaliq Web', serif;
+        }
+        
+        .donation-description {
+            margin-top: 15px;
+            color: #495057;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            font-family: 'Mehr Nastaliq Web', serif;
+        }
+        
+        .whatsapp {
+            color: #25D366;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+        
+        .account-info {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 5px solid #1e3c72;
+            margin: 30px 0;
+        }
+        
+        .contact-info {
+            background: linear-gradient(135deg, #e8f5e8 0%, #d4edda 100%);
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 5px solid #25D366;
+        }
+
+        /* Footer - Professional Compact Design */
+        footer {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 30%, #3b6ecd 60%, #5a7ddb 100%);
+            color: white;
+            box-shadow: 0 -8px 30px rgba(30, 60, 114, 0.4);
+            position: relative;
+            overflow: hidden;
+            padding: 30px 0 15px;
+        }
+        
+        /* Light Effects */
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%), 
+                radial-gradient(circle at 80% 20%, rgba(255, 193, 7, 0.1) 0%, transparent 50%), 
+                radial-gradient(circle at 40% 70%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .footer-section h3 {
+            color: white;
+            font-weight: 600;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section li {
+            margin-bottom: 6px;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #FFC107;
+        }
+        
+        .footer-contact {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.4;
+        }
+        
+        .footer-contact p {
+            margin-bottom: 4px;
+            font-size: 0.9rem;
+        }
+        
+        .footer-contact strong {
+            color: #FFC107;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 15px;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 5px;
+            font-size: 0.85rem;
+        }
+        
+        .footer-bottom .sitename {
+            color: #FFC107;
+            font-weight: 700;
+        }
+        
+        .footer-bottom .credits {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.8rem;
+        }
+        
+        .footer-bottom .credits a {
+            color: #FFC107;
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Animation for Logo and Sitename */
+        @keyframes logoBounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+        
+        @keyframes textFadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .logo img {
+            animation: logoBounce 2s infinite;
+        }
+
+        .sitename {
+            animation: textSlideIn 2s ease-out, textGlow 3s ease-in-out infinite 2s;
+            animation-fill-mode: backwards;
+        }
+        
+        @keyframes textSlideIn {
+            0% {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes textGlow {
+            0%, 100% {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            }
+            50% {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.3), 0 0 10px rgba(255, 193, 7, 0.5), 0 0 20px rgba(255, 193, 7, 0.3);
+            }
+        }
+        
+        /* FORCE LOGO SIZE - Override all other styles with maximum specificity */
+        html body .header .logo img,
+        html body header .logo img,
+        html body .logo img,
+        .logo img,
+        .header .logo img,
+        header .logo img,
+        body .logo img,
+        body .header .logo img,
+        body header .logo img {
+            height: 60px !important;
+            min-height: 60px !important;
+            max-height: 60px !important;
+            width: auto !important;
+        }
+        
+        /* Mobile logo size override */
+        @media (max-width: 1199px) {
+            html body .header .logo img,
+            html body header .logo img,
+            html body .logo img,
+            .logo img,
+            .header .logo img,
+            header .logo img,
+            body .logo img,
+            body .header .logo img,
+            body header .logo img {
+                height: 55px !important;
+                min-height: 55px !important;
+                max-height: 55px !important;
+                width: auto !important;
+            }
+        }
+        
+        /* Additional override for mobile devices */
+        @media (max-width: 576px) {
+            html body .header .logo img,
+            html body header .logo img,
+            html body .logo img,
+            .logo img,
+            .header .logo img,
+            header .logo img,
+            body .logo img,
+            body .header .logo img,
+            body header .logo img {
+                height: 50px !important;
+                min-height: 50px !important;
+                max-height: 50px !important;
+                width: auto !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Professional Navbar -->
+    <header id="header" class="header d-flex align-items-center sticky-top">
+        <div class="container-fluid container-xl position-relative d-flex align-items-center">
+            <div class="logo d-flex align-items-center me-auto">
+                <img src="assets/img/Vlogo.png" alt="Virtual Islamic University Logo" style="height: 60px !important; max-height: 60px !important; min-height: 60px !important; width: auto !important; border-radius: 8px; box-shadow: 0 4px 15px rgba(30, 60, 114, 0.3); border: 2px solid rgba(255, 255, 255, 0.2);">
+                <div class="logo-text" style="margin-right: 15px;">
+                    <h1 class="sitename" style="font-size: 1.8rem; font-weight: 700; margin-bottom: 5px; text-shadow: 0 2px 4px rgba(0,0,0,0.3); color: white; font-family: 'Mehr Nastaliq Web', serif;">ورچوئل اسلامک یونیورسٹی</h1>
+                    <p style="font-size: 0.9rem; opacity: 0.9; margin: 0; color: #FFC107; font-family: 'Mehr Nastaliq Web', serif;">اسلامی تعلیم کا آن لائن مستند پلیٹ فارم</p>
+                </div>
+            </div>
+            <nav id="navmenu" class="navmenu">
+                <ul>
+                </ul>
+                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+            </nav>
+            <a href="index.html" class="btn-getstarted" style="margin-left: 10px;">
+                واپس ہوم
+            </a>
+        </div>
+    </header>
+    
+    <!-- Page Title -->
+    <section class="page-title">
+        <div class="container">
+            <h1>ڈونیشن</h1>
+            <p>تعلیمی مقاصد کے لیے آپ کی مالی مدد کی درخواست</p>
+            <div style="margin-top: 25px; font-size: 1.1rem; line-height: 1.8; opacity: 0.9; max-width: 800px; margin-left: auto; margin-right: auto;">
+                <p>• معیاری اسلامی تعلیم کو دنیا بھر میں پہنچانے کے لیے</p>
+                <p>• غریب اور مستحق طلباء کی تعلیمی مدد کے لیے</p>
+                <p>• جدید ٹیکنالوجی کے ذریعے قرآن و سنت کی تعلیم کے لیے</p>
+                <p style="font-weight: 600; color: #FFC107; margin-top: 20px;">"جو شخص علم کی طلب میں کوئی راستہ اختیار کرتا ہے، اللہ اس کے لیے جنت کا راستہ آسان کر دیتا ہے"</p>
+                <p style="font-size: 0.9rem; margin-top: 15px; opacity: 0.8;">آپ کا ہر چھوٹا سا تعاون ہزاروں طلباء کی زندگی میں تبدیلی لا سکتا ہے</p>
+            </div>
+        </div>
+    </section>
+    
+    <div class="container donation-list">
+        <div class="donation-item" data-aos="fade-up" data-aos-delay="100">
+            <h2 class="donation-title">بینک اکاؤنٹ کی تفصیلات</h2>
+            <div class="donation-description account-info">
+                <strong>Allied Bank Pakistan</strong><br>
+                <strong>Branch:</strong> Sargodha<br>
+                <strong>Account Holder:</strong> Muhammad Ejaz<br>
+                <strong>Branch Code:</strong> 0364<br>
+                <strong>Account No:</strong> 00100 184586 70031<br>
+                <strong>IBAN No:</strong> PK95 ABPA 00100 184586 70031<br>
+                <strong>Zip Code:</strong> 40100
+            </div>
+        </div>
+        
+        <div class="donation-item" data-aos="fade-up" data-aos-delay="200">
+            <h2 class="donation-title">موبائل بینکنگ</h2>
+            <div class="donation-description account-info">
+                <strong style="font-family: 'Mehr Nastaliq Web', serif;">جاز کیش / ایزی پیسہ:</strong><br>
+                <span style="font-size: 1.4rem; color: #1e3c72; font-weight: bold;">03008558957</span><br>
+                <strong>Account Name:</strong> Muhammad Ejaz
+            </div>
+        </div>
+        
+        <div class="donation-item" data-aos="fade-up" data-aos-delay="300">
+            <h2 class="donation-title">اہم ہدایات</h2>
+            <div class="donation-description contact-info">
+                <span style="font-family: 'Mehr Nastaliq Web', serif;">ادائیگی کرنے کے بعد رسید واٹس ایپ پر ضرور بھیجیں۔</span><br><br>
+                <span class="whatsapp" style="font-family: 'Mehr Nastaliq Web', serif;">واٹس ایپ نمبر:</span><br>
+                <span class="whatsapp" style="font-size: 1.5rem; font-family: 'Arial', 'Helvetica', sans-serif; direction: ltr; display: inline-block; unicode-bidi: embed; text-align: left; writing-mode: horizontal-tb; font-weight: bold; letter-spacing: 1px; background: rgba(255,255,255,0.8); padding: 5px 10px; border-radius: 5px;">+92 345 5556654</span><br><br>
+                <em style="font-family: 'Mehr Nastaliq Web', serif;">آپ کی تعاون سے ہم معیاری اسلامی تعلیم فراہم کر سکیں گے۔ جزاک اللہ خیراً</em>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <a href="index.html" style="display: flex; align-items: center; text-decoration: none; margin-bottom: 15px;">
+                        <span style="color: white; font-size: 1.3rem; font-weight: 700;">ورچوئل اسلامک یونیورسٹی</span>
+                    </a>
+                    <div class="footer-contact">
+                        <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 4px; font-size: 0.9rem;">رائل ایونیو، سرگودھا</p>
+                        <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 8px; font-size: 0.9rem;">پنجاب، پاکستان</p>
+                        <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 4px; font-size: 0.85rem;"><strong>فون:</strong> <span dir="ltr">+92 (345) 555-6654</span></p>
+                        <p style="color: rgba(255, 255, 255, 0.8); font-size: 0.85rem;"><strong>ای میل:</strong> <span>info@virtualislamicuniversity.com</span></p>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>مفید لنکس</h3>
+                    <ul>
+                        <li><a href="index.html#hero">پہلا صفحہ</a></li>
+                        <li><a href="index.html#about">تعارف</a></li>
+                        <li><a href="index.html#courses">کورسز</a></li>
+                        <li><a href="index.html#contact">رابطہ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>کورسز</h3>
+                    <ul>
+                        <li><a href="course-quran.html">فہم القرآن</a></li>
+                        <li><a href="course-arabic.html">اللغة العربية</a></li>
+                        <li><a href="course-islamic-studies.html">علوم الدین</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>واٹس ایپ چینل</h3>
+                    <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.4; font-size: 0.9rem; margin-bottom: 12px;">ہماری تازہ خبروں اور اپڈیٹس کے لیے واٹس ایپ چینل میں شامل ہوں</p>
+                    <div style="margin-top: 12px;">
+                        <a href="https://whatsapp.com/channel/0029Va9jzZ3IHphQSgtwkJ0K" target="_blank" style="background: linear-gradient(45deg, #25D366, #128C7E); color: white; padding: 10px 20px; border-radius: 20px; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3); font-size: 0.9rem;">
+                            <i class="fab fa-whatsapp" style="font-size: 1rem;"></i>
+                            چینل میں شامل ہوں
+                        </a>
+                    </div>
+                    <p style="color: rgba(255, 255, 255, 0.6); font-size: 0.8rem; margin-top: 8px; line-height: 1.3;">فوری اپڈیٹس اور اہم اعلانات کے لیے</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© <span>کاپی رائٹ</span> <strong class="sitename">ورچوئل اسلامک یونیورسٹی</strong> <span>تمام حقوق محفوظ ہیں</span></p>
+                <div class="credits">
+                    ڈیزائن <a href="#">VIU Team</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+</body>
+</html>

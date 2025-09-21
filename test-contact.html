@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Contact Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f8f9fa;
+        }
+        .form-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .btn-primary {
+            background: #1e3c72;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .btn-primary:hover {
+            background: #2a5298;
+            transform: translateY(-2px);
+        }
+        .alert {
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            display: none;
+        }
+        .alert-success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .alert-error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Test Contact Form</h2>
+        <p>This is a simple test to verify the contact form API is working.</p>
+        
+        <div id="alert" class="alert"></div>
+        
+        <form id="contactForm">
+            <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+            <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+            <input type="text" name="subject" class="form-control" placeholder="Subject" required>
+            <textarea name="message" class="form-control" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit" class="btn-primary">
+                <i class="bi bi-send"></i> Send Message
+            </button>
+        </form>
+    </div>
+
+    <script>
+        // API Configuration
+        (function(){
+            const loc = window.location;
+            const defaultApi = 'http://127.0.0.1:8000/api';
+            let base;
+            if (loc.origin && !loc.origin.startsWith('file:') && (loc.port === '' || loc.port === '8000')) {
+                base = `${loc.origin}/api`;
+            } else {
+                base = defaultApi;
+            }
+            window.API_BASE_URL = base;
+        })();
+        
+        // Form handler
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                subject: formData.get('subject'),
+                message: formData.get('message')
+            };
+            
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const alert = document.getElementById('alert');
+            
+            // Show loading state
+            submitBtn.innerHTML = '<i class="bi bi-hourglass-split"></i> Sending...';
+            submitBtn.disabled = true;
+            alert.style.display = 'none';
+            
+            try {
+                const response = await fetch(`${API_BASE_URL}/submit-contact`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    alert.className = 'alert alert-success';
+                    alert.innerHTML = `<i class="bi bi-check-circle"></i> ${result.message}`;
+                    alert.style.display = 'block';
+                    this.reset();
+                } else {
+                    alert.className = 'alert alert-error';
+                    alert.innerHTML = `<i class="bi bi-exclamation-triangle"></i> ${result.error}`;
+                    alert.style.display = 'block';
+                }
+                
+            } catch (error) {
+                console.error('Error:', error);
+                alert.className = 'alert alert-error';
+                alert.innerHTML = `<i class="bi bi-exclamation-triangle"></i> Network error: ${error.message}`;
+                alert.style.display = 'block';
+            }
+            
+            // Restore button
+            submitBtn.innerHTML = '<i class="bi bi-send"></i> Send Message';
+            submitBtn.disabled = false;
+        });
+    </script>
+</body>
+</html>

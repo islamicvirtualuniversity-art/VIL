@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form Connectivity Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f8f9fa;
+        }
+        .test-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin: 20px 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .status {
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .success { background: #d4edda; color: #155724; }
+        .error { background: #f8d7da; color: #721c24; }
+        .warning { background: #fff3cd; color: #856404; }
+        .info { background: #d1ecf1; color: #0c5460; }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 5px;
+            font-size: 16px;
+        }
+        button:hover { background: #0056b3; }
+        pre {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 12px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        h2 { color: #1e3c72; }
+    </style>
+</head>
+<body>
+    <div class="test-card">
+        <h1>🔧 Contact Form Connectivity Test</h1>
+        <div id="page-info" class="info">
+            <strong>Current Page URL:</strong> <span id="current-url"></span><br>
+            <strong>Expected API URL:</strong> <span id="api-url"></span>
+        </div>
+    </div>
+
+    <div class="test-card">
+        <h2>🚀 Quick Connectivity Tests</h2>
+        <button onclick="testServerConnection()">1. Test Server Connection</button>
+        <button onclick="testContactAPI()">2. Test Contact API</button>
+        <button onclick="clearResults()">Clear Results</button>
+        <div id="test-results"></div>
+    </div>
+
+    <div class="test-card">
+        <h2>📧 Live Contact Form Test</h2>
+        <p>This form uses the same code as your main website:</p>
+        
+        <form id="testContactForm">
+            <input type="text" name="name" placeholder="Your Name" value="Muhammad Ahad" required>
+            <input type="email" name="email" placeholder="Your Email" value="ahadarshad2001@gmail.com" required>
+            <input type="text" name="subject" placeholder="Subject" value="Test from connectivity page" required>
+            <textarea name="message" rows="4" placeholder="Message" required>This is a connectivity test from the diagnostic page.</textarea>
+            <button type="submit">📤 Submit Test Form</button>
+        </form>
+        
+        <div id="form-result"></div>
+    </div>
+
+    <script>
+        // Same API configuration as your main website
+        (function(){
+            const loc = window.location;
+            const defaultApi = 'http://127.0.0.1:8000/api';
+            let base;
+            if (loc.origin && !loc.origin.startsWith('file:') && (loc.port === '' || loc.port === '8000')) {
+                base = `${loc.origin}/api`;
+            } else {
+                base = defaultApi;
+            }
+            window.API_BASE_URL = base;
+        })();
+        
+        // Display page information
+        document.getElementById('current-url').textContent = window.location.href;
+        document.getElementById('api-url').textContent = API_BASE_URL;
+
+        function addResult(message, type = 'info') {
+            const results = document.getElementById('test-results');
+            const div = document.createElement('div');
+            div.className = `status ${type}`;
+            div.innerHTML = `<strong>${new Date().toLocaleTimeString()}</strong>: ${message}`;
+            results.appendChild(div);
+            results.scrollTop = results.scrollHeight;
+        }
+
+        function clearResults() {
+            document.getElementById('test-results').innerHTML = '';
+            document.getElementById('form-result').innerHTML = '';
+        }
+
+        // Test 1: Server Connection
+        async function testServerConnection() {
+            addResult('🔍 Testing server connection...', 'info');
+            
+            try {
+                const response = await fetch(`${API_BASE_URL}`);
+                const data = await response.json();
+                
+                if (response.ok) {
+                    addResult(`✅ Server connection successful! Message: ${data.message}`, 'success');
+                    addResult(`Server details: <pre>${JSON.stringify(data, null, 2)}</pre>`, 'info');
+                } else {
+                    addResult(`⚠️ Server responded with status: ${response.status}`, 'warning');
+                }
+            } catch (error) {
+                addResult(`❌ Server connection failed: ${error.message}`, 'error');
+                addResult(`This means Flask server is not running or not accessible from this URL`, 'warning');
+            }
+        }
+
+        // Test 2: Contact API
+        async function testContactAPI() {
+            addResult('📧 Testing contact API endpoint...', 'info');
+            
+            const testData = {
+                name: 'Connectivity Test User',
+                email: 'test@connectivity.com',
+                subject: 'Connectivity Test',
+                message: 'This is a connectivity test message from the diagnostic tool.'
+            };
+            
+            addResult(`Sending test data: <pre>${JSON.stringify(testData, null, 2)}</pre>`, 'info');
+            
+            try {
+                const response = await fetch(`${API_BASE_URL}/submit-contact`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(testData)
+                });
+                
+                addResult(`API Response Status: ${response.status}`, 'info');
+                
+                const result = await response.json();
+                addResult(`API Response: <pre>${JSON.stringify(result, null, 2)}</pre>`, 'info');
+                
+                if (result.success) {
+                    addResult(`✅ Contact API test successful! Submission ID: ${result.submission_id}`, 'success');
+                    addResult(`This proves the API is working and data is being saved to database`, 'success');
+                } else {
+                    addResult(`⚠️ API returned error: ${result.error}`, 'warning');
+                }
+                
+            } catch (error) {
+                addResult(`❌ Contact API test failed: ${error.message}`, 'error');
+                addResult(`This is the same error your main contact form is experiencing`, 'error');
+            }
+        }
+
+        // Handle form submission (same as main website)
+        document.getElementById('testContactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const resultDiv = document.getElementById('form-result');
+            resultDiv.innerHTML = '<div class="status info">📤 Submitting form...</div>';
+            
+            // Get form data (same as main website)
+            const formData = new FormData(this);
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                subject: formData.get('subject'),
+                message: formData.get('message')
+            };
+            
+            console.log('Form data collected:', data);
+            
+            try {
+                const response = await fetch(`${API_BASE_URL}/submit-contact`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+                
+                console.log('Response status:', response.status);
+                const result = await response.json();
+                console.log('Response data:', result);
+                
+                if (result.success) {
+                    resultDiv.innerHTML = `
+                        <div class="status success">
+                            ✅ <strong>SUCCESS!</strong> Form submitted successfully!<br>
+                            Message: ${result.message}<br>
+                            Submission ID: ${result.submission_id}<br>
+                            <strong>This means your contact form should work on the main website too!</strong>
+                        </div>
+                    `;
+                    this.reset();
+                } else {
+                    resultDiv.innerHTML = `
+                        <div class="status warning">
+                            ⚠️ <strong>Server Error:</strong> ${result.error}<br>
+                            The form reached the server but there was a validation or processing error.
+                        </div>
+                    `;
+                }
+                
+            } catch (error) {
+                console.error('Form submission error:', error);
+                resultDiv.innerHTML = `
+                    <div class="status error">
+                        ❌ <strong>Network Error:</strong> ${error.message}<br>
+                        <strong>This is the same error happening on your main contact form!</strong><br><br>
+                        <strong>Possible solutions:</strong><br>
+                        • Make sure Flask server is running (python app.py)<br>
+                        • Check if you can access http://127.0.0.1:8000/api in your browser<br>
+                        • Try accessing this page through Flask server instead: http://127.0.0.1:8000/connectivity-test.html<br>
+                        • Check browser console (F12) for more details
+                    </div>
+                `;
+            }
+        });
+
+        // Auto-run connectivity test when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(() => {
+                addResult('🚀 Running automatic connectivity test...', 'info');
+                testServerConnection();
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

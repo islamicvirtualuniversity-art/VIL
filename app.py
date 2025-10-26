@@ -13,7 +13,7 @@ os.environ["LANG"] = "C.UTF-8"
 os.environ["LC_ALL"] = "C.UTF-8"
 
 # Load environment variables
-# load_dotenv()
+load_dotenv()
 
 # Initialize Flask app
 app = Flask(__name__)

@@ -13,8 +13,9 @@ os.environ["LANG"] = "C.UTF-8"
 os.environ["LC_ALL"] = "C.UTF-8"
 
 # Load environment variables
-load_dotenv()
-
+# Load .env only if not in production
+if os.environ.get("FLASK_ENV") != "production":
+    load_dotenv()
 # Initialize Flask app
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'dev-secret-key-change-in-production-123456789')

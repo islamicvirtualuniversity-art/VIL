@@ -10,7 +10,7 @@
 @font-face {
   font-family: "Mehr Nastaliq Web";
   src: local("Mehr Nastaliq Web"),
-       url("../../mehr-nastaliq-web-font-v2.0/Mehr_Nastaliq_Web v.2.0.woff") format("woff"),
+       url("../../mehr-nastaliq-web-font-v2.0/Mehr_Nastaliq_Web-v.2.0.woff") format("woff"),
        url("../../mehr-nastaliq-web-font-v2.0/Mehr_Nastaliq_Web-v.2.0.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
@@ -20,7 +20,7 @@
 @font-face {
   font-family: "Jameel Noori Nastaleeq";
   src: local("Jameel Noori Nastaleeq"),
-       url("../../jameel-noori-nastaleeq/Jameel Noori Nastaleeq Regular/Jameel-Noori-Nastaleeq-Regular.ttf") format("truetype");
+       url("../../jameel-noori-nastaleeq/Jameel-Noori-Nastaleeq-Regular/Jameel-Noori-Nastaleeq-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;

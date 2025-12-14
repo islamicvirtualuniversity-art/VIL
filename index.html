@@ -17,7 +17,16 @@
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Noto+Nastaliq+Urdu:wght@400;500;600;700&family=Amiri:wght@400;500;600;700&family=Scheherazade+New:wght@400;500;700&family=Cairo:wght@400;500;600;700&family=Tajawal:wght@400;500;600;700&family=Markazi+Text:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
+  <!-- Local Mehr Nastaliq Web Font -->
+  <style>
+    @font-face {
+      font-family: 'Mehr Nastaliq Web';
+      src: url('mehr nastaliq web font v 2.0/Mehr_Nastaliq_Web v. 2.0.ttf') format('truetype'),
+           url('mehr nastaliq web font v 2.0/Mehr_Nastaliq_Web v.2.0.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+  </style>
 
   <!-- Vendor CSS Files with CDN Fallbacks -->
   <link href="assets/vendor/bootstrap/css/bootstrap.rtl.min.css" rel="stylesheet" onerror="this.href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css'">
@@ -723,6 +732,51 @@
       border-color: #FFC107;
       box-shadow: 0 0 15px rgba(255, 193, 7, 0.6);
     }
+
+    /* Responsive behavior for slider indicators */
+    @media (max-width: 992px) {
+      .slider-indicators {
+        gap: 8px;
+        bottom: 18px;
+        max-width: 80vw;
+      }
+      .indicator {
+        width: 11px;
+        height: 11px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .slider-indicators {
+        gap: 6px;
+        bottom: 14px;
+        max-width: 90vw;
+        left: 50%;
+        transform: translateX(-50%);
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 6px 8px;
+        box-sizing: border-box;
+        -webkit-overflow-scrolling: touch;
+      }
+      .indicator {
+        width: 10px;
+        height: 10px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .slider-indicators {
+        gap: 6px;
+        bottom: 10px;
+        max-width: 95vw;
+        padding: 6px 6px;
+      }
+      .indicator {
+        width: 9px;
+        height: 9px;
+      }
+    }
     
     
     .about-content h3 {
@@ -1339,7 +1393,7 @@
       width: 100%;
       height: 100%;
       background: 
-        url('assets/img/teacherbackground.jpg') no-repeat center center,
+        url('assets/img/teacher-background.jpg') no-repeat center center,
         url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="faculty-pattern" patternUnits="userSpaceOnUse" width="20" height="20"><circle cx="10" cy="10" r="2" fill="none" stroke="%231e3c72" stroke-width="0.3" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23faculty-pattern)"/></svg>');
       background-size: cover, auto;
       background-position: center, 0 0;
@@ -2264,6 +2318,38 @@
       }
     }
   </style>
+  <style>
+    /* Mobile override for hero intro text */
+    @media (max-width: 768px) {
+      #hero p {
+        font-size: 1.05rem !important;
+        line-height: 1.6 !important;
+        max-width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-right: 0.5rem !important;
+      }
+      #hero h2 {
+        font-size: 1.6rem !important;
+      }
+      .hero {
+        min-height: 45vh !important;
+        height: auto !important;
+        padding: 40px 0 !important;
+      }
+    }
+
+    @media (max-width: 420px) {
+      #hero p {
+        font-size: 0.95rem !important;
+        line-height: 1.5 !important;
+        padding-right: 0.5rem !important;
+      }
+      #hero h2 {
+        font-size: 1.35rem !important;
+      }
+    }
+  </style>
 </head>
 
 <body class="index-page">
@@ -2334,7 +2420,7 @@
 
       <div class="container">
         <h2 data-aos="fade-up" data-aos-delay="100">اسلامی علوم میں جدید تعلیم</h2>
-        <p data-aos="fade-up" data-aos-delay="200" style="font-size: 1.75rem; line-height: 1.9; color: rgba(240, 246, 247, 0.95); text-shadow: 0 2px 6px rgba(0,0,0,0.4); font-weight: 500; margin-bottom: 30px; max-width: 800px; margin-left: auto; margin-right: 0; text-align: right;">اسلامی علوم و فنون کی تعلیم میں جدت اکیسویں صدی کا اولین تقاضا ہے۔ ہم روایت کو برقرار رکھتے ہوئے جدید ٹیکنالوجی کے ذریعے ایسا تعلیمی نظام فراہم کرتے ہیں جو دین و دنیا دونوں میں رہنمائی فراہم کرے۔ہمارا مقصد ایسے باعمل، باعلم اور عصری تقاضوں سے ہم آہنگ علماء اور طلباء کی تیاری ہے جو معاشرے کی ضروریات کو سمجھتے ہوئے اسلامی تعلیمات کو عملی زندگی میں نافذ کر سکیں۔</p>
+        <p data-aos="fade-up" data-aos-delay="200" style="font-size: 1.75rem; line-height: 1.9; color: rgba(240, 246, 247, 0.95); text-shadow: 0 2px 6px rgba(0,0,0,0.4); font-weight: 500; margin-bottom: 30px; max-width: 800px; margin-left: auto; margin-right: 0; text-align: right;"> بدلتے زمانوں کے ساتھ تمام علوم وفنون کی تعلیم وتدریس کا نصاب اور طریقہ بدلتا رہا ہے۔ اسلامی علوم وفنون کی تعلیم میں جدت اکیسویں صدی کا اولین تقاضا ہے۔ دنیا ایک گلوبل ویلیج بن گئی ہے۔ دنیا کی بہت سی معروف یونیورسٹیز اپنی آن لائن سروس شروع کر چکی ہیں، کچھ سالوں میں ایک انقلاب برپا ہونے والا ہے، جو اکثر تعلیمی اداروں کو آن سائٹ سے آن لائن کر دے گا۔ انہی حالات کے پیشِ نظر ہم ورچوئل اسلامک یونیورسٹی کا قیام عمل میں لائے ہیں۔۔</p>
         
         
         </div>
@@ -2424,6 +2510,37 @@
       </div>
 
     </section><!-- /About Section -->
+    <!-- اہداف و مقاصد Section -->
+    <section id="objectives" class="objectives section">
+
+      <div class="container section-title" data-aos="fade-up">
+        <h2>اہداف و مقاصد</h2>
+        <p>ورچوئل اسلامک یونیورسٹی کے بنیادی مقاصد</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4 align-items-center">
+          <div class="col-lg-6 content">
+            <h3 style="font-family: 'Mehr Nastaliq Web', serif;">ہماری کوششیں کہاں مرکوز ہیں</h3>
+            <p style="font-family: 'Mehr Nastaliq Web', serif; color: rgba(30,60,114,0.9);">ورچوئل اسلامک یونیورسٹی کا وژن عملی، معیاری اور عصری اسلامی تعلیم فراہم کرنا ہے۔ ہماری کوشش ہے کہ طلباء درست دینی اور دنیاوی رہنمائی کے ساتھ مضبوط کردار اختیار کریں۔</p>
+            <ul style="list-style: none; padding: 0; margin-top: 18px;">
+              <li style="margin-bottom: 12px;"><i class="bi bi-check-circle" style="color: #FFC107; margin-left: 8px;"></i><span style="font-family: 'Mehr Nastaliq Web', serif;">معیاری اور آسان رسائی تعلیم ہر گھر تک</span></li>
+              <li style="margin-bottom: 12px;"><i class="bi bi-check-circle" style="color: #FFC107; margin-left: 8px;"></i><span style="font-family: 'Mehr Nastaliq Web', serif;">اساتذہ کی تربیت اور پیشہ ورانہ رہنمائی</span></li>
+              <li style="margin-bottom: 12px;"><i class="bi bi-check-circle" style="color: #FFC107; margin-left: 8px;"></i><span style="font-family: 'Mehr Nastaliq Web', serif;">جدید نصاب جو عصری تقاضوں کے مطابق ہو</span></li>
+              <li style="margin-bottom: 12px;"><i class="bi bi-check-circle" style="color: #FFC107; margin-left: 8px;"></i><span style="font-family: 'Mehr Nastaliq Web', serif;">طلباء کو عملی زندگی میں نافذ کرنے کے قابل بنانا</span></li>
+            </ul>
+            <p style="font-family: 'Mehr Nastaliq Web', serif; color: rgba(30,60,114,0.9); text-align: right; line-height: 1.8; margin-top: 18px;">
+              اہداف ومقاصد بہت سے لوگ اپنے کاروبار یا ملازمت میں مصروف ہونے کی وجہ سے مدارس میں قیام کر کے دینی علوم سے بہرہ وَر نہیں ہو سکتے، نیز کچھ لوگ اپنا علاقہ چھوڑ کر سفر کرنے سے عاجز ہیں، اسی طرح ایسے لوگ بھی دینی علوم سیکھنے کے متمنی ہیں، جو معاشی مجبوریوں کی وجہ سے دیارِ غیر میں مقیم ہیں، جہاں مدارسِ اسلامیہ نہ ہونے کی وجہ سے ان کی یہ خواہش پوری نہیں ہو پاتی۔ ان سب کے خواب ہمارے ورچوئل کلاس روم میں باقاعدہ دینی تعلیم کے اجرا سے پورے ہو رہے ہیں۔ الحمد للہ علاقے، عمر اور وقت کی قید سے آزاد اب کسی بھی عمر کا کوئی بھی شخص دنیا میں کہیں بھی رہتے ہوئے اور کوئی بھی کام کرتے ہوئے ورچوئل دینی ادارے کا باقاعدہ طالب علم بن سکتا ہے۔ وہ روزانہ اپنی مصروفیات سے کچھ وقت نکال کر ایک دن عالمِ دین بن سکے گا۔ ان شاء اللہ
+            </p>
+          </div>
+
+          <div class="col-lg-6" style="text-align: center;">
+            <img src="assets/img/تعارف-2.jpg" alt="تعارف" style="max-width: 100%; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.12);">
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /اہداف و مقاصد Section -->
 
     <!-- Courses Section -->
     <section id="courses" class="courses section">
@@ -2453,7 +2570,7 @@
                 <p class="description" style="font-size: 1.4rem !important;">قرآن کریم کی تفہیم اور تدبر کے جدید طریقے</p>
                 <div class="trainer d-flex justify-content-between align-items-center">
                   <div class="trainer-profile d-flex align-items-center">
-                    <a href="" class="trainer-link">فضیلۃ الشیخ حافظ عبد الرحمن</a>
+                    <a href="" class="trainer-link">استاد</a>
                   </div>
                   <div class="trainer-rank d-flex align-items-center">
 <i class="bi bi-person user-icon"></i>&nbsp;&nbsp;150
@@ -2478,7 +2595,7 @@
                 <p class="description" style="font-size: 1.4rem !important;">عربی زبان کی بنیادی اور پیشہ ورانہ تعلیم</p>
                 <div class="trainer d-flex justify-content-between align-items-center">
                   <div class="trainer-profile d-flex align-items-center">
-                    <a href="" class="trainer-link">فضیلۃ الشیخ حافظ اقبال خلجی</a>
+                    <a href="" class="trainer-link">استاد</a>
                   </div>
                   <div class="trainer-rank d-flex align-items-center">
 <i class="bi bi-person user-icon"></i>&nbsp;&nbsp;120
@@ -2503,7 +2620,7 @@
                 <p class="description" style="font-size: 1.4rem !important;">اسلامی علوم کی جامع اور معاصر تعلیم</p>
                 <div class="trainer d-flex justify-content-between align-items-center">
                   <div class="trainer-profile d-flex align-items-center">
-                    <a href="" class="trainer-link">فضیلۃ الشیخ حافظ ابوبکر صدیق</a>
+                    <a href="" class="trainer-link">استاد</a>
                   </div>
                   <div class="trainer-rank d-flex align-items-center">
 <i class="bi bi-person user-icon"></i>&nbsp;&nbsp;200
@@ -2975,7 +3092,7 @@
     </section><!-- /Features Section -->
 
     <!-- VC Section -->
-    <section id="vc" class="vc section" style="background: url('assets/img/Directorbackground.jpg') center/cover no-repeat; padding: 80px 0; margin-top: 60px; margin-bottom: 100px; position: relative;">
+    <section id="vc" class="vc section" style="background: url('assets/img/Director background.jpg') center/cover no-repeat; padding: 80px 0; margin-top: 60px; margin-bottom: 100px; position: relative;">
       <!-- Transparent overlay to make background image transparent -->
       <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.7); z-index: 1;"></div>
       <div style="position: relative; z-index: 2;">

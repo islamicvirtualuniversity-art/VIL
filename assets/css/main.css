@@ -720,6 +720,225 @@ h6 {
   border-radius: 50px;
 }
 
+/* Responsive Footer Adjustments */
+@media (max-width: 992px) {
+  .footer {
+    font-size: 15px;
+  }
+  .footer .footer-top {
+    padding-top: 20px;
+  }
+  .footer .footer-about .logo span {
+    font-size: 1.25rem;
+  }
+}
+
+/*--------------------------------------------------------------
+# Objectives (اہداف و مقاصد) Section
+--------------------------------------------------------------*/
+section#objectives,
+.objectives.section {
+  padding: 60px 0;
+}
+
+.objectives .section-title h2 {
+  font-size: 2rem;
+  color: var(--heading-color);
+  font-family: var(--urdu-font);
+}
+
+.objectives .section-title p {
+  font-size: 1rem;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  font-family: var(--urdu-font);
+}
+
+.objectives .content h3 {
+  font-size: 1.6rem;
+  color: var(--heading-color);
+  margin-bottom: 12px;
+  font-family: var(--urdu-font);
+}
+
+.objectives .content p {
+  font-size: 1.03rem;
+  line-height: 1.7;
+  color: color-mix(in srgb, var(--default-color), transparent 10%);
+  font-family: var(--urdu-font);
+}
+
+.objectives ul {
+  list-style: none;
+  padding: 0;
+  margin: 18px 0 0 0;
+}
+
+.objectives ul li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-family: var(--urdu-font);
+  color: color-mix(in srgb, var(--default-color), transparent 10%);
+}
+
+.objectives ul li i {
+  color: #FFC107;
+  font-size: 1.1rem;
+}
+
+.objectives img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: 0;
+  border-radius: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .objectives .content h3 {
+    font-size: 1.45rem;
+  }
+  .objectives .content p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  section#objectives,
+  .objectives.section {
+    padding: 40px 0;
+  }
+
+  .objectives .content,
+  .objectives .col-lg-6 {
+    text-align: center !important;
+    margin: 0 auto;
+  }
+
+  .objectives img {
+    margin: 0 auto !important;
+    width: 85%;
+    max-width: 420px;
+  }
+
+  .objectives ul li {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 420px) {
+  .objectives .section-title h2 {
+    font-size: 1.5rem;
+  }
+
+  .objectives .content h3 {
+    font-size: 1.25rem;
+  }
+
+  .objectives .content p,
+  .objectives ul li span {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer .footer-top .row {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    align-items: stretch;
+  }
+
+  .footer .footer-about,
+  .footer .footer-links,
+  .footer .footer-newsletter {
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer .footer-about .logo {
+    justify-content: center;
+  }
+
+  .footer .footer-contact p {
+    margin-bottom: 6px;
+    color: rgba(255,255,255,0.85);
+    text-align: center;
+  }
+
+  .footer .social-links {
+    justify-content: center;
+    margin-top: 12px;
+  }
+
+  .footer .social-links a {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+
+  .footer .footer-links ul li {
+    justify-content: center;
+    padding: 6px 0;
+  }
+
+  .footer .footer-links h4,
+  .footer .footer-newsletter h4 {
+    text-align: center;
+    margin-bottom: 12px;
+  }
+
+  .footer .footer-newsletter p {
+    text-align: center;
+    margin: 0 auto 10px auto;
+    max-width: 420px;
+  }
+
+  .footer .footer-newsletter a {
+    display: inline-block;
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+    padding: 12px 18px;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 420px) {
+  .footer {
+    font-size: 14px;
+  }
+
+  .footer .footer-about .logo span {
+    font-size: 1.05rem;
+  }
+
+  .footer .social-links a {
+    width: 34px;
+    height: 34px;
+    font-size: 13px;
+  }
+
+  .footer .footer-newsletter a {
+    padding: 10px 14px;
+    border-radius: 20px;
+  }
+
+  .footer .copyright p,
+  .footer .credits {
+    font-size: 0.9rem;
+  }
+}
+
 .footer .footer-newsletter .newsletter-form input[type=submit]:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
 }

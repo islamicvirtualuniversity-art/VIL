@@ -21,12 +21,16 @@
   <style>
     @font-face {
       font-family: 'Mehr Nastaliq Web';
-      src: url('mehr nastaliq web font v 2.0/Mehr_Nastaliq_Web v. 2.0.ttf') format('truetype'),
-           url('mehr nastaliq web font v 2.0/Mehr_Nastaliq_Web v.2.0.woff') format('woff');
+      src: url('mehr nastaliq web font v 2.0/Mehr_Nastaliq_Web v.2.0.woff') format('woff'),
+           url('mehr nastaliq web font v 2.0/Mehr_Nastaliq_Web v. 2.0.ttf') format('truetype');
       font-weight: normal;
       font-style: normal;
+      font-display: swap;
     }
   </style>
+
+  <!-- Preload primary local Urdu font to reduce jitter (FOIT/FOUT) -->
+  <link rel="preload" as="font" type="font/woff" href="mehr%20nastaliq%20web%20font%20v%202.0/Mehr_Nastaliq_Web%20v.2.0.woff" crossorigin>
 
   <!-- Vendor CSS Files with CDN Fallbacks -->
   <link href="assets/vendor/bootstrap/css/bootstrap.rtl.min.css" rel="stylesheet" onerror="this.href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css'">
@@ -40,7 +44,6 @@
 
   <!-- Preload critical images -->
   <link rel="preload" as="image" href="assets/img/background1.jpg">
-  <link rel="preload" as="image" href="assets/img/about.jpg">
 
   <!-- Custom RTL and Islamic Styling -->
   <style>
@@ -2358,7 +2361,7 @@
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
       <div class="logo d-flex align-items-center me-auto">
-        <img src="/assets/img/Vlogo.png" alt="Virtual Islamic University Logo" style="height: 60px !important; max-height: 60px !important; min-height: 60px !important; width: auto !important; border-radius: 8px; box-shadow: 0 4px 15px rgba(30, 60, 114, 0.3); border: 2px solid rgba(255, 255, 255, 0.2);">
+        <img src="/assets/img/Vlogo.png" alt="Virtual Islamic University Logo" width="773" height="773" decoding="async" fetchpriority="high" style="height: 60px !important; max-height: 60px !important; min-height: 60px !important; width: auto !important; border-radius: 8px; box-shadow: 0 4px 15px rgba(30, 60, 114, 0.3); border: 2px solid rgba(255, 255, 255, 0.2);">
         <div class="logo-text" style="margin-right: 15px;">
 <h1 class="sitename" style="font-family: 'Mehr Nastaliq Web', serif; font-size: 1.8rem; font-weight: 700; margin-bottom: 10px; text-shadow: 0 2px 4px rgba(0,0,0,0.3); color: white;">ورچوئل اسلامک یونیورسٹی</h1>
           <p style="font-family: 'Mehr Nastaliq Web', serif; font-size: 1.1rem; opacity: 0.9; margin: 0; color: #FFC107;">اسلامی تعلیم کا آن لائن مستند پلیٹ فارم</p>
@@ -2440,7 +2443,7 @@
               <div class="simple-slider" id="aboutSlider">
                 <!-- Slide 1 -->
                 <div class="slide active">
-                  <img src="assets/img/about.jpg" alt="Islamic University Campus">
+                  <img src="assets/img/about.jpg" alt="Islamic University Campus" width="4400" height="3067" loading="lazy" decoding="async">
                   <div class="slider-overlay"></div>
                   <div class="slider-content">
                     <h4>جدید کیمپس</h4>
@@ -2450,7 +2453,7 @@
                 
                 <!-- Slide 2 -->
                 <div class="slide">
-                  <img src="assets/img/about2.jpg" alt="Islamic Education">
+                  <img src="assets/img/about2.jpg" alt="Islamic Education" width="5456" height="3632" loading="lazy" decoding="async">
                   <div class="slider-overlay"></div>
                   <div class="slider-content">
                     <h4>اسلامی تعلیم</h4>
@@ -2460,7 +2463,7 @@
                 
                 <!-- Slide 3 -->
                 <div class="slide">
-                  <img src="assets/img/about3.jpg" alt="Online Learning">
+                  <img src="assets/img/about3.jpg" alt="Online Learning" width="7728" height="5152" loading="lazy" decoding="async">
                   <div class="slider-overlay"></div>
                   <div class="slider-content">
                     <h4>آن لائن تعلیم</h4>
@@ -2470,7 +2473,7 @@
                 
                 <!-- Slide 4 -->
                 <div class="slide">
-                  <img src="assets/img/about4.jpg" alt="Digital Learning">
+                  <img src="assets/img/about4.jpg" alt="Digital Learning" width="4368" height="2912" loading="lazy" decoding="async">
                   <div class="slider-overlay"></div>
                   <div class="slider-content">
                     <h4>ڈیجیٹل تعلیم</h4>
@@ -2535,7 +2538,7 @@
           </div>
 
           <div class="col-lg-6" style="text-align: center;">
-            <img src="assets/img/Taruf.jpg" alt="تعارف" style="max-width: 100%; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.12);">
+            <img src="assets/img/Taruf.jpg" alt="تعارف" width="1280" height="720" loading="lazy" decoding="async" style="max-width: 100%; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.12);">
           </div>
         </div>
       </div>
@@ -2559,7 +2562,7 @@
 
           <div class="col-xl-3 col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
             <div class="course-item">
-              <a href="course-quran.html"><img src="assets/img/course-1.jpg" class="img-fluid" alt="فہم القرآن"></a>
+              <a href="course-quran.html"><img src="assets/img/course-1.jpg" class="img-fluid" alt="فہم القرآن" width="6000" height="4000" loading="lazy" decoding="async"></a>
               <div class="course-content">
                 <div class="d-flex justify-content-between align-items-center mb-3">
                   <p class="course-category">اسلامی علوم</p>
@@ -2584,7 +2587,7 @@
 
           <div class="col-xl-3 col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="200">
             <div class="course-item">
-              <a href="course-arabic.html"><img src="assets/img/course-2.jpg" class="img-fluid" alt="اللغة العربية"></a>
+              <a href="course-arabic.html"><img src="assets/img/course-2.jpg" class="img-fluid" alt="اللغة العربية" width="6000" height="4000" loading="lazy" decoding="async"></a>
               <div class="course-content">
                 <div class="d-flex justify-content-between align-items-center mb-3">
                   <p class="course-category">عربی زبان</p>
@@ -2609,7 +2612,7 @@
 
           <div class="col-xl-3 col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="300">
             <div class="course-item">
-              <a href="course-islamic-studies.html"><img src="assets/img/course-3.jpg" class="img-fluid" alt="علوم الدین"></a>
+              <a href="course-islamic-studies.html"><img src="assets/img/course-3.jpg" class="img-fluid" alt="علوم الدین" width="4896" height="3264" loading="lazy" decoding="async"></a>
               <div class="course-content">
                 <div class="d-flex justify-content-between align-items-center mb-3">
                   <p class="course-category">اسلامی علوم</p>
@@ -2634,7 +2637,7 @@
 
           <div class="col-xl-3 col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
             <div class="course-item">
-              <a href="course-alsaraf.html"><img src="assets/img/Ramzan.jpg" class="img-fluid" alt="Dora Al-Sarf"></a>
+              <a href="course-alsaraf.html"><img src="assets/img/Ramzan.jpg" class="img-fluid" alt="Dora Al-Sarf" width="6000" height="4000" loading="lazy" decoding="async"></a>
               <div class="course-content">
                 <div class="d-flex justify-content-between align-items-center mb-3">
                   <p class="course-category">خصوصی کورس</p>
@@ -2659,7 +2662,7 @@
 
           <div class="col-xl-3 col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="200">
             <div class="course-item">
-              <a href="course-usool-hadees.html"><img src="assets/img/Usool-Hadees.jpg" class="img-fluid" alt="Usool e hadith"></a>
+              <a href="course-usool-hadees.html"><img src="assets/img/Usool-Hadees.jpg" class="img-fluid" alt="Usool e hadith" width="1280" height="961" loading="lazy" decoding="async"></a>
               <div class="course-content">
                 <div class="d-flex justify-content-between align-items-center mb-3">
                   <p class="course-category">تخصص</p>
@@ -2684,7 +2687,7 @@
 
           <div class="col-xl-3 col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="300">
             <div class="course-item">
-              <a href="course-al-aqeeda.html"><img src="assets/img/Aqedah.jpg" class="img-fluid" alt="Aqeedah"></a>
+              <a href="course-al-aqeeda.html"><img src="assets/img/Aqedah.jpg" class="img-fluid" alt="Aqeedah" width="5184" height="3456" loading="lazy" decoding="async"></a>
               <div class="course-content">
                 <div class="d-flex justify-content-between align-items-center mb-3">
                   <p class="course-category">تخصص</p>
@@ -2710,7 +2713,7 @@
           <!-- Course 7: دورۃ الاعراب -->
           <div class="col-xl-3 col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="400">
             <div class="course-item">
-                  <a href="course-doratul-arab.html"><img src="assets/img/Doraarab.jpg" class="img-fluid" alt="Dora Al-I'raab"></a>
+                  <a href="course-doratul-arab.html"><img src="assets/img/Doraarab.jpg" class="img-fluid" alt="Dora Al-I'raab" width="2048" height="1365" loading="lazy" decoding="async"></a>
                   <div class="course-content">
                     <div class="d-flex justify-content-between align-items-center mb-3">
                       <p class="course-category">عربی نحو</p>
@@ -2736,7 +2739,7 @@
           <!-- Course 8: دورۃ تطبیق القواعد -->
           <div class="col-xl-3 col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="500">
             <div class="course-item">
-                  <a href="course-dora-tatbiq-alqawaid.html"><img src="assets/img/course9.jpg" class="img-fluid" alt="Dora Tatbiqul Qawaid"></a>
+                  <a href="course-dora-tatbiq-alqawaid.html"><img src="assets/img/course9.jpg" class="img-fluid" alt="Dora Tatbiqul Qawaid" width="5184" height="3456" loading="lazy" decoding="async"></a>
                   <div class="course-content">
                     <div class="d-flex justify-content-between align-items-center mb-3">
                       <p class="course-category">عملی تطبیق</p>
@@ -3230,7 +3233,7 @@ font-family: 'Mehr Nastaliq Web', serif;
                   <div class="col-lg-4 text-center mb-4 mb-lg-0 order-1 order-lg-2">
                     <div class="vc-image-wrapper" style="position: relative; display: inline-block;">
                       <div style="padding: 8px; background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%); border-radius: 50%; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);">
-                        <img src="assets/img/VC2.jpg" alt="Dr. Hafiz Abu Yahya Noorpuri" style="
+                        <img src="assets/img/VC2.jpg" alt="Dr. Hafiz Abu Yahya Noorpuri" width="571" height="566" loading="lazy" decoding="async" style="
                           width: 180px;
                           height: 180px;
                           border-radius: 50%;
@@ -4047,6 +4050,9 @@ font-family: 'Mehr Nastaliq Web', serif;
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
 
   <!-- Vendor JS Files with CDN Fallbacks -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" onerror="this.onerror=null; this.src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js'"></script>

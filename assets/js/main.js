@@ -106,6 +106,8 @@
    * Animation on scroll function and init
    */
   function aosInit() {
+    if (typeof AOS === 'undefined') return;
+
     AOS.init({
       duration: 600,
       easing: 'ease-in-out',
@@ -113,7 +115,13 @@
       mirror: false
     });
   }
-  window.addEventListener('load', aosInit);
+  // Init as soon as DOM is ready to avoid flicker/FOUC.
+  document.addEventListener('DOMContentLoaded', aosInit);
+  // Refresh after all assets load for correct positions.
+  window.addEventListener('load', () => {
+    if (typeof AOS === 'undefined') return;
+    AOS.refresh();
+  });
 
   /**
    * Initiate glightbox

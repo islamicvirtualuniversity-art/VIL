@@ -22,12 +22,16 @@
   <!-- Vendor CSS Files with CDN Fallbacks -->
   <link href="assets/vendor/bootstrap/css/bootstrap.rtl.min.css" rel="stylesheet" onerror="this.href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css'">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" onerror="this.href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css'">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet" onerror="this.href='https://unpkg.com/aos@2.3.1/dist/aos.css'">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" onerror="this.href='https://cdn.jsdelivr.net/gh/biati-digital/glightbox/dist/css/glightbox.min.css'">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" onerror="this.href='https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css'">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet" media="print" onload="this.media='all'" onerror="this.href='https://unpkg.com/aos@2.3.1/dist/aos.css'">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" media="print" onload="this.media='all'" onerror="this.href='https://cdn.jsdelivr.net/gh/biati-digital/glightbox/dist/css/glightbox.min.css'">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" media="print" onload="this.media='all'" onerror="this.href='https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css'">
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- Preload critical images -->
+  <link rel="preload" as="image" href="assets/img/background1.jpg">
+  <link rel="preload" as="image" href="assets/img/about.jpg">
 
   <!-- Custom RTL and Islamic Styling -->
   <style>
@@ -1072,7 +1076,7 @@
       height: 100%;
       display: flex;
       animation: slideBackground 32s ease-in-out infinite;
-      animation-delay: 4s;
+      animation-delay: 0s;
       will-change: transform;
     }
 
@@ -3933,13 +3937,21 @@ font-family: 'Mehr Nastaliq Web', serif;
   <!-- Vendor JS Files with CDN Fallbacks -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" onerror="this.onerror=null; this.src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js'"></script>
   <!-- PHP validation script removed for Flask backend -->
-  <script src="assets/vendor/aos/aos.js" onerror="this.onerror=null; this.src='https://unpkg.com/aos@2.3.1/dist/aos.js'"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js" onerror="this.onerror=null; this.src='https://cdn.jsdelivr.net/gh/biati-digital/glightbox/dist/js/glightbox.min.js'"></script>
+  <script defer src="assets/vendor/aos/aos.js" onerror="this.onerror=null; this.src='https://unpkg.com/aos@2.3.1/dist/aos.js'"></script>
+  <script defer src="assets/vendor/glightbox/js/glightbox.min.js" onerror="this.onerror=null; this.src='https://cdn.jsdelivr.net/gh/biati-digital/glightbox/dist/js/glightbox.min.js'"></script>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js" onerror="this.onerror=null; this.src='https://cdn.jsdelivr.net/npm/@srexi/purecounterjs/dist/purecounter_vanilla.js'"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js" onerror="this.onerror=null; this.src='https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js'"></script>
+  <script>
+    // Initialize PureCounter when document is ready
+    document.addEventListener('DOMContentLoaded', function() {
+      if (typeof PureCounter !== 'undefined') {
+        new PureCounter();
+      }
+    });
+  </script>
+  <script defer src="assets/vendor/swiper/swiper-bundle.min.js" onerror="this.onerror=null; this.src='https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js'"></script>
   <script src="assets/js/main.js"></script>
   <script src="static/js/form-handler.js"></script>
-  <script src="assets/js/faculty-handler.js"></script>
+  <script defer src="assets/js/faculty-handler.js"></script>
   
   <!-- Mobile Navigation JavaScript -->
   <script>
@@ -4852,6 +4864,30 @@ font-family: 'Mehr Nastaliq Web', serif;
   
   <script src="assets/js/faculty-handler.js"></script>
   <script src="assets/js/contact-new.js"></script>
+
+  <!-- Performance optimization: Preload remaining images after page loads -->
+  <script>
+    window.addEventListener('load', function() {
+      // Preload remaining images for smooth transitions
+      const imagesToPreload = [
+        'assets/img/background2.jpg',
+        'assets/img/background3.jpg',
+        'assets/img/background4.jpg',
+        'assets/img/about2.jpg',
+        'assets/img/about3.jpg'
+      ];
+
+      imagesToPreload.forEach(src => {
+        const img = new Image();
+        img.src = src;
+      });
+
+      // Optimize animations with GPU acceleration
+      document.querySelectorAll('[data-aos]').forEach(el => {
+        el.style.willChange = 'transform, opacity';
+      });
+    });
+  </script>
 
 </body>
 

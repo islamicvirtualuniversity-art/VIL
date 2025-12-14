@@ -235,8 +235,9 @@
 
         .course-image {
             width: 100%;
-            height: 400px;
-            object-fit: cover;
+            max-height: 400px;
+            height: auto;
+            object-fit: contain;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             border: 3px solid #ffc107;
@@ -332,6 +333,15 @@
             background: linear-gradient(45deg, #004D40, #00251A);
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(0, 105, 92, 0.4);
+        }
+
+        .small-admission-btn {
+            display: inline-block;
+            width: auto;
+            padding: 8px 14px;
+            font-size: 0.95rem;
+            margin-top: 0;
+            border-radius: 20px;
         }
 
         /* Footer - Professional Compact Design */
@@ -729,8 +739,9 @@
         
         .gallery-item img {
             width: 100%;
-            height: 250px;
-            object-fit: cover;
+            height: auto;
+            max-height: 250px;
+            object-fit: contain;
             transition: transform 0.4s ease;
         }
         
@@ -1048,21 +1059,15 @@
                         <p>اس کورس میں جدید تدریسی طریقوں کا استعمال کرتے ہوئے عربی گرامر، لغت اور محاورات سکھائے جاتے ہیں۔ طلباء یہاں سے بنیادی عربی بول چال بھی سیکھیں گے۔</p>
                     </div>
 
-                    <div class="curriculum-section">
-                        <h3>نصاب (Curriculum)</h3>
-                        
-                        <ul class="curriculum-list">
-                            <li><strong>باب اول:</strong> عربی حروف تہجی اور اصوات</li>
-                            <li><strong>باب دوم:</strong> بنیادی کلمات اور جملے</li>
-                            <li><strong>باب سوم:</strong> عربی گرامر کے بنیادی اصول</li>
-                            <li><strong>باب چہارم:</strong> اسماء (Nouns) اور ان کی اقسام</li>
-                            <li><strong>باب پنجم:</strong> افعال (Verbs) اور زمانے</li>
-                            <li><strong>باب ششم:</strong> حروف جار اور حروف عطف</li>
-                            <li><strong>باب ہفتم:</strong> روزمرہ کی گفتگو اور محاورات</li>
-                            <li><strong>باب ہشتم:</strong> قرآنی الفاظ اور ان کے معانی</li>
-                            <li><strong>باب نہم:</strong> بنیادی ترجمہ کی مشق</li>
-                            <li><strong>باب دہم:</strong> عربی کہانیاں اور نثر</li>
-                        </ul>
+                    <div class="course-intro" style="background: rgba(255,255,255,0.95); padding: 25px; border-radius: 12px; margin-top: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.06);">
+                        <h3 style="margin-bottom: 12px; color: #343a40;">اللغۃ العربیۃ کورس</h3>
+                        <p style="font-size: 1.15rem; line-height: 1.9; color: #495057; text-align: justify; margin-bottom: 12px;">عربی زبان قرآن وحدیث کی زبان ہے، اس کا سیکھنا باعث سعادت ہے۔ اسے سیکھے بغیر خود اللہ ورسول صلی اللہ علیہ وسلم کے پیغام کو سمجھنا ممکن نہیں۔</p>
+                        <p style="font-size: 1.15rem; line-height: 1.9; color: #495057; text-align: justify; margin-bottom: 12px;">ورچوئل اسلامک یونیورسٹی نے اپنے ماہر اساتذہ کی بدولت صرف 3 سمسٹرز پر مشتمل عربی زبان کا کورس متعارف کرایا ہے، جسے کامیابی سے مکمل کرنے پر عربی گرائمر، صیغے، گردانوں، ترکیبوں وغیرہ پر مہارت حاصل ہو جاتی ہے، جس سے عربی عبارات سمجھنا، پڑھنا اور لکھنا ممکن ہو جاتا ہے۔</p>
+                        <p style="font-size: 1.15rem; line-height: 1.9; color: #495057; text-align: justify; margin-bottom: 12px;">داخلے کا آغاز دسمبر اور جون میں ہوتا ہے۔ کلاسز کا آغاز جنوری اور جولائی میں ہوتا ہے۔</p>
+                        <p style="font-size: 1.15rem; line-height: 1.9; color: #495057; text-align: justify; margin-top: 8px;">
+                            داخلہ شروع ہو تو 
+                            <button type="button" class="enroll-btn small-admission-btn" style="display: inline-block; margin-right: 8px;">یہاں درخواست</button>
+                        </p>
                     </div>
                     
                     <!-- Course Gallery Section -->
@@ -1074,42 +1079,42 @@
                         </p>
                         <div class="gallery-grid">
                             <div class="gallery-item" onclick="openLightbox(0)">
-                                <img src="assets/img/Course Alghat ul Arabia/01.jpg" alt="عربی زبان کورس - تفصیل 1">
+                                <img loading="lazy" src="assets/img/Course%20Alghat%20ul%20Arabia/01.jpg" alt="عربی زبان کورس - تفصیل 1">
                                 <div class="gallery-caption">
                                     <h4>بنیادی عربی</h4>
                                     <p>عربی حروف تہجی اور بنیادی کلمات کی تعلیم</p>
                                 </div>
                             </div>
                             <div class="gallery-item" onclick="openLightbox(1)">
-                                <img src="assets/img/Course Alghat ul Arabia/02.jpg" alt="عربی زبان کورس - تفصیل 2">
+                                <img loading="lazy" src="assets/img/Course%20Alghat%20ul%20Arabia/02.jpg" alt="عربی زبان کورس - تفصیل 2">
                                 <div class="gallery-caption">
                                     <h4>گرامر کے اصول</h4>
                                     <p>عربی گرامر کے بنیادی اصول اور قواعد</p>
                                 </div>
                             </div>
                             <div class="gallery-item" onclick="openLightbox(2)">
-                                <img src="assets/img/Course Alghat ul Arabia/03.png" alt="عربی زبان کورس - تفصیل 3">
+                                <img loading="lazy" src="assets/img/Course%20Alghat%20ul%20Arabia/03.png" alt="عربی زبان کورس - تفصیل 3">
                                 <div class="gallery-caption">
                                     <h4>عملی مشقیں</h4>
                                     <p>ترجمہ اور تحریری مشقوں کا مجموعہ</p>
                                 </div>
                             </div>
                             <div class="gallery-item" onclick="openLightbox(3)">
-                                <img src="assets/img/Course Alghat ul Arabia/04.png" alt="عربی زبان کورس - تفصیل 4">
+                                <img loading="lazy" src="assets/img/Course%20Alghat%20ul%20Arabia/04.png" alt="عربی زبان کورس - تفصیل 4">
                                 <div class="gallery-caption">
                                     <h4>قرآنی الفاظ</h4>
                                     <p>قرآن پاک کے اہم الفاظ اور ان کے معانی</p>
                                 </div>
                             </div>
                             <div class="gallery-item" onclick="openLightbox(4)">
-                                <img src="assets/img/Course Alghat ul Arabia/05.png" alt="عربی زبان کورس - تفصیل 5">
+                                <img loading="lazy" src="assets/img/Course%20Alghat%20ul%20Arabia/05.png" alt="عربی زبان کورس - تفصیل 5">
                                 <div class="gallery-caption">
                                     <h4>بول چال</h4>
                                     <p>روزمرہ کی عربی گفتگو اور محاورات</p>
                                 </div>
                             </div>
                             <div class="gallery-item" onclick="openLightbox(5)">
-                                <img src="assets/img/Course Alghat ul Arabia/06.png" alt="عربی زبان کورس - تفصیل 6">
+                                <img loading="lazy" src="assets/img/Course%20Alghat%20ul%20Arabia/06.png" alt="عربی زبان کورس - تفصیل 6">
                                 <div class="gallery-caption">
                                     <h4>اعلیٰ مطالعہ</h4>
                                     <p>عربی ادب اور کلاسیکی متون کا مطالعہ</p>
@@ -1330,39 +1335,42 @@
     </footer>
 
     <script>
-        document.querySelector('.enroll-btn').addEventListener('click', function() {
-            alert('داخلے کے لیے ہم سے رابطہ کریں:\nPhone: +92 (345) 555-6654\nEmail: info@virtualislamicuniversity.com');
+        document.querySelectorAll('.enroll-btn').forEach(function(btn) {
+            btn.addEventListener('click', function(e) {
+                if (e && typeof e.preventDefault === 'function') e.preventDefault();
+                alert('داخلے کے لیے ہم سے رابطہ کریں:\nPhone: +92 (345) 555-6654\nEmail: info@virtualislamicuniversity.com');
+            });
         });
         
         // Lightbox functionality
         const galleryImages = [
             {
-                src: 'assets/img/Course Alghat ul Arabia/01.jpg',
+                src: 'assets/img/Course%20Alghat%20ul%20Arabia/01.jpg',
                 title: 'بنیادی عربی',
                 description: 'عربی حروف تہجی اور بنیادی کلمات کی تعلیم'
             },
             {
-                src: 'assets/img/Course Alghat ul Arabia/02.jpg',
+                src: 'assets/img/Course%20Alghat%20ul%20Arabia/02.jpg',
                 title: 'گرامر کے اصول',
                 description: 'عربی گرامر کے بنیادی اصول اور قواعد'
             },
             {
-                src: 'assets/img/Course Alghat ul Arabia/03.png',
+                src: 'assets/img/Course%20Alghat%20ul%20Arabia/03.png',
                 title: 'عملی مشقیں',
                 description: 'ترجمہ اور تحریری مشقوں کا مجموعہ'
             },
             {
-                src: 'assets/img/Course Alghat ul Arabia/04.png',
+                src: 'assets/img/Course%20Alghat%20ul%20Arabia/04.png',
                 title: 'قرآنی الفاظ',
                 description: 'قرآن پاک کے اہم الفاظ اور ان کے معانی'
             },
             {
-                src: 'assets/img/Course Alghat ul Arabia/05.png',
+                src: 'assets/img/Course%20Alghat%20ul%20Arabia/05.png',
                 title: 'بول چال',
                 description: 'روزمرہ کی عربی گفتگو اور محاورات'
             },
             {
-                src: 'assets/img/Course Alghat ul Arabia/06.png',
+                src: 'assets/img/Course%20Alghat%20ul%20Arabia/06.png',
                 title: 'اعلیٰ مطالعہ',
                 description: 'عربی ادب اور کلاسیکی متون کا مطالعہ'
             }

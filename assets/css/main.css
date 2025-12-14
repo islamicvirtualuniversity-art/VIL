@@ -6,20 +6,21 @@
 * License: https://bootstrapmade.com/license/
 */
 
-/* Custom Font - Mehr Nastaliq */
+/* Custom Web Fonts (canonical names and paths) */
 @font-face {
-  font-family: "mehr";
-  src: url("../../mehr nastaliq web font v 2.0/Mehr_Nastaliq_Web v.2.0.woff") format("woff"),
-       url("../../mehr nastaliq web font v 2.0/Mehr_Nastaliq_Web v. 2.0.ttf") format("truetype");
+  font-family: "Mehr Nastaliq Web";
+  src: local("Mehr Nastaliq Web"),
+       url("../../mehr-nastaliq-web-font-v2.0/Mehr_Nastaliq_Web-v.2.0.woff") format("woff"),
+       url("../../mehr-nastaliq-web-font-v2.0/Mehr_Nastaliq_Web-v.2.0.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Mehar Neskh";
-  src: url("../../mehr nastaliq web font v 2.0/Mehr_Nastaliq_Web v.2.0.woff") format("woff"),
-       url("../../mehr nastaliq web font v 2.0/Mehr_Nastaliq_Web v. 2.0.ttf") format("truetype");
+  font-family: "Jameel Noori Nastaleeq";
+  src: local("Jameel Noori Nastaleeq"),
+       url("../../jameel-noori-nastaleeq/Jameel-Noori-Nastaleeq-Regular/Jameel-Noori-Nastaleeq-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -31,11 +32,11 @@
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
-  --default-font: "mehr", "Mehar Neskh", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "mehr", "Mehar Neskh", sans-serif;
-  --nav-font: "mehr", "Mehar Neskh", sans-serif;
+  --default-font: "Mehr Nastaliq Web", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Mehr Nastaliq Web", sans-serif;
+  --nav-font: "Mehr Nastaliq Web", sans-serif;
   --arabic-font: "Noto Naskh Arabic", "Amiri", "Scheherazade New", serif;
-  --urdu-font: "Noto Nastaliq Urdu", "Jameel Noori Nastaleeq", "mehr", serif;
+  --urdu-font: "Jameel Noori Nastaleeq", "Mehr Nastaliq Web", serif;
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
@@ -1238,7 +1239,7 @@ section,
   padding-bottom: 10px;
   font-size: 1.1rem;
   line-height: 1.6;
-  font-family: "Mehar Neskh";
+  font-family: "Mehr Nastaliq Web";
 }
 
 .about .content ul i {
@@ -1495,7 +1496,7 @@ section,
   font-size: 1.4rem;
   color: color-mix(in srgb, var(--default-color), transparent 20%);
   transition: 0.3s;
-  font-family: "Mehar Neskh", "mehr", sans-serif !important;
+  font-family: "Mehr Nastaliq Web", sans-serif !important;
 }
 
 .courses .trainer .trainer-profile .trainer-link:hover {

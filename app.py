@@ -981,11 +981,29 @@ def serve_assets(filename):
     except FileNotFoundError:
         abort(404)
 
+# Serve Mehr Nastaliq Web fonts from hyphenated folder (canonical path used in CSS)
+@app.route('/mehr-nastaliq-web-font-v2.0/<path:filename>')
+def serve_mehr_fonts_hyphenated(filename):
+    """Serve Mehr Nastaliq Web font files from hyphenated folder"""
+    try:
+        return send_from_directory('mehr-nastaliq-web-font-v2.0', filename)
+    except FileNotFoundError:
+        abort(404)
+
 @app.route('/mehr nastaliq web font v 2.0/<path:filename>')
 def serve_fonts(filename):
     """Serve font files"""
     try:
         return send_from_directory('mehr nastaliq web font v 2.0', filename)
+    except FileNotFoundError:
+        abort(404)
+
+# Serve Jameel Noori Nastaleeq fonts root
+@app.route('/jameel-noori-nastaleeq/<path:filename>')
+def serve_jameel_fonts(filename):
+    """Serve Jameel Noori Nastaleeq font files"""
+    try:
+        return send_from_directory('jameel-noori-nastaleeq', filename)
     except FileNotFoundError:
         abort(404)
 

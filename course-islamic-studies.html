@@ -243,20 +243,23 @@
         }
 
         .curriculum-section h3 {
-            font-size: 2rem;
-            margin-bottom: 25px;
-            color: #495057;
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            color: #2c3e50;
             position: relative;
+            font-weight: 700;
+            letter-spacing: 0.5px;
         }
 
         .curriculum-section h3::before {
             content: '';
             position: absolute;
-            bottom: -5px;
+            bottom: -12px;
             right: 0;
-            width: 50px;
+            width: 60px;
             height: 3px;
-            background: #fd7e14;
+            background: #ffc107;
+            border-radius: 2px;
         }
 
         .curriculum-list {
@@ -279,6 +282,251 @@
             right: 0;
             top: 15px;
             font-size: 1.2rem;
+        }
+
+        /* Professional Curriculum Cards */
+        .curriculum-cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        .curriculum-card {
+            position: relative;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            transition: all 0.4s ease;
+            border: 1px solid #e8e8e8;
+            min-height: 520px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .curriculum-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: #ffc107;
+            z-index: 10;
+        }
+
+        .curriculum-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+            border-color: #f0f0f0;
+        }
+
+        .semester-badge-top {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: #2c3e50;
+            color: white;
+            padding: 8px 18px;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            z-index: 20;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            letter-spacing: 0.5px;
+            text-transform: capitalize;
+            border: 2px solid #ffc107;
+        }
+
+        .curriculum-card-header {
+            padding: 30px 25px 25px;
+            color: white;
+            text-align: center;
+            background: #34495e;
+            position: relative;
+            overflow: hidden;
+            min-height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        .curriculum-card-header::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -50px;
+            width: 280px;
+            height: 280px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.03) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .curriculum-card-header::after {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            left: -50px;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.02) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .curriculum-card-header h4 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin: 0 0 5px 0;
+            position: relative;
+            z-index: 2;
+            letter-spacing: 0.5px;
+            color: #ffffff;
+        }
+
+        .curriculum-card-header p {
+            font-size: 0.95rem;
+            opacity: 0.95;
+            margin: 0;
+            position: relative;
+            z-index: 2;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Specific Header Colors - Professional & Simple */
+        .curriculum-card-header.foundation {
+            background: #34495e;
+        }
+
+        .curriculum-card-header.building {
+            background: #34495e;
+        }
+
+        .curriculum-card-header.bond {
+            background: #34495e;
+        }
+
+        .curriculum-card-header.gallery-level {
+            background: #34495e;
+        }
+
+        .curriculum-card-header.chain {
+            background: #34495e;
+        }
+
+        .curriculum-card-body {
+            padding: 35px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(248, 249, 250, 0.98) 100%);
+        }
+
+        .curriculum-goal {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-right: 4px solid #ffc107;
+            margin-bottom: 25px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+        }
+
+        .curriculum-goal:hover {
+            background: #f0f1f3;
+        }
+
+        .curriculum-goal h5 {
+            color: #2c3e50;
+            font-size: 1.1rem;
+            margin: 0 0 10px 0;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+        }
+
+        .curriculum-goal p {
+            color: #555;
+            font-size: 0.95rem;
+            margin: 0;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        .subjects-title {
+            color: #2c3e50;
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin: 0 0 15px 0;
+            text-align: right;
+            letter-spacing: 0.3px;
+        }
+
+        .subjects-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .subjects-list li {
+            padding: 12px 14px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-right: 3px solid #ffc107;
+            color: #555;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            text-align: right;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+        }
+
+        .subjects-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 12px;
+            color: #27ae60;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .subjects-list li:hover {
+            background: #e8eaed;
+            transform: translateX(-3px);
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Responsive Design for Curriculum */
+        @media (max-width: 1024px) {
+            .curriculum-cards-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .curriculum-cards-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .curriculum-card {
+                min-height: auto;
+            }
+            
+            .curriculum-card-header h4 {
+                font-size: 2rem;
+            }
+            
+            .curriculum-card-header, .curriculum-card-body {
+                padding: 25px 20px;
+            }
         }
 
         /* Sidebar Styling */
@@ -1100,7 +1348,7 @@
                     </div>
                     
                     <div class="course-description">
-                        <p>علوم الدین کورس کا مقصد طلباء کو اسلامی تعلیمات کی مکمل آگاہی فراہم کرنا ہے۔ اس کورس میں اسلامی عقائد، فقہ، تاریخ، اور جدید مسائل پر روشنی ڈالی جاتی ہے۔</p>
+                        <p>برصغیر کے دینی مدارس میں اسلامی علوم وفنون سکھانے کے لیے مقرر کردہ نصابِ تعلیم کو عموماً درسِ نظامی کہا جاتا ہے۔  ہم جدید دَور کے تقاضوں کے مطابق بہترین نصاب کو بہترین طریقہ تعلیم کے ساتھ پیش کر رہے ہیں اور اسے -علوم الدین-  کا نام دے رہے ہیں۔ یہ آٹھ سیمیسٹرز پر مشتمل چار سالہ کورس ہے۔جس میں قرآن وحدیث کے ساتھ ساتھ عربی گرائمر میں صرف ونحو، نیز تفسیر، اصولِ تفسیر، اصولِ حدیث،اصولِ فقہ، وغیرہ کی تعلیم دی جاتی ہے۔</p>
                         
                         <p>یہ کورس ان لوگوں کے لیے ڈیزائن کیا گیا ہے جو اسلام کی بنیادوں کو مزید گہرائی میں سمجھنا چاہتے ہیں اور انہیں عملی زندگی میں نافذ کرنا چاہتے ہیں۔</p>
                     </div>
@@ -1108,16 +1356,118 @@
                     <div class="curriculum-section">
                         <h3>نصاب (Curriculum)</h3>
                         
-                        <ul class="curriculum-list">
-                            <li><strong>باب اول:</strong> اسلامی عقائد کا تعارف</li>
-                            <li><strong>باب دوم:</strong> فقہ اسلامی - عبادات</li>
-                            <li><strong>باب سوم:</strong> سیرت النبی ﷺ کا مفصل مطالعہ</li>
-                            <li><strong>باب چہارم:</strong> اسلامی تاریخ کے اہم ادوار</li>
-                            <li><strong>باب پنجم:</strong> حدیث شریف کی روشنی میں مسائل</li>
-                            <li><strong>باب ششم:</strong> جدید چیلنجز اور ان کا اسلامی حل</li>
-                            <li><strong>باب ہفتم:</strong> اخلاقیات اور ان کی اہمیت</li>
-                            <li><strong>باب ہشتم:</strong> اسلامی معاشرت اور سماجی نظام</li>
-                        </ul>
+                        <div class="curriculum-cards-container">
+                            <!-- الاساس - Foundation Level -->
+                            <div class="curriculum-card">
+                                <div class="semester-badge-top">سمسٹر 1</div>
+                                <div class="curriculum-card-header foundation">
+                                    <h4>الاساس</h4>
+                                    <p>بنیادی درجہ</p>
+                                </div>
+                                <div class="curriculum-card-body">
+                                    <div class="curriculum-goal">
+                                        <h5>کورس کا مقصد:</h5>
+                                        <p>اسلامی علوم کی بنیاد اور قرآن مجید کے ساتھ عام تعارف</p>
+                                    </div>
+                                    <h5 class="subjects-title">نصابی مضامین:</h5>
+                                    <ul class="subjects-list">
+                                        <li>قرآن کریم</li>
+                                        <li>ابتدائی قواعد النحو</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- البناء - Building Level -->
+                            <div class="curriculum-card">
+                                <div class="semester-badge-top">سمسٹر 2</div>
+                                <div class="curriculum-card-header building">
+                                    <h4>البناء</h4>
+                                    <p>تعمیری درجہ</p>
+                                </div>
+                                <div class="curriculum-card-body">
+                                    <div class="curriculum-goal">
+                                        <h5>کورس کا مقصد:</h5>
+                                        <p>عربی زبان کے قواعد اور قرآن کی تفہیم میں بہتری</p>
+                                    </div>
+                                    <h5 class="subjects-title">نصابی مضامین:</h5>
+                                    <ul class="subjects-list">
+                                        <li>قرآن کریم</li>
+                                        <li>نحو (قواعد النحو اول)</li>
+                                        <li>صرف (قواعد الصرف اول)</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- الوثاق - Strong Bond Level -->
+                            <div class="curriculum-card">
+                                <div class="semester-badge-top">سمسٹر 3</div>
+                                <div class="curriculum-card-header bond">
+                                    <h4>الوثاق</h4>
+                                    <p>مضبوط بنیاد</p>
+                                </div>
+                                <div class="curriculum-card-body">
+                                    <div class="curriculum-goal">
+                                        <h5>کورس کا مقصد:</h5>
+                                        <p>احادیث اور عقائد کے ساتھ زبانی مہارتوں میں اضافہ</p>
+                                    </div>
+                                    <h5 class="subjects-title">نصابی مضامین:</h5>
+                                    <ul class="subjects-list">
+                                        <li>قرآن کریم</li>
+                                        <li>حدیث</li>
+                                        <li>عقیدہ</li>
+                                        <li>نحو (قواعد النحو ثانی)</li>
+                                        <li>صرف (قواعد الصرف ثانی)</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- الرواق - Gallery Level -->
+                            <div class="curriculum-card">
+                                <div class="semester-badge-top">سمسٹر 4</div>
+                                <div class="curriculum-card-header gallery-level">
+                                    <h4>الرواق</h4>
+                                    <p>اعلیٰ درجہ پہلا</p>
+                                </div>
+                                <div class="curriculum-card-body">
+                                    <div class="curriculum-goal">
+                                        <h5>کورس کا مقصد:</h5>
+                                        <p>علوم الدین میں گہری تفہیم اور اصولی علم کی بنیاد</p>
+                                    </div>
+                                    <h5 class="subjects-title">نصابی مضامین:</h5>
+                                    <ul class="subjects-list">
+                                        <li>قرآن کریم</li>
+                                        <li>حدیث</li>
+                                        <li>نحو</li>
+                                        <li>صرف</li>
+                                        <li>اصول فقہ</li>
+                                        <li>منطق</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- الرباط - Bond/Chain Level -->
+                            <div class="curriculum-card">
+                                <div class="semester-badge-top">سمسٹر 5</div>
+                                <div class="curriculum-card-header chain">
+                                    <h4>الرباط</h4>
+                                    <p>ختم کرنے والا درجہ</p>
+                                </div>
+                                <div class="curriculum-card-body">
+                                    <div class="curriculum-goal">
+                                        <h5>کورس کا مقصد:</h5>
+                                        <p>اسلامی علوم میں مکمل ماہریت اور اعلیٰ درجے کی تخصص</p>
+                                    </div>
+                                    <h5 class="subjects-title">نصابی مضامین:</h5>
+                                    <ul class="subjects-list">
+                                        <li>قرآن کریم</li>
+                                        <li>حدیث رسول</li>
+                                        <li>النحو والصرف</li>
+                                        <li>اصول الحدیث</li>
+                                        <li>البلاغۃ</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     
                     <!-- Course Gallery Section -->
@@ -1129,49 +1479,49 @@
                         </p>
                         <div class="gallery-grid">
                             <div class="gallery-item" onclick="openLightbox(0)">
-                                <img src="assets/img/Course Aloom ul Deen/02.jpg" alt="علوم الدین کورس - تفصیل 1">
+                                <img src="assets/img/Course%20Aloom%20ul%20Deen/02.jpg" alt="علوم الدین کورس - تفصیل 1">
                                 <div class="gallery-caption">
                                     <h4>بنیادی عقائد</h4>
                                     <p>اسلامی عقائد کی تفصیلی وضاحت اور بنیادی اصول</p>
                                 </div>
                             </div>
                             <div class="gallery-item" onclick="openLightbox(1)">
-                                <img src="assets/img/Course Aloom ul Deen/03.jpg" alt="علوم الدین کورس - تفصیل 2">
+                                <img src="assets/img/Course%20Aloom%20ul%20Deen/03.jpg" alt="علوم الدین کورس - تفصیل 2">
                                 <div class="gallery-caption">
                                     <h4>فقہی مسائل</h4>
                                     <p>روزمرہ کے فقہی مسائل اور ان کے حل</p>
                                 </div>
                             </div>
                             <div class="gallery-item" onclick="openLightbox(2)">
-                                <img src="assets/img/Course Aloom ul Deen/04.jpg" alt="علوم الدین کورس - تفصیل 3">
+                                <img src="assets/img/Course%20Aloom%20ul%20Deen/04.jpg" alt="علوم الدین کورس - تفصیل 3">
                                 <div class="gallery-caption">
                                     <h4>سیرت النبی ﷺ</h4>
                                     <p>نبی کریم ﷺ کی مبارک زندگی کا تفصیلی مطالعہ</p>
                                 </div>
                             </div>
                             <div class="gallery-item" onclick="openLightbox(3)">
-                                <img src="assets/img/Course Aloom ul Deen/05.jpg" alt="علوم الدین کورس - تفصیل 4">
+                                <img src="assets/img/Course%20Aloom%20ul%20Deen/05.jpg" alt="علوم الدین کورس - تفصیل 4">
                                 <div class="gallery-caption">
                                     <h4>اسلامی تاریخ</h4>
                                     <p>اسلام کی تاریخ اور اہم واقعات کی روشنی</p>
                                 </div>
                             </div>
                             <div class="gallery-item" onclick="openLightbox(4)">
-                                <img src="assets/img/Course Aloom ul Deen/06.jpg" alt="علوم الدین کورس - تفصیل 5">
+                                <img src="assets/img/Course%20Aloom%20ul%20Deen/06.jpg" alt="علوم الدین کورس - تفصیل 5">
                                 <div class="gallery-caption">
                                     <h4>حدیث شریف</h4>
                                     <p>احادیث کی روشنی میں اسلامی تعلیمات</p>
                                 </div>
                             </div>
                             <div class="gallery-item" onclick="openLightbox(5)">
-                                <img src="assets/img/Course Aloom ul Deen/07.jpg" alt="علوم الدین کورس - تفصیل 6">
+                                <img src="assets/img/Course%20Aloom%20ul%20Deen/07.jpg" alt="علوم الدین کورس - تفصیل 6">
                                 <div class="gallery-caption">
                                     <h4>جدید مسائل</h4>
                                     <p>آج کے دور کے مسائل اور اسلامی حل</p>
                                 </div>
                             </div>
                             <div class="gallery-item" onclick="openLightbox(6)">
-                                <img src="assets/img/Course Aloom ul Deen/08.jpg" alt="علوم الدین کورس - تفصیل 7">
+                                <img src="assets/img/Course%20Aloom%20ul%20Deen/08.jpg" alt="علوم الدین کورس - تفصیل 7">
                                 <div class="gallery-caption">
                                     <h4>اخلاقیات</h4>
                                     <p>اسلامی اخلاق اور کردار کی تعمیر</p>
@@ -1222,17 +1572,17 @@
                         
                         <div class="info-item">
                             <strong>مدت:</strong>
-                            <span>9 مہینے</span>
+                            <span>6 مہینے</span>
                         </div>
                         
                         <div class="info-item">
                             <strong>کلاسیں:</strong>
-                            <span>ہفتے میں 5 دن</span>
+                            <span>ہفتے میں 4 دن</span>
                         </div>
                         
                         <div class="info-item">
                             <strong>وقت:</strong>
-                            <span>شام 6-7 بجے</span>
+                            <span>شام 8 بجے</span>
                         </div>
                         
                         <div class="info-item">
@@ -1245,10 +1595,7 @@
                             <span>مفت</span>
                         </div>
                         
-                        <div class="info-item">
-                            <strong>سرٹیفکیٹ:</strong>
-                            <span>ہاں</span>
-                        </div>
+            
                         
                         <button class="enroll-btn">ابھی داخلہ لیں</button>
                     </div>
@@ -1283,8 +1630,7 @@
                                     <div class="semester-badge" style="padding: 6px 15px; font-size: 0.8rem;">سمسٹر چہارم</div>
                                     <div class="semester-content" style="padding: 25px 15px 15px;">
                                         <div class="semester-header" style="margin-bottom: 15px;">
-                                            <i class="fas fa-book-open" style="color: #17a2b8; margin-left: 10px;"></i>
-                                            <h4 style="font-size: 1.2rem;">عقائد و فقہ</h4>
+                                           
                                         </div>
                                         <a href="https://mega.nz/folder/acUATaYQ#qJfcwgsfM_GEreyeLC8phw" target="_blank" class="download-btn semester-4" style="padding: 12px 20px; font-size: 1rem;">
                                             <i class="fas fa-download"></i>
@@ -1297,8 +1643,8 @@
                                     <div class="semester-badge" style="padding: 6px 15px; font-size: 0.8rem;">سمسٹر پنجم</div>
                                     <div class="semester-content" style="padding: 25px 15px 15px;">
                                         <div class="semester-header" style="margin-bottom: 15px;">
-                                            <i class="fas fa-graduation-cap" style="color: #28a745; margin-left: 10px;"></i>
-                                            <h4 style="font-size: 1.2rem;">تفسیر و حدیث</h4>
+                                    
+                                            
                                         </div>
                                         <a href="https://drive.google.com/drive/folders/1lQWzBU3P2WswsuriwL37eHdsB_ZQlTz9?usp=drive_link" target="_blank" class="download-btn semester-5" style="padding: 12px 20px; font-size: 1rem;">
                                             <i class="fas fa-download"></i>
@@ -1311,8 +1657,7 @@
                                     <div class="semester-badge" style="padding: 6px 15px; font-size: 0.8rem;">سمسٹر ششم</div>
                                     <div class="semester-content" style="padding: 25px 15px 15px;">
                                         <div class="semester-header" style="margin-bottom: 15px;">
-                                            <i class="fas fa-medal" style="color: #dc3545; margin-left: 10px;"></i>
-                                            <h4 style="font-size: 1.2rem;">سیرت و تاریخ</h4>
+                                           
                                         </div>
                                         <a href="https://drive.google.com/drive/folders/1BxPl5FybWKKQyoywzZTNojt0BsLx9-5g" target="_blank" class="download-btn semester-6" style="padding: 12px 20px; font-size: 1rem;">
                                             <i class="fas fa-download"></i>
@@ -1325,8 +1670,7 @@
                                     <div class="semester-badge" style="padding: 6px 15px; font-size: 0.8rem;">سمسٹر ہفتم</div>
                                     <div class="semester-content" style="padding: 25px 15px 15px;">
                                         <div class="semester-header" style="margin-bottom: 15px;">
-                                            <i class="fas fa-university" style="color: #ffc107; margin-left: 10px;"></i>
-                                            <h4 style="font-size: 1.2rem;">اخلاقیات</h4>
+                                         
                                         </div>
                                         <a href="https://mega.nz/folder/fVVVnY5I#9ZfH1SNce8DVtqyuvQhdeA" target="_blank" class="download-btn semester-7" style="padding: 12px 20px; font-size: 1rem;">
                                             <i class="fas fa-download"></i>
@@ -1339,8 +1683,7 @@
                                     <div class="semester-badge" style="padding: 6px 15px; font-size: 0.8rem;">سمسٹر ہشتم</div>
                                     <div class="semester-content" style="padding: 25px 15px 15px;">
                                         <div class="semester-header" style="margin-bottom: 15px;">
-                                            <i class="fas fa-star" style="color: #6f42c1; margin-left: 10px;"></i>
-                                            <h4 style="font-size: 1.2rem;">جدید مسائل</h4>
+                     
                                         </div>
                                         <a href="https://drive.google.com/drive/folders/1iDrY7hO7G1vpjKNgmvHJ-UI536KqasPM?usp=sharing" target="_blank" class="download-btn semester-8" style="padding: 12px 20px; font-size: 1rem;">
                                             <i class="fas fa-download"></i>

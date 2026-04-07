@@ -218,12 +218,28 @@
             justify-content: center;
         }
 
-        .feature-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
+        .feature-list {
+            list-style: disc inside;
+            list-style-position: inside;
+            padding-left: 0;
+            margin: 0;
+            overflow-x: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .feature-list::-webkit-scrollbar {
+            display: none;
+        }
+
+        .feature-list .feature-item {
+            margin-bottom: 12px;
             font-size: 1.1rem;
             color: #495057;
+            line-height: 1.7;
+            white-space: nowrap;
+            display: list-item;
+            padding-right: 10px;
         }
 
         .feature-item .checkmark {
@@ -445,6 +461,81 @@
         .footer-bottom .credits a {
             color: #FFC107;
             text-decoration: none;
+        }
+
+        .poster-lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            z-index: 2000;
+            transition: opacity 0.25s ease;
+            opacity: 0;
+        }
+
+        .poster-lightbox.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .poster-lightbox-content {
+            position: relative;
+            max-width: 95%;
+            max-height: 95%;
+            width: 900px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(12px);
+        }
+
+        .poster-lightbox-img {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-height: 90vh;
+            object-fit: contain;
+        }
+
+        .poster-lightbox-close {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            font-size: 1.7rem;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+
+        .poster-lightbox-close:hover {
+            transform: scale(1.05);
+            background: rgba(0, 0, 0, 0.85);
+        }
+
+        .poster-link {
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .poster-link img {
+            transition: transform 0.3s ease;
+        }
+
+        .poster-link:hover img {
+            transform: scale(1.03);
         }
 
         /* Books Download Section - Professional Styling */
@@ -1571,44 +1662,21 @@
                         <div class="course-features">
                             <h3 style="font-size: 1.8rem; color: #495057; margin-bottom: 20px; text-align: right;">کورس کی خصوصیات:</h3>
                             
-                            <div class="feature-item">
-                                <span>عربی حروف تہجی اور اصوات</span>
-                                <span class="checkmark">✓</span>
-                            </div>
-                            
-                            <div class="feature-item">
-                                <span>بنیادی گرامر کے اصول</span>
-                                <span class="checkmark">✓</span>
-                            </div>
-                            
-                            <div class="feature-item">
-                                <span>روزمرہ گفتگو اور محاورات</span>
-                                <span class="checkmark">✓</span>
-                            </div>
-                            
-                            <div class="feature-item">
-                                <span>قرآنی الفاظ کی تفہیم</span>
-                                <span class="checkmark">✓</span>
-                            </div>
-                            
-                            <div class="feature-item">
-                                <span>عملی ترجمہ کی مشق</span>
-                                <span class="checkmark">✓</span>
-                            </div>
-                            
-                            <div class="feature-item">
-                                <span>آن لائن Q&A سیشن</span>
-                                <span class="checkmark">✓</span>
-                            </div>
+                            <ul class="feature-list">
+                                <li class="feature-item">عربی گرائمر، صیغے، ترکیب اور گردانوں میں مہارت</li>
+                                <li class="feature-item">عربی سے اردو اور اردو سے عربی</li>
+                                <li class="feature-item">بغیر زبر زیر کے عربی عبارت پڑھنے میں مہارت</li>
+                                <li class="feature-item">قرآن و حدیث پر نحوی و صرفی قواعد کا اجراء</li>
+                                <li class="feature-item">سوموار سے جمعرات دو گھنٹے لائیو کلاسز بذریعہ زوم ایپ</li>
+                                <li class="feature-item">ریکارڈڈ کلاس کی سہولت</li>
+                                <li class="feature-item">یومیہ ہومورک چیکنگ اور ڈسکشکن کا بندو بست بذریعہ واٹس ایپ</li>
+                                <li class="feature-item">ہفتہ وار اسائنمنٹ بھی حل کروائی جاتی ہے</li>
+                            </ul>
                         </div>
                         
-                        <img src="assets/img/PosterA.png" alt="اللغة العربية کورس پوسٹر" class="course-image">
-                    </div>
-                    
-                    <div class="course-description">
-                        <p>عربی زبان قرآن وحدیث کی زبان ہے، اس کا سیکھنا باعث سعادت ہے۔ اسے سیکھے بغیر خود اللہ ورسول صلی اللہ علیہ وسلم کے پیغام کو سمجھنا ممکن نہیں۔ ورچوئل اسلامک یونیورسٹی نے اپنے ماہر اساتذہ کی بدولت صرف 3 سمسٹرز پر مشتمل عربی زبان کا کورس متعارف کرایا ہے، جسے کامیابی سے مکمل کرنے پر عربی گرائمر، صیغے، گردانوں، ترکیبوں وغیرہ پر مہارت حاصل ہو جاتی ہے، جس سے عربی عبارات سمجھنا، پڑھنا اور لکھنا ممکن ہو جاتا ہے۔</p>
-                        
-                        <p>اس کورس میں جدید تدریسی طریقوں کا استعمال کرتے ہوئے عربی گرامر، لغت اور محاورات سکھائے جاتے ہیں۔ طلباء یہاں سے بنیادی عربی بول چال بھی سیکھیں گے۔</p>
+                        <a href="assets/img/PosterA.png" class="poster-link" title="پوسٹر دیکھنے کے لئے کلک کریں">
+                            <img src="assets/img/PosterA.png" alt="اللغة العربية کورس پوسٹر" class="course-image">
+                        </a>
                     </div>
 
                     <div class="course-intro" style="background: rgba(255,255,255,0.95); padding: 25px; border-radius: 12px; margin-top: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.06);">
@@ -1683,7 +1751,7 @@
                         
                         <div class="info-item">
                             <strong>مدت:</strong>
-                            <span>12 مہینے</span>
+                            <span>18 مہینے</span>
                         </div>
                         
                         <div class="info-item">
@@ -1693,7 +1761,7 @@
                         
                         <div class="info-item">
                             <strong>وقت:</strong>
-                            <span>شام 8-9 بجے</span>
+                              <span>مغرب کے بعد</span>
                         </div>
                         
                         <div class="info-item">
@@ -1702,13 +1770,8 @@
                         </div>
                         
                         <div class="info-item">
-                            <strong>فیس:</strong>
-                            <span>مفت</span>
-                        </div>
-                        
-                        <div class="info-item">
                             <strong>سرٹیفکیٹ:</strong>
-                            <span>ہاں</span>
+                            <span>کورس کی تکمیل پر باقاعدہ سرٹیفکیٹ فراہم کیا جائے گا۔</span>
                         </div>
                         
                         <button class="enroll-btn">ابھی داخلہ لیں</button>
@@ -1886,12 +1949,56 @@
         </div>
     </footer>
 
+    <div class="poster-lightbox" id="posterLightbox">
+        <div class="poster-lightbox-content">
+            <button class="poster-lightbox-close" id="closePosterLightbox" aria-label="پوسٹر بند کریں">&times;</button>
+            <img src="" alt="Poster" class="poster-lightbox-img" id="posterLightboxImg">
+        </div>
+    </div>
+
     <script>
         document.querySelectorAll('.enroll-btn').forEach(function(btn) {
             btn.addEventListener('click', function(e) {
                 if (e && typeof e.preventDefault === 'function') e.preventDefault();
                 alert('داخلے کے لیے ہم سے رابطہ کریں:\nPhone: +92 (345) 555-6654\nEmail: info@virtualislamicuniversity.com');
             });
+        });
+
+        const posterLink = document.querySelector('.poster-link');
+        const posterLightbox = document.getElementById('posterLightbox');
+        const closePosterLightbox = document.getElementById('closePosterLightbox');
+        const posterLightboxImg = document.getElementById('posterLightboxImg');
+
+        if (posterLink && posterLightbox && posterLightboxImg) {
+            posterLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                posterLightboxImg.src = this.href;
+                posterLightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        }
+
+        if (closePosterLightbox) {
+            closePosterLightbox.addEventListener('click', function() {
+                posterLightbox.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        }
+
+        if (posterLightbox) {
+            posterLightbox.addEventListener('click', function(e) {
+                if (e.target === posterLightbox) {
+                    posterLightbox.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && posterLightbox && posterLightbox.classList.contains('active')) {
+                posterLightbox.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
         });
         
         // Lightbox functionality

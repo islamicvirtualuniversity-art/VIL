@@ -1,0 +1,30 @@
+479                         </div>
+480                         
+481                         <div class="info-item">
+482                             <strong>وقت:</strong>
+483                             <span>مغرب کے بعد</span>
+484                         </div>
+485                         
+486                         <div class="info-item">
+487                             <strong>زبان:</strong>
+488                             <span>اردو</span>
+489                         </div>
+490                         
+491                         <div class="info-item">
+492                             <strong>فیس:</strong>
+493                             <span>مفت</span>
+494                         </div>
+495                         
+496                         <div class="info-item">
+497                             <strong>سرٹیفکیٹ:</strong>
+498                             <span>کورس کی تکمیل پر باقاعدہ سرٹیفکیٹ فراہم کیا جائے گا۔</span>
+499                         </div>
+500                         
+501                         <button class="enroll-btn">ابھی داخلہ لیں</button>
+502                     </div>
+503                 </div>
+504             </div>
+505         </div>
+506     </section>
+507     
+508     

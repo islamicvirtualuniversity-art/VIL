@@ -1,0 +1,245 @@
+3 1         <div class="container">
+4 2             <div class="details-grid">
+5 3                 <div class="course-content">
+8 4                     <div class="course-overview">
+9 5                         <div class="course-features">
+19 4                         </div>
+24 3                     </div>
+26 4                     <div class="course-description">
+30 3                     </div>
+32 4                     <div class="curriculum-section">
+35 5                         <div class="curriculum-cards-container">
+37 6                             <div class="curriculum-card">
+38 6                                 <div class="semester-badge-top">سمسٹر 1</div>
+39 7                                 <div class="curriculum-card-header foundation">
+42 6                                 </div>
+43 7                                 <div class="curriculum-card-body">
+44 8                                     <div class="curriculum-goal">
+47 7                                     </div>
+55 6                                 </div>
+56 5                             </div>
+59 6                             <div class="curriculum-card">
+60 6                                 <div class="semester-badge-top">سمسٹر 2</div>
+61 7                                 <div class="curriculum-card-header building">
+64 6                                 </div>
+65 7                                 <div class="curriculum-card-body">
+66 8                                     <div class="curriculum-goal">
+69 7                                     </div>
+77 6                                 </div>
+78 5                             </div>
+81 6                             <div class="curriculum-card">
+82 6                                 <div class="semester-badge-top">سمسٹر 3</div>
+83 7                                 <div class="curriculum-card-header bond">
+86 6                                 </div>
+87 7                                 <div class="curriculum-card-body">
+88 8                                     <div class="curriculum-goal">
+91 7                                     </div>
+100 6                                 </div>
+101 5                             </div>
+104 6                             <div class="curriculum-card">
+105 6                                 <div class="semester-badge-top">سمسٹر 4</div>
+106 7                                 <div class="curriculum-card-header gallery-level">
+109 6                                 </div>
+110 7                                 <div class="curriculum-card-body">
+111 8                                     <div class="curriculum-goal">
+114 7                                     </div>
+124 6                                 </div>
+125 5                             </div>
+128 6                             <div class="curriculum-card">
+129 6                                 <div class="semester-badge-top">سمسٹر 5</div>
+130 7                                 <div class="curriculum-card-header chain">
+133 6                                 </div>
+134 7                                 <div class="curriculum-card-body">
+135 8                                     <div class="curriculum-goal">
+138 7                                     </div>
+148 6                                 </div>
+149 5                             </div>
+150 4                         </div>
+151 5                         <div class="curriculum-cards-container">
+153 6                             <div class="curriculum-card">
+154 6                                 <div class="semester-badge-top">سمسٹر 6</div>
+155 7                                 <div class="curriculum-card-header foundation">
+157 6                                 </div>
+158 7                                 <div class="curriculum-card-body">
+159 8                                     <div class="curriculum-goal">
+162 7                                     </div>
+171 6                                 </div>
+172 5                             </div>
+173 6                             <div class="curriculum-card">
+174 6                                 <div class="semester-badge-top">سمسٹر 7</div>
+175 7                                 <div class="curriculum-card-header foundation">
+177 6                                 </div>
+178 7                                 <div class="curriculum-card-body">
+179 8                                     <div class="curriculum-goal">
+182 7                                     </div>
+190 6                                 </div>
+191 5                             </div>
+192 6                             <div class="curriculum-card">
+193 6                                 <div class="semester-badge-top">سمسٹر 8</div>
+194 7                                 <div class="curriculum-card-header foundation">
+196 6                                 </div>
+197 7                                 <div class="curriculum-card-body">
+198 8                                     <div class="curriculum-goal">
+199 7                                     </div>
+207 6                                 </div>
+208 5                             </div>
+209 4                         </div>
+212 5                     <div class="course-gallery">
+218 6                         <div class="gallery-grid">
+219 7                             <div class="gallery-item" onclick="openLightbox(0)">
+221 8                                 <div class="gallery-caption">
+224 7                                 </div>
+225 6                             </div>
+226 7                             <div class="gallery-item" onclick="openLightbox(1)">
+228 8                                 <div class="gallery-caption">
+231 7                                 </div>
+232 6                             </div>
+233 7                             <div class="gallery-item" onclick="openLightbox(2)">
+235 8                                 <div class="gallery-caption">
+238 7                                 </div>
+239 6                             </div>
+240 7                             <div class="gallery-item" onclick="openLightbox(3)">
+242 8                                 <div class="gallery-caption">
+245 7                                 </div>
+246 6                             </div>
+247 7                             <div class="gallery-item" onclick="openLightbox(4)">
+249 8                                 <div class="gallery-caption">
+252 7                                 </div>
+253 6                             </div>
+254 7                             <div class="gallery-item" onclick="openLightbox(5)">
+256 8                                 <div class="gallery-caption">
+259 7                                 </div>
+260 6                             </div>
+261 7                             <div class="gallery-item" onclick="openLightbox(6)">
+263 8                                 <div class="gallery-caption">
+266 7                                 </div>
+267 6                             </div>
+268 7                             <div class="gallery-item" onclick="openLightbox(7)">
+270 8                                 <div class="gallery-caption">
+273 7                                 </div>
+274 6                             </div>
+275 7                             <div class="gallery-item" onclick="openLightbox(8)">
+277 8                                 <div class="gallery-caption">
+280 7                                 </div>
+281 6                             </div>
+282 7                             <div class="gallery-item" onclick="openLightbox(9)">
+284 8                                 <div class="gallery-caption">
+287 7                                 </div>
+288 6                             </div>
+289 7                             <div class="gallery-item" onclick="openLightbox(10)">
+291 8                                 <div class="gallery-caption">
+294 7                                 </div>
+295 6                             </div>
+296 7                             <div class="gallery-item" onclick="openLightbox(11)">
+298 8                                 <div class="gallery-caption">
+301 7                                 </div>
+302 6                             </div>
+303 5                         </div>
+304 4                     </div>
+306 5                 <div class="course-sidebar">
+307 6                     <div class="sidebar-section">
+309 7                         <div class="books-download-section">
+310 8                             <div class="section-introduction">
+312 9                                 <div class="benefits-grid" style="grid-template-columns: 1fr; gap: 10px;">
+313 10                                     <div class="benefit-item" style="padding: 10px 15px;">
+316 9                                     </div>
+317 10                                     <div class="benefit-item" style="padding: 10px 15px;">
+320 9                                     </div>
+321 10                                     <div class="benefit-item" style="padding: 10px 15px;">
+324 9                                     </div>
+325 10                                     <div class="benefit-item" style="padding: 10px 15px;">
+328 9                                     </div>
+329 8                                 </div>
+330 7                             </div>
+332 8                             <div class="semester-books" style="gap: 15px; margin-bottom: 20px;">
+333 9                                 <div class="semester-item semester-first" style="padding: 0;">
+334 9                                     <div class="semester-badge" style="padding: 6px 15px; font-size: 0.8rem;">سمسٹر اول</div>
+335 10                                     <div class="semester-content" style="padding: 25px 15px 15px;">
+336 11                                         <div class="semester-header" style="margin-bottom: 15px;">
+339 10                                         </div>
+344 9                                     </div>
+345 8                                 </div>
+347 9                                 <div class="semester-item semester-second" style="padding: 0;">
+348 9                                     <div class="semester-badge" style="padding: 6px 15px; font-size: 0.8rem;">سمسٹر دوم</div>
+349 10                                     <div class="semester-content" style="padding: 25px 15px 15px;">
+350 11                                         <div class="semester-header" style="margin-bottom: 15px;">
+353 10                                         </div>
+358 9                                     </div>
+359 8                                 </div>
+361 9                                 <div class="semester-item semester-third" style="padding: 0;">
+362 9                                     <div class="semester-badge" style="padding: 6px 15px; font-size: 0.8rem;">سمسٹر سوم</div>
+363 10                                     <div class="semester-content" style="padding: 25px 15px 15px;">
+364 11                                         <div class="semester-header" style="margin-bottom: 15px;">
+367 10                                         </div>
+372 9                                     </div>
+373 8                                 </div>
+375 9                                 <div class="semester-item semester-fourth" style="padding: 0;">
+376 9                                     <div class="semester-badge" style="padding: 6px 15px; font-size: 0.8rem;">سمسٹر چہارم</div>
+377 10                                     <div class="semester-content" style="padding: 25px 15px 15px;">
+378 11                                         <div class="semester-header" style="margin-bottom: 15px;">
+380 10                                         </div>
+385 9                                     </div>
+386 8                                 </div>
+388 9                                 <div class="semester-item semester-fifth" style="padding: 0;">
+389 9                                     <div class="semester-badge" style="padding: 6px 15px; font-size: 0.8rem;">سمسٹر پنجم</div>
+390 10                                     <div class="semester-content" style="padding: 25px 15px 15px;">
+391 11                                         <div class="semester-header" style="margin-bottom: 15px;">
+393 10                                         </div>
+398 9                                     </div>
+399 8                                 </div>
+401 9                                 <div class="semester-item semester-sixth" style="padding: 0;">
+402 9                                     <div class="semester-badge" style="padding: 6px 15px; font-size: 0.8rem;">سمسٹر ششم</div>
+403 10                                     <div class="semester-content" style="padding: 25px 15px 15px;">
+404 11                                         <div class="semester-header" style="margin-bottom: 15px;">
+406 10                                         </div>
+411 9                                     </div>
+412 8                                 </div>
+414 9                                 <div class="semester-item semester-seventh" style="padding: 0;">
+415 9                                     <div class="semester-badge" style="padding: 6px 15px; font-size: 0.8rem;">سمسٹر ہفتم</div>
+416 10                                     <div class="semester-content" style="padding: 25px 15px 15px;">
+417 11                                         <div class="semester-header" style="margin-bottom: 15px;">
+419 10                                         </div>
+424 9                                     </div>
+425 8                                 </div>
+427 9                                 <div class="semester-item semester-eighth" style="padding: 0;">
+428 9                                     <div class="semester-badge" style="padding: 6px 15px; font-size: 0.8rem;">سمسٹر ہشتم</div>
+429 10                                     <div class="semester-content" style="padding: 25px 15px 15px;">
+430 11                                         <div class="semester-header" style="margin-bottom: 15px;">
+432 10                                         </div>
+437 9                                     </div>
+438 8                                 </div>
+439 7                             </div>
+441 8                             <div class="download-instructions" style="padding: 15px; margin-top: 15px;">
+442 9                                 <div class="instructions-header" style="margin-bottom: 15px;">
+445 8                                 </div>
+446 9                                 <div class="instructions-content" style="grid-template-columns: 1fr; gap: 10px;">
+447 10                                     <div class="instruction-item" style="padding: 15px; align-items: center;">
+450 9                                     </div>
+451 10                                     <div class="instruction-item" style="padding: 15px; align-items: center;">
+454 9                                     </div>
+455 10                                     <div class="instruction-item" style="padding: 15px; align-items: center;">
+458 9                                     </div>
+459 10                                     <div class="instruction-item" style="padding: 15px; align-items: center;">
+462 9                                     </div>
+463 8                                 </div>
+464 7                             </div>
+465 6                         </div>
+466 5                     </div>
+468 6                     <div class="sidebar-section">
+471 7                         <div class="info-item">
+474 6                         </div>
+476 7                         <div class="info-item">
+479 6                         </div>
+481 7                         <div class="info-item">
+484 6                         </div>
+486 7                         <div class="info-item">
+489 6                         </div>
+491 7                         <div class="info-item">
+494 6                         </div>
+496 7                         <div class="info-item">
+499 6                         </div>
+502 5                     </div>
+503 4                 </div>
+504 3             </div>
+505 2         </div>
+final balance 2

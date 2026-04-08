@@ -183,6 +183,9 @@
             border-radius: 20px;
             box-shadow: 0 15px 40px rgba(0,0,0,0.1);
             height: fit-content;
+            align-self: start;
+            position: sticky;
+            top: 90px;
         }
 
         .section-title {
@@ -1006,12 +1009,14 @@
             transform: scale(1.02);
         }
         
-        .gallery-content {
+        .gallery-content,
+        .gallery-caption {
             padding: 20px;
             background: #ffffff;
         }
         
-        .gallery-content h4 {
+        .gallery-content h4,
+        .gallery-caption h4 {
             font-size: 1.3rem;
             font-weight: 600;
             color: #2c3e50;
@@ -1019,12 +1024,18 @@
             text-align: center;
         }
         
-        .gallery-content p {
+        .gallery-content p,
+        .gallery-caption p {
             font-size: 0.95rem;
             line-height: 1.5;
             color: #6c757d;
             margin: 0;
             text-align: center;
+        }
+
+        /* Click cursor for all gallery items */
+        .gallery-item {
+            cursor: pointer;
         }
         
         .gallery-overlay {
@@ -1054,40 +1065,44 @@
 
         /* Lightbox Modal Styles */
         .lightbox {
-            display: none;
+            display: flex;
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(0, 0, 0, 0.92);
             z-index: 9999;
             opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .lightbox.active {
-            display: flex;
-            opacity: 1;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
             align-items: center;
             justify-content: center;
         }
         
+        .lightbox.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
         .lightbox-content {
             position: relative;
-            max-width: 90%;
-            max-height: 90%;
+            width: 90vw;
+            height: 90vh;
             display: flex;
             align-items: center;
             justify-content: center;
         }
         
         .lightbox img {
-            max-width: 100%;
-            max-height: 100%;
+            max-width: 90vw;
+            max-height: 85vh;
+            width: auto;
+            height: auto;
             object-fit: contain;
             border-radius: 10px;
             box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            display: block;
         }
         
         .lightbox-close {
@@ -1891,37 +1906,37 @@
                             <h3 style="font-size: 1.8rem; color: #495057; margin-bottom: 20px; text-align: right;">کورس کی خصوصیات:</h3>
                             
                             <div class="feature-item">
-                                <span>اسلامی عقائد کی تفصیلی وضاحت</span>
+                                <span>جدید دور کے تقاضوں کے مطابق درس نظامی</span>
                                 <span class="checkmark">✓</span>
                             </div>
                             
                             <div class="feature-item">
-                                <span>فقہی مسائل کا حل</span>
+                                <span>مختصر ترین وقت اور مفید ترین طریقہ تدریس</span>
                                 <span class="checkmark">✓</span>
                             </div>
                             
                             <div class="feature-item">
-                                <span>سیرت النبی ﷺ کا مطالعہ</span>
+                                <span>دنیا بھر کے تمام لوگوں کے لیے دینی علوم حاصل کرنے کا نادر موقع </span>
                                 <span class="checkmark">✓</span>
                             </div>
                             
                             <div class="feature-item">
-                                <span>اسلامی تاریخ کی روشنی میں واقعات</span>
+                                <span>مکمل ترجمہ و تفسیر صحاح ستہ کی مربوط تدریس،</span>
                                 <span class="checkmark">✓</span>
                             </div>
                             
                             <div class="feature-item">
-                                <span>جدید مسائل کا اسلامی حل</span>
+                                <span>سوموار سے جمعرات دو گھنٹے لائیو کلاسز بذریعہ زوم ایپ</span>
                                 <span class="checkmark">✓</span>
                             </div>
                             
                             <div class="feature-item">
-                                <span>آن لائن Q&A سیشن</span>
+                                <span>ہفتہ وار اسائنمنٹ بھی حل کروائی جاتی ہے بذریعہ</span>
                                 <span class="checkmark">✓</span>
                             </div>
                         </div>
                         
-                        <img src="assets/img/PosterB.png" alt="علوم الدین کورس پوسٹر" class="course-image">
+                        <img src="assets/img/PosterB.png" alt="علوم الدین کورس پوسٹر" class="course-image" onclick="openPosterLightbox(this)" style="cursor: pointer;" title="تصویر بڑی کریں">
                     </div>
                     
                     <div class="course-description">
@@ -1948,8 +1963,11 @@
                                     </div>
                                     <h5 class="subjects-title">نصابی مضامین:</h5>
                                     <ul class="subjects-list">
-                                        <li>قرآن کریم</li>
-                                        <li>ابتدائی قواعد النحو</li>
+                                        <li>قرآن (سورۃ الفاتحہ، سورۃ یونس اور سورۃ ھود)</li>
+                                        <li>حدیث (نخبۃ الاحادیث)</li>
+                                        <li>نحو (ابتدائی قواعد النحو)</li>
+                                        <li>صرف (ابتدائی قواعد الصرف)</li>
+                                        
                                     </ul>
                                 </div>
                             </div>
@@ -1968,9 +1986,11 @@
                                     </div>
                                     <h5 class="subjects-title">نصابی مضامین:</h5>
                                     <ul class="subjects-list">
-                                        <li>قرآن کریم</li>
-                                        <li>نحو (قواعد النحو اول)</li>
-                                        <li>صرف (قواعد الصرف اول)</li>
+                                        <li>قرآن (یوسف، رعد، ابراھیم، حجر اور نحل )</li>
+                                        <li>حدیث (مشکوٰۃ المصابیح؛ حصہ اول، منتخب کتب)</li>
+                                        <li>نحو (قواعد النحو حصہ اول)</li>
+                                        <li>صرف (قواعد الصرف حصہ اول)</li>
+                                        
                                     </ul>
                                 </div>
                             </div>
@@ -1989,11 +2009,11 @@
                                     </div>
                                     <h5 class="subjects-title">نصابی مضامین:</h5>
                                     <ul class="subjects-list">
-                                        <li>قرآن کریم</li>
-                                        <li>حدیث</li>
-                                        <li>عقیدہ</li>
-                                        <li>نحو (قواعد النحو ثانی)</li>
-                                        <li>صرف (قواعد الصرف ثانی)</li>
+                                        <li>قرآن (مریم، طہ، الانبیاء، الحج، المؤمنون، النور اور الفرقان )</li>
+                                        <li>حدیث (مشکوٰۃ المصابیح؛ حصہ اول، منتخب کتب)</li>
+                                        <li>نحو (قواعد النحو حصہ دوم)</li>
+                                        <li>صرف (قواعد الصرف حصہ دوم)</li>
+                                        
                                     </ul>
                                 </div>
                             </div>
@@ -2012,12 +2032,12 @@
                                     </div>
                                     <h5 class="subjects-title">نصابی مضامین:</h5>
                                     <ul class="subjects-list">
-                                        <li>قرآن کریم</li>
-                                        <li>حدیث</li>
-                                        <li>نحو</li>
-                                        <li>صرف</li>
-                                        <li>اصول فقہ</li>
-                                        <li>منطق</li>
+                                        <li>قرآن ( زمر تا حدید )</li>
+                                        <li>حدیث (سنن النسائی؛ منتخب کتب، مشکوٰۃ المصابیح؛ حصہ دوم، منتخب کتب)</li>
+                                        <li>نحو (شرح ابنِ عقیل، جزء اول)</li>
+                                        <li>اصولِ فقہ (اصول فقہ پر ایک نظر، الوجیز فی اصول الفقہ)</li>
+                                        <li>منطق (تیسیر المنطق، مرقاۃ)</li>
+                                       
                                     </ul>
                                 </div>
                             </div>
@@ -2036,14 +2056,84 @@
                                     </div>
                                     <h5 class="subjects-title">نصابی مضامین:</h5>
                                     <ul class="subjects-list">
-                                        <li>قرآن کریم</li>
-                                        <li>حدیث رسول</li>
-                                        <li>النحو والصرف</li>
-                                        <li>اصول الحدیث</li>
-                                        <li>البلاغۃ</li>
+                                        <li>قرآن (سورۃ البقرہ اور آل عمران؛ تفسیر جلالین)</li>
+                                        <li>حدیث (سنن الترمذی اور سنن ابن ماجہ؛ منتخب کتب)</li>
+                                        <li>نحووصرف (شرح ابنِ عقیل، جزء ثانی)</li>
+                                        <li>اصولِ بلاغہ(البلاغۃ الواضحۃ)</li>
+                                        <li>
+اصولِ حدیث (اصطلاحات المحدثین، تیسیر مصطلح الحدیث، شرح نخبۃ الفکر)</li>
+                                    </ul>
+                                    
+                                </div>
+                            </div>
+
+                            <!-- الشداد - Semester 6 -->
+                            <div class="curriculum-card">
+                                <div class="semester-badge-top">سمسٹر 6</div>
+                                <div class="curriculum-card-header foundation">
+                                    <h4>الشداد</h4>
+                                    <p>تخصصی درجہ اول</p>
+                                </div>
+                                <div class="curriculum-card-body">
+                                    <div class="curriculum-goal">
+                                        <h5>کورس کا مقصد:</h5>
+                                        <p>قرآن و حدیث کی گہری تفہیم اور اصولِ تفسیر کا علم</p>
+                                    </div>
+                                    <h5 class="subjects-title">نصابی مضامین:</h5>
+                                    <ul class="subjects-list">
+                                        <li>قرآن (النساء تا التوبۃ)</li>
+                                        <li>حدیث (سنن ابی داؤد، منتخب کتب)</li>
+                                        <li>نحو و صرف (شرح ابنِ عقیل، جزء ثالث)</li>
+                                        <li>اصولِ تفسیر (مقدمۃ فی اصول التفسیر از ابن تیمیہ، الفوز الكبير از شاہ ولی اللہ دہلوی)</li>
+                                        <li>وراثت (السراجی، اسلامی قانونِ وراثت)</li>
                                     </ul>
                                 </div>
                             </div>
+
+                            <!-- عالیہ - Semester 7 -->
+                            <div class="curriculum-card">
+                                <div class="semester-badge-top">سمسٹر 7</div>
+                                <div class="curriculum-card-header building">
+                                    <h4>عالیہ</h4>
+                                    <p>تخصصی درجہ دوم</p>
+                                </div>
+                                <div class="curriculum-card-body">
+                                    <div class="curriculum-goal">
+                                        <h5>کورس کا مقصد:</h5>
+                                        <p>عقیدے کی تعمیق اور قرآن و حدیث کا جامع مطالعہ</p>
+                                    </div>
+                                    <h5 class="subjects-title">نصابی مضامین:</h5>
+                                    <ul class="subjects-list">
+                                        <li>قرآن (بنی اسرائیل اور الکہف، شعراء تا ص)</li>
+                                        <li>حدیث (صحیح مسلم، منتخب کتب)</li>
+                                        <li>نحووصرف (شرح ابنِ عقیل جزء رابع)</li>
+                                        <li>عقیدہ (تقویۃ الایمان، کتاب التوحید، عقیدہ واسطیہ، عقیدہ طحاویہ)</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- عالمیہ - Semester 8 -->
+                            <div class="curriculum-card">
+                                <div class="semester-badge-top">سمسٹر 8</div>
+                                <div class="curriculum-card-header gallery-level">
+                                    <h4>عالمیہ</h4>
+                                    <p>تکمیلی درجہ</p>
+                                </div>
+                                <div class="curriculum-card-body">
+                                    <div class="curriculum-goal">
+                                        <h5>کورس کا مقصد:</h5>
+                                        <p>اسلامی علوم کی تکمیل اور ادیانِ عالم کا تقابلی مطالعہ</p>
+                                    </div>
+                                    <h5 class="subjects-title">نصابی مضامین:</h5>
+                                    <ul class="subjects-list">
+                                        <li>قرآن (مجادلۃ تا ناس)</li>
+                                        <li>حدیث (صحیح بخاری، منتخب کتب)</li>
+                                        <li>فقہ (بدایۃ المجتہد، منتخب کتب)</li>
+                                        <li>الادیان والفرق (اقوامِ عالم کے ادیان و مذاہب)</li>
+                                    </ul>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                     
@@ -2328,7 +2418,7 @@
                         <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 4px; font-size: 0.9rem;">رائل ایونیو، سرگودھا</p>
                         <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 8px; font-size: 0.9rem;">پنجاب، پاکستان</p>
                         <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 4px; font-size: 0.85rem;"><strong>فون:</strong> <span dir="ltr">+92 (345) 555-6654</span></p>
-                        <p style="color: rgba(255, 255, 255, 0.8); font-size: 0.85rem;"><strong>ای میل:</strong> <span>info@virtualislamicuniversity.com</span></p>
+                        <p style="color: rgba(255, 255, 255, 0.8); font-size: 0.85rem;"><strong>ای میل:</strong> <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="31585f575e714758434544505d58425d505c5852445f58475443425845481f525e5c">[email&#160;protected]</a></span></p>
                     </div>
                 </div>
                 
@@ -2460,22 +2550,14 @@
             lightboxDescription.textContent = currentImage.description;
             lightboxCounter.textContent = `${currentImageIndex + 1} / ${galleryImages.length}`;
             
-            lightbox.style.display = 'flex';
-            setTimeout(() => {
-                lightbox.classList.add('active');
-            }, 10);
-            
-            // Prevent body scrolling when lightbox is open
+            lightbox.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
         
         function closeLightbox() {
             const lightbox = document.getElementById('lightbox');
             lightbox.classList.remove('active');
-            setTimeout(() => {
-                lightbox.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }, 300);
+            document.body.style.overflow = 'auto';
         }
         
         function changeImage(direction) {
@@ -2509,6 +2591,24 @@
             }
         });
         
+        // Open lightbox for single poster image (not in gallery array)
+        function openPosterLightbox(imgEl) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightboxImage');
+            const lightboxTitle = document.getElementById('lightboxTitle');
+            const lightboxDescription = document.getElementById('lightboxDescription');
+            const lightboxCounter = document.getElementById('lightboxCounter');
+
+            lightboxImage.src = imgEl.src;
+            lightboxImage.alt = imgEl.alt;
+            lightboxTitle.textContent = 'علوم الدین کورس پوسٹر';
+            lightboxDescription.textContent = 'کورس کا تعارفی پوسٹر';
+            lightboxCounter.textContent = '';
+
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
         // Close lightbox with Escape key
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
@@ -2519,11 +2619,4 @@
                 changeImage(1);
             }
         });
-        
-        // Prevent context menu on lightbox images
-        document.getElementById('lightboxImage').addEventListener('contextmenu', function(e) {
-            e.preventDefault();
-        });
     </script>
-</body>
-</html>

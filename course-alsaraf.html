@@ -489,26 +489,106 @@
         }
 
         /* Responsive Design */
-        @media (max-width: 768px) {
+        /* ===== MOBILE RESPONSIVE ===== */
+        @media (max-width: 1024px) {
             .details-grid {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
-
-            .course-hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .course-hero p {
-                font-size: 1.2rem;
-            }
-
-            .course-content, .course-sidebar {
-                padding: 30px 20px;
+            .course-overview {
+                grid-template-columns: 1fr;
             }
         }
 
-        /* Lightbox Modal Styles */
+        @media (max-width: 768px) {
+            /* Header */
+            header { padding: 0.75rem 0; }
+            .header-content { flex-wrap: wrap; gap: 10px; }
+            .logo { gap: 10px; flex: 1; min-width: 0; }
+            .logo img { height: 45px; }
+            .logo-text h1 { font-size: 1.2rem; margin-bottom: 2px; }
+            .logo-text p { font-size: 0.75rem; }
+            .back-btn { padding: 8px 16px; font-size: 0.85rem; white-space: nowrap; }
+
+            /* Hero */
+            .course-hero { padding: 120px 0 50px; }
+            .course-icon { font-size: 3.5rem; margin-bottom: 15px; }
+            .course-hero h1 { font-size: 2rem; margin-bottom: 12px; }
+            .course-hero p { font-size: 1rem; margin-bottom: 25px; }
+
+            /* Details grid */
+            .details-grid { grid-template-columns: 1fr; gap: 25px; margin-top: 25px; }
+            .course-content { padding: 25px 15px; }
+            .course-sidebar {
+                padding: 25px 15px;
+                position: static;
+            }
+
+            /* Section title */
+            .section-title { font-size: 1.8rem; margin-bottom: 20px; padding-bottom: 10px; }
+
+            /* Course overview */
+            .course-overview { grid-template-columns: 1fr; gap: 20px; padding: 20px 15px; }
+            .course-image { max-height: 280px; width: 100%; object-fit: cover; }
+
+            /* Features list */
+            .course-features h3 { font-size: 1.4rem !important; }
+
+            /* Description */
+            .course-description { font-size: 1rem; line-height: 1.8; margin-bottom: 25px; }
+
+            /* Curriculum */
+            .curriculum-section h3 { font-size: 1.5rem; }
+            .curriculum-list li { font-size: 1rem; padding: 10px 0; }
+
+            /* Sidebar info */
+            .sidebar-section h3 { font-size: 1.2rem; padding: 12px; }
+            .info-item { font-size: 0.95rem; padding: 10px 0; }
+            .enroll-btn { padding: 12px 20px; font-size: 1rem; margin-top: 15px; }
+
+            /* Book download button */
+            .sidebar-section a[href*="drive.google"] { font-size: 0.95rem; padding: 12px 15px; }
+
+            /* Footer */
+            footer { padding: 25px 0 12px; }
+            .footer-content { grid-template-columns: 1fr; gap: 15px; }
+            .footer-section h3 { font-size: 1rem; margin-bottom: 8px; }
+            .footer-section a { font-size: 0.9rem; }
+            .footer-bottom p { font-size: 0.8rem; }
+        }
+
+        @media (max-width: 480px) {
+            /* Header */
+            .logo-text h1 { font-size: 1rem; }
+            .logo-text p { display: none; }
+            .logo img { height: 40px; }
+            .back-btn { padding: 7px 12px; font-size: 0.8rem; }
+
+            /* Hero */
+            .course-hero { padding: 100px 0 40px; }
+            .course-icon { font-size: 2.8rem; }
+            .course-hero h1 { font-size: 1.6rem; }
+            .course-hero p { font-size: 0.9rem; }
+
+            /* Content */
+            .course-content { padding: 20px 12px; }
+            .course-sidebar { padding: 20px 12px; }
+            .section-title { font-size: 1.5rem; }
+            .course-image { max-height: 220px; }
+            .course-description { font-size: 0.95rem; }
+            .curriculum-section h3 { font-size: 1.3rem; }
+            .curriculum-list li { font-size: 0.9rem; }
+
+            /* Sidebar */
+            .info-item strong, .info-item span { font-size: 0.9rem; }
+            .enroll-btn { font-size: 0.95rem; }
+
+            /* Footer */
+            .footer-content { gap: 12px; }
+            .footer-section h3 { font-size: 0.95rem; }
+        }
+
+
         .lightbox {
             display: flex;
             position: fixed;
@@ -679,7 +759,7 @@
                         
                         <div class="info-item">
                             <strong>مدت:</strong>
-                            <span>20 دن (رمضان)</span>
+                            <span>رمضان مبارک کے پہلے 20 دن</span>
                         </div>
                         
                         <div class="info-item">

@@ -19,7 +19,7 @@
             color: #333;
             direction: rtl;
             text-align: right;
-            background: linear-gradient(135deg, rgba(248, 249, 250, 0.2) 0%, rgba(233, 236, 239, 0.2) 25%, rgba(222, 226, 230, 0.2) 50%, rgba(206, 212, 218, 0.2) 75%, rgba(173, 181, 189, 0.2) 100%), url('assets/img/Ramzan.jpg');
+            background: linear-gradient(135deg, rgba(248, 249, 250, 0.2) 0%, rgba(233, 236, 239, 0.2) 25%, rgba(222, 226, 230, 0.2) 50%, rgba(206, 212, 218, 0.2) 75%, rgba(173, 181, 189, 0.2) 100%), url('assets/img/Quran.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -180,6 +180,9 @@
             border-radius: 20px;
             box-shadow: 0 15px 40px rgba(0,0,0,0.1);
             height: fit-content;
+            align-self: start;
+            position: sticky;
+            top: 90px;
         }
 
         .section-title {
@@ -504,6 +507,71 @@
                 padding: 30px 20px;
             }
         }
+
+        /* Lightbox Modal Styles */
+        .lightbox {
+            display: flex;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.92);
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .lightbox-content {
+            position: relative;
+            width: 90vw;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox img {
+            max-width: 90vw;
+            max-height: 85vh;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            border-radius: 10px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            display: block;
+        }
+
+        .lightbox-close {
+            position: fixed;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 2.5rem;
+            cursor: pointer;
+            z-index: 10001;
+            background: rgba(0,0,0,0.6);
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .lightbox-close:hover {
+            background: rgba(255,255,255,0.2);
+            transform: scale(1.1);
+        }
     </style>
 </head>
 <body>
@@ -550,38 +618,35 @@
                         <div class="course-features">
                             <h3 style="font-size: 1.8rem; color: #495057; margin-bottom: 20px; text-align: right;">کورس کی خصوصیات:</h3>
                             
-                            <div class="feature-item">
-                                <span>عربی صرف کے بنیادی اصول</span>
-                                <span class="checkmark">✓</span>
-                            </div>
-                            
-                            <div class="feature-item">
-                                <span>فعل کی تصریف اور اوزان</span>
-                                <span class="checkmark">✓</span>
-                            </div>
-                            
-                            <div class="feature-item">
-                                <span>مشتقات اور ان کے اقسام</span>
-                                <span class="checkmark">✓</span>
-                            </div>
-                            
-                            <div class="feature-item">
-                                <span>قرآنی الفاظ کا صرفی تجزیہ</span>
-                                <span class="checkmark">✓</span>
-                            </div>
-                            
-                            <div class="feature-item">
-                                <span>عملی مشقیں اور امتحان</span>
-                                <span class="checkmark">✓</span>
-                            </div>
-                            
-                            <div class="feature-item">
-                                <span>رمضان کے خصوصی موضوعات</span>
-                                <span class="checkmark">✓</span>
-                            </div>
+                            <ul style="list-style: none; padding: 0; margin: 0;">
+                                <li style="display: flex; align-items: flex-start; margin-bottom: 14px; background: #f8f9fa; border-radius: 10px; padding: 12px 15px; border-right: 4px solid #28a745;">
+                                    <span style="color: #495057; font-size: 1.05rem; line-height: 1.6; flex: 1;">علم الصرف کا اجمالی تعارف</span>
+                                    <span style="color: #28a745; font-size: 1.3rem; font-weight: bold; margin-right: 12px; margin-top: 2px;">●</span>
+                                </li>
+                                <li style="display: flex; align-items: flex-start; margin-bottom: 14px; background: #f8f9fa; border-radius: 10px; padding: 12px 15px; border-right: 4px solid #28a745;">
+                                    <span style="color: #495057; font-size: 1.05rem; line-height: 1.6; flex: 1;">صیغوں کو بنانے کا طریقہ</span>
+                                    <span style="color: #28a745; font-size: 1.3rem; font-weight: bold; margin-right: 12px; margin-top: 2px;">●</span>
+                                </li>
+                                <li style="display: flex; align-items: flex-start; margin-bottom: 14px; background: #f8f9fa; border-radius: 10px; padding: 12px 15px; border-right: 4px solid #28a745;">
+                                    <span style="color: #495057; font-size: 1.05rem; line-height: 1.6; flex: 1;">صیغوں کی پہچان</span>
+                                    <span style="color: #28a745; font-size: 1.3rem; font-weight: bold; margin-right: 12px; margin-top: 2px;">●</span>
+                                </li>
+                                <li style="display: flex; align-items: flex-start; margin-bottom: 14px; background: #f8f9fa; border-radius: 10px; padding: 12px 15px; border-right: 4px solid #28a745;">
+                                    <span style="color: #495057; font-size: 1.05rem; line-height: 1.6; flex: 1;">مشکل صیغوں کا حل</span>
+                                    <span style="color: #28a745; font-size: 1.3rem; font-weight: bold; margin-right: 12px; margin-top: 2px;">●</span>
+                                </li>
+                                <li style="display: flex; align-items: flex-start; margin-bottom: 14px; background: #f8f9fa; border-radius: 10px; padding: 12px 15px; border-right: 4px solid #28a745;">
+                                    <span style="color: #495057; font-size: 1.05rem; line-height: 1.6; flex: 1;">مشکل قواعد کی تطبیق</span>
+                                    <span style="color: #28a745; font-size: 1.3rem; font-weight: bold; margin-right: 12px; margin-top: 2px;">●</span>
+                                </li>
+                                <li style="display: flex; align-items: flex-start; margin-bottom: 14px; background: #f8f9fa; border-radius: 10px; padding: 12px 15px; border-right: 4px solid #28a745;">
+                                    <span style="color: #495057; font-size: 1.05rem; line-height: 1.6; flex: 1;">گردانیں یاد کرنے کا آسان طریقہ</span>
+                                    <span style="color: #28a745; font-size: 1.3rem; font-weight: bold; margin-right: 12px; margin-top: 2px;">●</span>
+                                </li>
+                            </ul>
                         </div>
                         
-                        <img src="assets/img/Ramzan.jpg" alt="دورۃ الصرف کورس پوسٹر" class="course-image">
+                        <img src="assets/img/dora-saraf-poster.jpeg" alt="دورۃ الصرف کورس پوسٹر" class="course-image" onclick="openPosterLightbox(this)" style="cursor: pointer;" title="تصویر بڑی کریں">
                     </div>
                     
                     <div class="course-description">
@@ -614,7 +679,7 @@
                         
                         <div class="info-item">
                             <strong>مدت:</strong>
-                            <span>30 دن (رمضان)</span>
+                            <span>20 دن (رمضان)</span>
                         </div>
                         
                         <div class="info-item">
@@ -624,28 +689,24 @@
                         
                         <div class="info-item">
                             <strong>وقت:</strong>
-                            <span>اسحار کے بعد</span>
+                            <span>مغرب کے بعد</span>
                         </div>
                         
                         <div class="info-item">
                             <strong>زبان:</strong>
-                            <span>اردو/عربی</span>
+                            <span>اردو</span>
                         </div>
-                        
-                        <div class="info-item">
-                            <strong>فیس:</strong>
-                            <span>مفت</span>
-                        </div>
+                
                         
                         <div class="info-item">
                             <strong>سرٹیفکیٹ:</strong>
-                            <span>ہاں</span>
+                            <span>کورس کے اختتام پر سرٹیفکیٹ دیا جائے گا</span>
                         </div>
                         
                         <button class="enroll-btn">ابھی داخلہ لیں</button>
                     </div>
                     
-                    <div class="sidebar-section">
+                    <!-- <div class="sidebar-section">
                         <h3>استاد کا تعارف</h3>
                         <p style="text-align: center; color: #6c757d; line-height: 1.6;">
                             استاد محمد علی<br>
@@ -653,11 +714,42 @@
                             <small>جامعہ اسلامیہ کے فارغ التحصیل</small><br>
                             <small>15 سال تدریسی تجربہ</small>
                         </p>
+                    </div> -->
+
+                    <div class="sidebar-section">
+                        <h3 style="font-size: 1.3rem; color: white; text-align: center; background: linear-gradient(45deg, #1e3c72, #2a5298); padding: 15px; border-radius: 10px; margin-bottom: 20px;">نصابی کتاب</h3>
+                        <p style="color: #495057; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px; text-align: center;">کورس کی نصابی کتاب مفت ڈاؤن لوڈ کریں</p>
+                        <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px;">
+                            <div style="display: flex; align-items: center; background: #f8f9fa; padding: 10px 15px; border-radius: 8px; border-right: 3px solid #28a745;">
+                                <i class="fas fa-check-circle" style="color: #28a745; margin-left: 8px;"></i>
+                                <span style="color: #495057; font-size: 0.9rem;">مکمل طور پر مفت</span>
+                            </div>
+                            <div style="display: flex; align-items: center; background: #f8f9fa; padding: 10px 15px; border-radius: 8px; border-right: 3px solid #28a745;">
+                                <i class="fas fa-file-pdf" style="color: #dc3545; margin-left: 8px;"></i>
+                                <span style="color: #495057; font-size: 0.9rem;">پی ڈی ایف فارمیٹ</span>
+                            </div>
+                            <div style="display: flex; align-items: center; background: #f8f9fa; padding: 10px 15px; border-radius: 8px; border-right: 3px solid #28a745;">
+                                <i class="fas fa-cloud-download-alt" style="color: #007bff; margin-left: 8px;"></i>
+                                <span style="color: #495057; font-size: 0.9rem;">فوری ڈاؤن لوڈ</span>
+                            </div>
+                        </div>
+                        <a href="https://drive.google.com/file/d/18X6GeURc7uj6uRZL6V3eSCUkKx6L3SwE/view?usp=drive_link" target="_blank" style="display: flex; align-items: center; justify-content: center; gap: 10px; background: linear-gradient(135deg, #28a745, #1e7e34); color: white; padding: 14px 20px; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 1rem; transition: all 0.3s ease; box-shadow: 0 6px 20px rgba(40,167,69,0.3); width: 100%;">
+                            <i class="fas fa-download"></i>
+                            <span>کتاب ڈاؤن لوڈ کریں</span>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+            <img id="lightboxImage" src="" alt="">
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer>
@@ -671,7 +763,7 @@
                         <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 4px; font-size: 0.9rem;">رائل ایونیو، سرگودھا</p>
                         <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 8px; font-size: 0.9rem;">پنجاب، پاکستان</p>
                         <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 4px; font-size: 0.85rem;"><strong>فون:</strong> <span dir="ltr">+92 (345) 555-6654</span></p>
-                        <p style="color: rgba(255, 255, 255, 0.8); font-size: 0.85rem;"><strong>ای میل:</strong> <span>info@virtualislamicuniversity.com</span></p>
+                        <p style="color: rgba(255, 255, 255, 0.8); font-size: 0.85rem;"><strong>ای میل:</strong> <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ed84838b82ad9b849f99988c81849e818c80848e9883849b889f9e849994c38e8280">[email&#160;protected]</a></span></p>
                     </div>
                 </div>
                 
@@ -720,6 +812,28 @@
     <script>
         document.querySelector('.enroll-btn').addEventListener('click', function() {
             alert('داخلے کے لیے ہم سے رابطہ کریں:\nPhone: +92 (345) 555-6654\nEmail: info@virtualislamicuniversity.com');
+        });
+
+        function openPosterLightbox(imgEl) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightboxImage');
+            lightboxImage.src = imgEl.src;
+            lightboxImage.alt = imgEl.alt;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        document.getElementById('lightbox').addEventListener('click', function(e) {
+            if (e.target === this) closeLightbox();
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeLightbox();
         });
     </script>
 </body>

@@ -2355,6 +2355,70 @@
       }
     }
   </style>
+  <!-- Features Section Mobile Responsive CSS -->
+  <style>
+    /* ── Features Section Responsive ── */
+
+    /* Tablet (≤992px): tighten spacing only */
+    @media (max-width: 992px) {
+      #features.features.section {
+        padding: 30px 0;
+      }
+      .features-item {
+        padding: 18px 12px;
+      }
+      .features-item h3 {
+        font-size: 1rem;
+      }
+    }
+
+    /* Mobile (≤768px): 2 per row, compact */
+    @media (max-width: 768px) {
+      #features.features.section {
+        padding: 25px 0;
+      }
+      /* Force 2 columns on all phones */
+      #features .row.gy-4 > [class*="col-"] {
+        width: 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+      }
+      .features-item {
+        padding: 16px 10px;
+        border-radius: 10px;
+      }
+      .features-item h3 {
+        font-size: 0.95rem;
+        line-height: 1.4;
+      }
+    }
+
+    /* Small Mobile (≤480px): still 2 per row, smallest text */
+    @media (max-width: 480px) {
+      #features.features.section {
+        padding: 20px 0;
+      }
+      #features .row.gy-4 > [class*="col-"] {
+        width: 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+      }
+      .features-item {
+        padding: 14px 8px;
+      }
+      .features-item h3 {
+        font-size: 0.88rem;
+        line-height: 1.3;
+      }
+    }
+
+    /* Very small (≤360px) */
+    @media (max-width: 360px) {
+      .features-item h3 {
+        font-size: 0.82rem;
+      }
+    }
+  </style>
 </head>
 
 <body class="index-page">
@@ -3073,28 +3137,28 @@
           <div class="col-lg-2 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="300">
             <div class="features-item">
               <i class="bi bi-award" style="color: #e80368;"></i>
-              <h3><a href="" class="stretched-link">معتبر سرٹیفکیٹ</a></h3>
+              <h3><a href="" class="stretched-link"> سرٹیفکیٹ</a></h3>
             </div>
           </div><!-- End Feature Item -->
 
           <div class="col-lg-2 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="400">
             <div class="features-item">
               <i class="bi bi-clock" style="color: #e361ff;"></i>
-              <h3><a href="" class="stretched-link">&nbsp;&nbsp;لچکدار وقت</a></h3>
+              <h3><a href="" class="stretched-link">&nbsp;&nbsp;ریکارڈڈ کلاسز </a></h3>
             </div>
           </div><!-- End Feature Item -->
 
           <div class="col-lg-2 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="500">
             <div class="features-item">
               <i class="bi bi-globe" style="color: #ff5828;"></i>
-              <h3><a href="" class="stretched-link">عالمی رابطہ</a></h3>
+              <h3><a href="" class="stretched-link">انٹرنیشنل یونیورسٹی</a></h3>
             </div>
           </div><!-- End Feature Item -->
 
           <div class="col-lg-2 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="600">
             <div class="features-item">
               <i class="bi bi-lightbulb" style="color: #ffc107;"></i>
-              <h3><a href="" class="stretched-link">جدید خیالات</a></h3>
+              <h3><a href="" class="stretched-link">جدید طرزِ تدریس</a></h3>
             </div>
           </div><!-- End Feature Item -->
 
@@ -3229,7 +3293,7 @@ font-family: 'Mehr Nastaliq Web', serif;
                           font-weight: 500;
                           position: relative;
                           z-index: 2;
-                        ">تعلیم انسان کی زندگی کا بنیادی حق ہے اور اسلامی تعلیم کے ذریعے ہم نئی نسل کو دین اور دنیا کی بہترین تعلیم فراہم کر سکتے ہیں۔</p>
+                        ">تعلیم انسان کی زندگی کا بنیادی حق ہے اور اسلامی تعلیم کے ذریعے ہم نئی نسل کی دنیا و آخرت کو بہتر بنا سکتے ہیں۔</p>
                         
                         <!-- Signature Line -->
                         <div style="text-align: left; margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(30, 60, 114, 0.1);">
@@ -3277,19 +3341,19 @@ font-family: 'Mehr Nastaliq Web', serif;
         <ul style="color: #64748b; font-size: 1.5rem; font-weight: 500; margin-top: 35px; text-align: right; font-family: 'Mehr Nastaliq Web'; line-height: 1.8; list-style: none; padding: 0;">
           <li style="margin-bottom: 12px; position: relative; padding-right: 25px;">
             <i class="bi bi-check-circle" style="position: absolute; right: 0; top: 2px; color: #1e3c72; font-size: 1.2rem;"></i>
-            تجربہ کار اور باعلم اساتذہ جو آپ کی تعلیمی سفر میں رہنمائی کرتے ہیں
+            تجربہ کار اور ماہرینِ فن
           </li>
           <li style="margin-bottom: 12px; position: relative; padding-right: 25px;">
             <i class="bi bi-check-circle" style="position: absolute; right: 0; top: 2px; color: #1e3c72; font-size: 1.2rem;"></i>
-            اسلامی علوم میں مہارت رکھنے والے قابل استاد
+            اسلامی و معاشرتی مسائل سے آشنا
           </li>
           <li style="margin-bottom: 12px; position: relative; padding-right: 25px;">
             <i class="bi bi-check-circle" style="position: absolute; right: 0; top: 2px; color: #1e3c72; font-size: 1.2rem;"></i>
-            جدید تدابیر اپناتے ہوئے تعلیم دیتے ہیں
+            جدید طرزِ تدریس سے روشناس 
           </li>
           <li style="margin-bottom: 12px; position: relative; padding-right: 25px;">
             <i class="bi bi-check-circle" style="position: absolute; right: 0; top: 2px; color: #1e3c72; font-size: 1.2rem;"></i>
-            جو آپ کو اعلیٰ تعلیمی معیار اور بہترین تدریسی طریقے فراہم کرتے ہیں
+            دینی و عصری تعلیم سے ہم آہنگ
           </li>
         </ul>
       </div><!-- End Section Title -->

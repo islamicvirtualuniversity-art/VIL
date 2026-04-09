@@ -19,7 +19,7 @@
             color: #333;
             direction: rtl;
             text-align: right;
-            background: linear-gradient(135deg, rgba(248, 249, 250, 0.2) 0%, rgba(233, 236, 239, 0.2) 25%, rgba(222, 226, 230, 0.2) 50%, rgba(206, 212, 218, 0.2) 75%, rgba(173, 181, 189, 0.2) 100%), url('assets/img/Usool Hadees.jpg');
+            background: linear-gradient(135deg, rgba(248, 249, 250, 0.2) 0%, rgba(233, 236, 239, 0.2) 25%, rgba(222, 226, 230, 0.2) 50%, rgba(206, 212, 218, 0.2) 75%, rgba(173, 181, 189, 0.2) 100%), url('assets/img/Usool-Hadees.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -239,45 +239,6 @@
             border: 3px solid #8b4513;
         }
 
-        .curriculum-section h3 {
-            font-size: 2rem;
-            margin-bottom: 25px;
-            color: #495057;
-            position: relative;
-        }
-
-        .curriculum-section h3::before {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            right: 0;
-            width: 50px;
-            height: 3px;
-            background: #fd7e14;
-        }
-
-        .curriculum-list {
-            list-style: none;
-            margin-bottom: 30px;
-        }
-
-        .curriculum-list li {
-            padding: 15px 0;
-            border-bottom: 1px solid #e9ecef;
-            font-size: 1.1rem;
-            color: #495057;
-            position: relative;
-            padding-right: 30px;
-        }
-
-        .curriculum-list li::before {
-            content: "📚";
-            position: absolute;
-            right: 0;
-            top: 15px;
-            font-size: 1.2rem;
-        }
-
         /* Sidebar Styling */
         .sidebar-section {
             margin-bottom: 40px;
@@ -486,22 +447,223 @@
         }
 
         /* Responsive Design */
-        @media (max-width: 768px) {
+
+        /* Tablet (max-width: 992px) */
+        @media (max-width: 992px) {
             .details-grid {
                 grid-template-columns: 1fr;
-                gap: 40px;
+                gap: 30px;
+            }
+
+            .course-overview {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding: 25px;
+            }
+
+            .course-image {
+                height: 280px;
             }
 
             .course-hero h1 {
-                font-size: 2.5rem;
+                font-size: 3rem;
             }
 
             .course-hero p {
+                font-size: 1.3rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* Mobile (max-width: 768px) */
+        @media (max-width: 768px) {
+            /* Header */
+            .header-content {
+                gap: 10px;
+            }
+
+            .logo img {
+                height: 45px;
+            }
+
+            .logo-text h1 {
                 font-size: 1.2rem;
             }
 
-            .course-content, .course-sidebar {
-                padding: 30px 20px;
+            .logo-text p {
+                font-size: 0.75rem;
+            }
+
+            .back-btn {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+
+            /* Hero */
+            .course-hero {
+                padding: 120px 0 50px;
+            }
+
+            .course-icon {
+                font-size: 4rem;
+                margin-bottom: 20px;
+            }
+
+            .course-hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .course-hero p {
+                font-size: 1.1rem;
+                margin-bottom: 20px;
+            }
+
+            /* Details */
+            .course-details {
+                padding: 40px 0;
+            }
+
+            .details-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+                margin-top: 20px;
+            }
+
+            .course-content {
+                padding: 25px 18px;
+            }
+
+            .course-sidebar {
+                padding: 25px 18px;
+            }
+
+            .section-title {
+                font-size: 1.7rem;
+                margin-bottom: 20px;
+            }
+
+            /* Course overview grid stack */
+            .course-overview {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 20px 15px;
+                margin-bottom: 25px;
+            }
+
+            .course-image {
+                height: 220px;
+            }
+
+            /* Bullet list font size */
+            .course-features ul li {
+                font-size: 1rem !important;
+            }
+
+            .course-features h3 {
+                font-size: 1.4rem !important;
+            }
+
+            /* Description */
+            .course-description {
+                font-size: 1rem;
+                margin-bottom: 25px;
+            }
+
+            /* Sidebar */
+            .sidebar-section h3 {
+                font-size: 1.2rem;
+                padding: 12px;
+            }
+
+            .info-item {
+                padding: 10px 0;
+                font-size: 0.95rem;
+            }
+
+            .enroll-btn {
+                font-size: 1.1rem;
+                padding: 13px 20px;
+            }
+
+            /* Footer */
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 15px;
+            }
+        }
+
+        /* Small Mobile (max-width: 480px) */
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 12px;
+            }
+
+            .logo {
+                gap: 8px;
+            }
+
+            .logo img {
+                height: 38px;
+            }
+
+            .logo-text h1 {
+                font-size: 1rem;
+            }
+
+            .logo-text p {
+                display: none;
+            }
+
+            .back-btn {
+                padding: 7px 12px;
+                font-size: 0.85rem;
+            }
+
+            .course-hero {
+                padding: 110px 0 40px;
+            }
+
+            .course-icon {
+                font-size: 3rem;
+            }
+
+            .course-hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .course-hero p {
+                font-size: 1rem;
+            }
+
+            .course-content {
+                padding: 20px 14px;
+            }
+
+            .course-sidebar {
+                padding: 20px 14px;
+            }
+
+            .section-title {
+                font-size: 1.4rem;
+            }
+
+            .course-overview {
+                padding: 15px 10px;
+            }
+
+            .course-image {
+                height: 180px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-section h3 {
+                font-size: 1rem;
             }
         }
     </style>
@@ -547,65 +709,29 @@
                     
                     
                     <div class="course-overview">
-                        <div class="course-features">
+                                                                        <div class="course-features">
                             <h3 style="font-size: 1.8rem; color: #495057; margin-bottom: 20px; text-align: right;">کورس کی خصوصیات:</h3>
                             
-                            <div class="feature-item">
-                                <span>حدیث کی اقسام اور درجہ بندی</span>
-                                <span class="checkmark">✓</span>
-                            </div>
-                            
-                            <div class="feature-item">
-                                <span>رجال الحدیث اور جرح و تعدیل</span>
-                                <span class="checkmark">✓</span>
-                            </div>
-                            
-                            <div class="feature-item">
-                                <span>سند اور متن کی تحقیق</span>
-                                <span class="checkmark">✓</span>
-                            </div>
-                            
-                            <div class="feature-item">
-                                <span>علل الحدیث کی پہچان</span>
-                                <span class="checkmark">✓</span>
-                            </div>
-                            
-                            <div class="feature-item">
-                                <span>مختلف حدیثی مصادر کا تجزیہ</span>
-                                <span class="checkmark">✓</span>
-                            </div>
-                            
-                            <div class="feature-item">
-                                <span>عملی تحقیقی مشقیں</span>
-                                <span class="checkmark">✓</span>
-                            </div>
+                            <ul style="list-style: disc; padding-right: 25px; margin: 0; color: #495057;">
+                                <li style="margin-bottom: 12px; font-size: 1.1rem; line-height: 1.7;"><strong>اصولِ حدیث کی تمام اہم مباحث کی تدریس</strong></li>
+                                <li style="margin-bottom: 12px; font-size: 1.1rem; line-height: 1.7;"><strong>ائمہ متقدمین کے منہج پر اسناد اور متن کا دراسۃ</strong></li>
+                                <li style="margin-bottom: 12px; font-size: 1.1rem; line-height: 1.7;"><strong>روایات کی تخریج و تحقیق کے اصول و ضوابط کی تفہیم</strong></li>
+                                <li style="margin-bottom: 12px; font-size: 1.1rem; line-height: 1.7;"><strong>مشہور کتبِ مصطلح کا تعارف و منہج</strong></li>
+                                <li style="margin-bottom: 12px; font-size: 1.1rem; line-height: 1.7;"><strong>ائمہ علل کا تعارف اور علل سے متعلق اہم مباحث کا دراسۃ</strong></li>
+                                <li style="margin-bottom: 12px; font-size: 1.1rem; line-height: 1.7;"><strong>حسن لغیرہ، متواتر و آحاد، تدلیس اور ارسال جیسے مختلف فیہ مسائل میں ائمہ متقدمین کی ترجمانی</strong></li>
+                                <li style="margin-bottom: 12px; font-size: 1.1rem; line-height: 1.7;"><strong>حجیتِ حدیث پر وارد اعتراضات کے کافی و شافی جوابات</strong></li>
+                                <li style="margin-bottom: 12px; font-size: 1.1rem; line-height: 1.7;"><strong>حدیث سے متعلق جدید فکری بگاڑ کی نشاندہی</strong></li>
+                            </ul>
                         </div>
                         
-                        <img src="assets/img/Usool Hadees.jpg" alt="اصول الحدیث کورس پوسٹر" class="course-image">
+                        <img src="assets/img/Usool-Hadees.jpg" alt="اصول الحدیث کورس پوسٹر" class="course-image">
                     </div>
-                    
+<!--                     
                     <div class="course-description">
                         <p>اصول الحدیث کا یہ جامع کورس طلباء کو حدیث شریف کی جانچ پرکھ اور تحقیق کے علمی اصولوں سے روشناس کراتا ہے۔ اس کورس کا مقصد طلباء میں حدیث کی صحت، ضعف، اور درجہ بندی کی صحیح سمجھ پیدا کرنا ہے تاکہ وہ حدیثی مواد کا صحیح استعمال کر سکیں۔</p>
                         
                         <p>یہ کورس جدید تحقیقی طریقوں کے ساتھ ساتھ کلاسیکی اصول الحدیث کی روایتی تعلیمات کو یکجا کرتا ہے۔ طلباء یہاں سے حدیثی کتب کا استعمال، راویوں کی جانچ، اور مختلف احادیث کے درمیان موازنہ کرنے کا فن سیکھیں گے۔</p>
-                    </div>
-
-                    <div class="curriculum-section">
-                        <h3>نصاب (Curriculum)</h3>
-                        
-                        <ul class="curriculum-list">
-                            <li><strong>باب اول:</strong> اصول الحدیث کی تعریف اور اہمیت</li>
-                            <li><strong>باب دوم:</strong> حدیث کی اقسام - صحیح، حسن، ضعیف</li>
-                            <li><strong>باب سوم:</strong> سند اور متن کا تجزیہ</li>
-                            <li><strong>باب چہارم:</strong> رجال الحدیث اور طبقات الرواۃ</li>
-                            <li><strong>باب پنجم:</strong> جرح و تعدیل کے اصول</li>
-                            <li><strong>باب ششم:</strong> علل الحدیث اور اسباب الضعف</li>
-                            <li><strong>باب ہفتم:</strong> متواتر، مشہور، اور آحاد احادیث</li>
-                            <li><strong>باب ہشتم:</strong> نسخ فی الحدیث اور ناسخ و منسوخ</li>
-                            <li><strong>باب نہم:</strong> مختلف الحدیث اور جمع و ترجیح</li>
-                            <li><strong>باب دہم:</strong> حدیثی مصادر اور کتب الحدیث کا تعارف</li>
-                        </ul>
-                    </div>
+                    </div> -->
                 </div>
 
                 <div class="course-sidebar">
@@ -624,7 +750,7 @@
                         
                         <div class="info-item">
                             <strong>وقت:</strong>
-                            <span>شام 7-8 بجے</span>
+                            <span>مغرب کے بعد:</span>
                         </div>
                         
                         <div class="info-item">
@@ -633,26 +759,21 @@
                         </div>
                         
                         <div class="info-item">
-                            <strong>فیس:</strong>
-                            <span>مفت</span>
-                        </div>
-                        
-                        <div class="info-item">
                             <strong>سرٹیفکیٹ:</strong>
-                            <span>ہاں</span>
+                            <span>کورس کے اختتام پر سرٹیفکیٹ دیا جائے گا</span>
                         </div>
                         
                         <button class="enroll-btn">ابھی داخلہ لیں</button>
                     </div>
                     
                     <div class="sidebar-section">
-                        <h3>استاد کا تعارف</h3>
+                        <!-- <h3>استاد کا تعارف</h3>
                         <p style="text-align: center; color: #6c757d; line-height: 1.6;">
                             ڈاکٹر محمد یوسف<br>
                             <small>اصول الحدیث میں پی ایچ ڈی</small><br>
                             <small>جامعہ مدینہ کے فارغ التحصیل</small><br>
                             <small>20 سال تحقیقی تجربہ</small>
-                        </p>
+                        </p> -->
                     </div>
                 </div>
             </div>

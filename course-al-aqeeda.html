@@ -215,21 +215,6 @@
             justify-content: center;
         }
 
-        .feature-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-            color: #495057;
-        }
-
-        .feature-item .checkmark {
-            color: #4b0082;
-            margin-left: 15px;
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
-
         .course-image {
             width: 100%;
             height: 400px;
@@ -237,37 +222,6 @@
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             border: 3px solid #4b0082;
-        }
-
-        .curriculum-section h3 {
-            font-size: 2rem;
-            margin-bottom: 25px;
-            color: #495057;
-            position: relative;
-        }
-
-        .curriculum-section h3::before {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            right: 0;
-            width: 50px;
-            height: 3px;
-            background: #fd7e14;
-        }
-
-        .curriculum-list {
-            list-style: none;
-            margin-bottom: 30px;
-        }
-
-        .curriculum-list li {
-            padding: 15px 0;
-            border-bottom: 1px solid #e9ecef;
-            font-size: 1.1rem;
-            color: #495057;
-            position: relative;
-            padding-right: 30px;
         }
 
         .curriculum-list li::before {
@@ -486,22 +440,223 @@
         }
 
         /* Responsive Design */
-        @media (max-width: 768px) {
+
+        /* Tablet (max-width: 992px) */
+        @media (max-width: 992px) {
             .details-grid {
                 grid-template-columns: 1fr;
-                gap: 40px;
+                gap: 30px;
+            }
+
+            .course-overview {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding: 25px;
+            }
+
+            .course-image {
+                height: 280px;
             }
 
             .course-hero h1 {
-                font-size: 2.5rem;
+                font-size: 3rem;
             }
 
             .course-hero p {
+                font-size: 1.3rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* Mobile (max-width: 768px) */
+        @media (max-width: 768px) {
+            /* Header */
+            .header-content {
+                gap: 10px;
+            }
+
+            .logo img {
+                height: 45px;
+            }
+
+            .logo-text h1 {
                 font-size: 1.2rem;
             }
 
-            .course-content, .course-sidebar {
-                padding: 30px 20px;
+            .logo-text p {
+                font-size: 0.75rem;
+            }
+
+            .back-btn {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+
+            /* Hero */
+            .course-hero {
+                padding: 120px 0 50px;
+            }
+
+            .course-icon {
+                font-size: 4rem;
+                margin-bottom: 20px;
+            }
+
+            .course-hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .course-hero p {
+                font-size: 1.1rem;
+                margin-bottom: 20px;
+            }
+
+            /* Details */
+            .course-details {
+                padding: 40px 0;
+            }
+
+            .details-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+                margin-top: 20px;
+            }
+
+            .course-content {
+                padding: 25px 18px;
+            }
+
+            .course-sidebar {
+                padding: 25px 18px;
+            }
+
+            .section-title {
+                font-size: 1.7rem;
+                margin-bottom: 20px;
+            }
+
+            /* Course overview grid stack */
+            .course-overview {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 20px 15px;
+                margin-bottom: 25px;
+            }
+
+            .course-image {
+                height: 220px;
+            }
+
+            /* Bullet list */
+            .course-features ul li {
+                font-size: 1rem !important;
+            }
+
+            .course-features h3 {
+                font-size: 1.4rem !important;
+            }
+
+            /* Description */
+            .course-description {
+                font-size: 1rem;
+                margin-bottom: 25px;
+            }
+
+            /* Sidebar */
+            .sidebar-section h3 {
+                font-size: 1.2rem;
+                padding: 12px;
+            }
+
+            .info-item {
+                padding: 10px 0;
+                font-size: 0.95rem;
+            }
+
+            .enroll-btn {
+                font-size: 1.1rem;
+                padding: 13px 20px;
+            }
+
+            /* Footer */
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+        }
+
+        /* Small Mobile (max-width: 480px) */
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 12px;
+            }
+
+            .logo {
+                gap: 8px;
+            }
+
+            .logo img {
+                height: 38px;
+            }
+
+            .logo-text h1 {
+                font-size: 1rem;
+            }
+
+            .logo-text p {
+                display: none;
+            }
+
+            .back-btn {
+                padding: 7px 12px;
+                font-size: 0.85rem;
+            }
+
+            .course-hero {
+                padding: 110px 0 40px;
+            }
+
+            .course-icon {
+                font-size: 3rem;
+            }
+
+            .course-hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .course-hero p {
+                font-size: 1rem;
+            }
+
+            .course-content {
+                padding: 20px 14px;
+            }
+
+            .course-sidebar {
+                padding: 20px 14px;
+            }
+
+            .section-title {
+                font-size: 1.4rem;
+            }
+
+            .course-overview {
+                padding: 15px 10px;
+            }
+
+            .course-image {
+                height: 180px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-section h3 {
+                font-size: 1rem;
             }
         }
     </style>
@@ -547,66 +702,31 @@
                     
                     
                     <div class="course-overview">
-                        <div class="course-features">
+                                                <div class="course-features">
                             <h3 style="font-size: 1.8rem; color: #495057; margin-bottom: 20px; text-align: right;">کورس کی خصوصیات:</h3>
                             
-                            <div class="feature-item">
-                                <span>توحید کے تین اقسام کا تفصیلی مطالعہ</span>
-                                <span class="checkmark">✓</span>
-                            </div>
-                            
-                            <div class="feature-item">
-                                <span>ایمانیات کے چھ بنیادی ارکان</span>
-                                <span class="checkmark">✓</span>
-                            </div>
-                            
-                            <div class="feature-item">
-                                <span>شرک کی اقسام اور احتراز کے طریقے</span>
-                                <span class="checkmark">✓</span>
-                            </div>
-                            
-                            <div class="feature-item">
-                                <span>نبوت اور رسالت کے عقائد</span>
-                                <span class="checkmark">✓</span>
-                            </div>
-                            
-                            <div class="feature-item">
-                                <span>آخرت اور قیامت کے احوال</span>
-                                <span class="checkmark">✓</span>
-                            </div>
-                            
-                            <div class="feature-item">
-                                <span>منحرف عقائد سے بچاؤ کے طریقے</span>
-                                <span class="checkmark">✓</span>
-                            </div>
+                            <ul style="list-style: disc; padding-right: 25px; margin: 0; color: #495057;">
+                                <li style="margin-bottom: 12px; font-size: 1.1rem; line-height: 1.7;"><strong>منہجِ سلف پر اسلامی عقائد کی تعلیم</strong></li>
+                                <li style="margin-bottom: 12px; font-size: 1.1rem; line-height: 1.7;"><strong>کتاب و سنت کے دلائل اور ائمہ متقدمین کے اقوال سے مزین</strong></li>
+                                <li style="margin-bottom: 12px; font-size: 1.1rem; line-height: 1.7;"><strong>صفاتِ باری تعالیٰ پر خصوصی توجہ</strong></li>
+                                <li style="margin-bottom: 12px; font-size: 1.1rem; line-height: 1.7;"><strong>صحابہ کرام رضوان اللہ علیہم اجمعین کے متعلق اہلِ سنت کے موقف کا بیان</strong></li>
+                                <li style="margin-bottom: 12px; font-size: 1.1rem; line-height: 1.7;"><strong>نواقضِ اسلام کے اصول و ضوابط کی تدریس</strong></li>
+                                <li style="margin-bottom: 12px; font-size: 1.1rem; line-height: 1.7;"><strong>تکفیری و ارجائی فتنوں کا علمی تعاقب</strong></li>
+                                <li style="margin-bottom: 12px; font-size: 1.1rem; line-height: 1.7;"><strong>گمراہ فِرَق کا تعارف و تجزیہ</strong></li>
+                                <li style="margin-bottom: 12px; font-size: 1.1rem; line-height: 1.7;"><strong>جدید افکار و نظریات اور شخصیات پر علمی تبصرہ</strong></li>
+                                <li style="margin-bottom: 12px; font-size: 1.1rem; line-height: 1.7;"><strong>کتبِ عقیدہ کا تعارف و منہج</strong></li>
+                            </ul>
                         </div>
                         
                         <img src="assets/img/Aqedah.jpg" alt="العقیدہ کورس پوسٹر" class="course-image">
                     </div>
                     
-                    <div class="course-description">
+                    <!-- <div class="course-description">
                         <p>العقیدہ کا یہ جامع کورس اسلامی ایمانیات اور عقائد کی صحیح تعلیم فراہم کرتا ہے۔ اس کورس کا بنیادی مقصد طلباء میں توحید کا صحیح تصور پیدا کرنا اور شرک سے بچانا ہے۔ یہ کورس قرآن و سنت کی روشنی میں اسلامی عقائد کو سادہ اور واضح انداز میں پیش کرتا ہے۔</p>
                         
                         <p>اس کورس میں ایمان کے چھ بنیادی ارکان، توحید کے تینوں اقسام، نبوت و رسالت، آخرت کے احوال، اور تقدیر کے مسائل کو تفصیل سے بیان کیا گیا ہے۔ طلباء یہاں سے صحیح عقیدے کی بنیاد حاصل کر سکیں گے اور منحرف فرقوں کے شبہات کا جواب دے سکیں گے۔</p>
+                    </div> -->
                     </div>
-
-                    <div class="curriculum-section">
-                        <h3>نصاب (Curriculum)</h3>
-                        
-                        <ul class="curriculum-list">
-                            <li><strong>باب اول:</strong> عقیدہ کی تعریف اور اہمیت</li>
-                            <li><strong>باب دوم:</strong> توحید کی تعریف اور اقسام</li>
-                            <li><strong>باب سوم:</strong> توحید الربوبیہ - ربوبیت میں توحید</li>
-                            <li><strong>باب چہارم:</strong> توحید الالوہیہ - عبادت میں توحید</li>
-                            <li><strong>باب پنجم:</strong> توحید الاسماء والصفات - نام اور صفات میں توحید</li>
-                            <li><strong>باب ششم:</strong> شرک کی تعریف، اقسام اور خطرات</li>
-                            <li><strong>باب ہفتم:</strong> ایمان بالملائکہ - فرشتوں پر ایمان</li>
-                            <li><strong>باب ہشتم:</strong> ایمان بالکتب اور ایمان بالرسل</li>
-                            <li><strong>باب نہم:</strong> آخرت پر ایمان اور قیامت کے احوال</li>
-                            <li><strong>باب دہم:</strong> تقدیر پر ایمان اور اس کے مراتب</li>
-                        </ul>
-                    </div>
-                </div>
 
                 <div class="course-sidebar">
                     <div class="sidebar-section">
@@ -614,7 +734,7 @@
                         
                         <div class="info-item">
                             <strong>مدت:</strong>
-                            <span>4 مہینے</span>
+                            <span>6 مہینے</span>
                         </div>
                         
                         <div class="info-item">
@@ -624,7 +744,7 @@
                         
                         <div class="info-item">
                             <strong>وقت:</strong>
-                            <span>شام 6-7 بجے</span>
+                            <span>مغرب کے بعد</span>
                         </div>
                         
                         <div class="info-item">
@@ -633,27 +753,13 @@
                         </div>
                         
                         <div class="info-item">
-                            <strong>فیس:</strong>
-                            <span>مفت</span>
-                        </div>
-                        
-                        <div class="info-item">
                             <strong>سرٹیفکیٹ:</strong>
-                            <span>ہاں</span>
+                            <span>کورس کے اختتام پر سرٹیفکیٹ دیا جائے گا</span>
                         </div>
                         
                         <button class="enroll-btn">ابھی داخلہ لیں</button>
                     </div>
-                    
-                    <div class="sidebar-section">
-                        <h3>استاد کا تعارف</h3>
-                        <p style="text-align: center; color: #6c757d; line-height: 1.6;">
-                            شیخ احمد علی<br>
-                            <small>عقیدہ و کلام میں ماسٹرز</small><br>
-                            <small>جامعہ سلفیہ کے فارغ التحصیل</small><br>
-                            <small>18 سال تدریسی تجربہ</small>
-                        </p>
-                    </div>
+                
                 </div>
             </div>
         </div>

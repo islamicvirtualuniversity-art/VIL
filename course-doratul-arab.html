@@ -307,45 +307,6 @@
             border: 3px solid #228B22;
         }
 
-        .curriculum-section h3 {
-            font-size: 2rem;
-            margin-bottom: 25px;
-            color: #495057;
-            position: relative;
-        }
-
-        .curriculum-section h3::before {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            right: 0;
-            width: 50px;
-            height: 3px;
-            background: #fd7e14;
-        }
-
-        .curriculum-list {
-            list-style: none;
-            margin-bottom: 30px;
-        }
-
-        .curriculum-list li {
-            padding: 15px 0;
-            border-bottom: 1px solid #e9ecef;
-            font-size: 1.1rem;
-            color: #495057;
-            position: relative;
-            padding-right: 30px;
-        }
-
-        .curriculum-list li::before {
-            content: "📝";
-            position: absolute;
-            right: 0;
-            top: 15px;
-            font-size: 1.2rem;
-        }
-
         /* Sidebar Styling */
         .sidebar-section {
             margin-bottom: 40px;
@@ -554,22 +515,218 @@
         }
 
         /* Responsive Design */
-        @media (max-width: 768px) {
+        @media (max-width: 992px) {
+            .logo-text h1 {
+                font-size: 1.4rem;
+            }
+
             .details-grid {
                 grid-template-columns: 1fr;
-                gap: 40px;
+                gap: 30px;
+            }
+
+            .course-overview {
+                grid-template-columns: 1fr;
+                gap: 25px;
+                padding: 25px;
+            }
+
+            .course-image {
+                height: auto;
+                aspect-ratio: 4 / 3;
+                max-height: 420px;
+                order: -1;
             }
 
             .course-hero h1 {
-                font-size: 2.5rem;
+                font-size: 2.8rem;
+            }
+
+            .course-sidebar {
+                position: static;
+                top: auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                gap: 10px;
+            }
+
+            .logo img {
+                height: 45px;
+            }
+
+            .logo-text h1 {
+                font-size: 1.2rem;
+                margin-bottom: 2px;
+            }
+
+            .logo-text p {
+                font-size: 0.78rem;
+            }
+
+            .back-btn {
+                padding: 9px 16px;
+                font-size: 0.88rem;
+            }
+
+            .course-hero {
+                padding: 120px 0 50px;
+            }
+
+            .course-icon {
+                font-size: 4rem;
+                margin-bottom: 20px;
+            }
+
+            .course-hero h1 {
+                font-size: 2rem;
+                margin-bottom: 15px;
             }
 
             .course-hero p {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
+                margin-bottom: 25px;
             }
 
-            .course-content, .course-sidebar {
-                padding: 30px 20px;
+            .course-details {
+                padding: 50px 0;
+            }
+
+            .details-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+                margin-top: 20px;
+            }
+
+            .course-content {
+                padding: 25px 18px;
+            }
+
+            .course-sidebar {
+                padding: 25px 18px;
+                position: static;
+                top: auto;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+                margin-bottom: 20px;
+            }
+
+            .course-overview {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 20px 15px;
+                margin-bottom: 25px;
+            }
+
+            .course-image {
+                height: auto;
+                aspect-ratio: 4 / 3;
+                max-height: 380px;
+                order: -1;
+            }
+
+            .course-description {
+                font-size: 1.05rem;
+                margin-bottom: 25px;
+            }
+
+            .sidebar-section h3 {
+                font-size: 1.2rem;
+                padding: 12px;
+            }
+
+            .info-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
+                padding: 10px 0;
+            }
+
+            .enroll-btn {
+                font-size: 1.05rem;
+                padding: 13px 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                background-attachment: scroll;
+            }
+
+            .container {
+                padding: 0 12px;
+            }
+
+            .logo img {
+                height: 38px;
+            }
+
+            .logo-text h1 {
+                font-size: 1rem;
+            }
+
+            .logo-text p {
+                display: none;
+            }
+
+            .back-btn {
+                padding: 8px 13px;
+                font-size: 0.82rem;
+                border-radius: 20px;
+            }
+
+            .course-hero {
+                padding: 105px 0 40px;
+            }
+
+            .course-icon {
+                font-size: 3rem;
+                margin-bottom: 15px;
+            }
+
+            .course-hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .course-hero p {
+                font-size: 1rem;
+                line-height: 1.7;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .course-content {
+                padding: 18px 14px;
+            }
+
+            .course-sidebar {
+                padding: 18px 14px;
+            }
+
+            .course-overview {
+                padding: 15px 12px;
+            }
+
+            .course-image {
+                height: auto;
+                aspect-ratio: 4 / 3;
+                max-height: 320px;
+            }
+
+            .enroll-btn {
+                font-size: 1rem;
+                padding: 12px 20px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 15px;
             }
         }
     </style>
@@ -620,28 +777,28 @@
                             
                             <ul style="list-style: none; padding: 0; margin: 0;">
                                 <li style="display: flex; align-items: flex-start; margin-bottom: 14px; background: #f8f9fa; border-radius: 10px; padding: 12px 15px; border-right: 4px solid #228B22;">
+                                    <span style="color: #228B22; font-size: 1.3rem; font-weight: bold; margin-left: 12px; margin-top: 2px;">●</span>
                                     <span style="color: #495057; font-size: 1.05rem; line-height: 1.6; flex: 1;">رمضان المبارک سے عملی مطابقت رکھنے والی چند احادیث پر نحوی قواعد کی تطبیق</span>
-                                    <span style="color: #228B22; font-size: 1.3rem; font-weight: bold; margin-right: 12px; margin-top: 2px;">●</span>
                                 </li>
                                 <li style="display: flex; align-items: flex-start; margin-bottom: 14px; background: #f8f9fa; border-radius: 10px; padding: 12px 15px; border-right: 4px solid #228B22;">
+                                    <span style="color: #228B22; font-size: 1.3rem; font-weight: bold; margin-left: 12px; margin-top: 2px;">●</span>
                                     <span style="color: #495057; font-size: 1.05rem; line-height: 1.6; flex: 1;">احادیث کا لفظی و بامحاورہ ترجمہ</span>
-                                    <span style="color: #228B22; font-size: 1.3rem; font-weight: bold; margin-right: 12px; margin-top: 2px;">●</span>
                                 </li>
                                 <li style="display: flex; align-items: flex-start; margin-bottom: 14px; background: #f8f9fa; border-radius: 10px; padding: 12px 15px; border-right: 4px solid #228B22;">
+                                    <span style="color: #228B22; font-size: 1.3rem; font-weight: bold; margin-left: 12px; margin-top: 2px;">●</span>
                                     <span style="color: #495057; font-size: 1.05rem; line-height: 1.6; flex: 1;">اعراب اور وجہِ اعراب</span>
-                                    <span style="color: #228B22; font-size: 1.3rem; font-weight: bold; margin-right: 12px; margin-top: 2px;">●</span>
                                 </li>
                                 <li style="display: flex; align-items: flex-start; margin-bottom: 14px; background: #f8f9fa; border-radius: 10px; padding: 12px 15px; border-right: 4px solid #228B22;">
+                                    <span style="color: #228B22; font-size: 1.3rem; font-weight: bold; margin-left: 12px; margin-top: 2px;">●</span>
                                     <span style="color: #495057; font-size: 1.05rem; line-height: 1.6; flex: 1;">احادیث کی نحوی ترکیب</span>
-                                    <span style="color: #228B22; font-size: 1.3rem; font-weight: bold; margin-right: 12px; margin-top: 2px;">●</span>
                                 </li>
                                 <li style="display: flex; align-items: flex-start; margin-bottom: 14px; background: #f8f9fa; border-radius: 10px; padding: 12px 15px; border-right: 4px solid #228B22;">
+                                    <span style="color: #228B22; font-size: 1.3rem; font-weight: bold; margin-left: 12px; margin-top: 2px;">●</span>
                                     <span style="color: #495057; font-size: 1.05rem; line-height: 1.6; flex: 1;">مشکل صیغوں کا حل</span>
-                                    <span style="color: #228B22; font-size: 1.3rem; font-weight: bold; margin-right: 12px; margin-top: 2px;">●</span>
                                 </li>
                                 <li style="display: flex; align-items: flex-start; margin-bottom: 14px; background: #f8f9fa; border-radius: 10px; padding: 12px 15px; border-right: 4px solid #228B22;">
+                                    <span style="color: #228B22; font-size: 1.3rem; font-weight: bold; margin-left: 12px; margin-top: 2px;">●</span>
                                     <span style="color: #495057; font-size: 1.05rem; line-height: 1.6; flex: 1;">کثیر الاستعمال قواعد کا حفظ</span>
-                                    <span style="color: #228B22; font-size: 1.3rem; font-weight: bold; margin-right: 12px; margin-top: 2px;">●</span>
                                 </li>
                             </ul>
                         </div>
@@ -653,23 +810,6 @@
                         <p>دورۃ الاعراب کا یہ جامع کورس عربی زبان کے اعراب اور گرامر کی مکمل تعلیم فراہم کرتا ہے۔ اس کورس کا بنیادی مقصد طلباء کو عربی کتابوں اور قرآنی آیات کا صحیح اعرابی تجزیہ سکھانا ہے تاکہ وہ عربی متن کو درست طریقے سے سمجھ سکیں۔</p>
                         
                         <p>یہ کورس نحو کی بنیادی کتابوں پر مبنی ہے اور اس میں عملی مشقوں کے ذریعے اعراب لگانے کا فن سکھایا جاتا ہے۔ طلباء یہاں سے عربی جملوں کی ترکیب، کلمات کے اعرابی حالات، اور مختلف نحوی قواعد کا تطبیقی استعمال سیکھیں گے۔</p>
-                    </div>
-
-                    <div class="curriculum-section">
-                        <h3>نصاب (Curriculum)</h3>
-                        
-                        <ul class="curriculum-list">
-                            <li><strong>باب اول:</strong> اعراب کی تعریف اور بنیادی اصول</li>
-                            <li><strong>باب دوم:</strong> رفع کے حالات اور اس کے اسباب</li>
-                            <li><strong>باب سوم:</strong> نصب کے حالات اور اس کے اسباب</li>
-                            <li><strong>باب چہارم:</strong> جر کے حالات اور حروف جار</li>
-                            <li><strong>باب پنجم:</strong> جزم کے حالات اور ادوات جازمہ</li>
-                            <li><strong>باب ششم:</strong> اسماء کا اعرابی تجزیہ</li>
-                            <li><strong>باب ہفتم:</strong> افعال کا اعرابی تجزیہ</li>
-                            <li><strong>باب ہشتم:</strong> جملے کی ترکیب اور اعراب</li>
-                            <li><strong>باب نہم:</strong> قرآنی آیات کا اعرابی مطالعہ</li>
-                            <li><strong>باب دہم:</strong> عملی مشقیں اور اعرابی نشاندہی</li>
-                        </ul>
                     </div>
                 </div>
 
@@ -732,7 +872,7 @@
                                 <span style="color: #495057; font-size: 0.9rem;">فوری ڈاؤن لوڈ</span>
                             </div>
                         </div>
-                        <a href="https://drive.google.com/file/d/1rcKL5qUZcgyMdESYJVBmLRG6TjkVTQeF/view?usp=drive_link" target="_blank" style="display: flex; align-items: center; justify-content: center; gap: 10px; background: linear-gradient(135deg, #228B22, #1a6b1a); color: white; padding: 14px 20px; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 1rem; transition: all 0.3s ease; box-shadow: 0 6px 20px rgba(34,139,34,0.3); width: 100;">
+                        <a href="https://drive.google.com/file/d/1rcKL5qUZcgyMdESYJVBmLRG6TjkVTQeF/view?usp=drive_link" target="_blank" style="display: flex; align-items: center; justify-content: center; gap: 10px; background: linear-gradient(135deg, #228B22, #1a6b1a); color: white; padding: 14px 20px; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 1rem; transition: all 0.3s ease; box-shadow: 0 6px 20px rgba(34,139,34,0.3); width: 100%;">
                             <i class="fas fa-download"></i>
                             <span>کتاب ڈاؤن لوڈ کریں</span>
                         </a>
